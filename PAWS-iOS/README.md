@@ -1,2 +1,5 @@
-# PAWS
-A portable audio visualizer (waves) speaker or PAWS designed by  Mac Shaughnessy, Kevin Murray, Molly Pabst, Griffin Myslow and Chas Porter
+# PAWS-iOS
+`PAWS-iOS` is the driving app behind the PAWS system. Controlling music, visulization, volume and more.
+
+## Install
+Coming soon...
