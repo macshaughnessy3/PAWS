@@ -1,14 +1,14 @@
 //
-//  SeniorDesignAppTests.swift
-//  SeniorDesignAppTests
+//  PAWSTests.swift
+//  PAWSTests
 //
-//  Created by Griffin Myslow on 9/20/21.
+//  Created by macseansc3 on 9/27/21.
 //
 
 import XCTest
-@testable import SeniorDesignApp
+@testable import PAWS
 
-class SeniorDesignAppTests: XCTestCase {
+class PAWSTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

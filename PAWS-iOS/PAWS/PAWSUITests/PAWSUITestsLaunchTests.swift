@@ -1,13 +1,13 @@
 //
-//  SeniorDesignAppUITestsLaunchTests.swift
-//  SeniorDesignAppUITests
+//  PAWSUITestsLaunchTests.swift
+//  PAWSUITests
 //
-//  Created by Griffin Myslow on 9/20/21.
+//  Created by macseansc3 on 9/27/21.
 //
 
 import XCTest
 
-class SeniorDesignAppUITestsLaunchTests: XCTestCase {
+class PAWSUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
