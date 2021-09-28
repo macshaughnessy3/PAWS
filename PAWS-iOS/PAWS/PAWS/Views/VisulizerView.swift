@@ -9,22 +9,16 @@ import Foundation
 import SwiftUI
 
 struct VisulizerView: View {
+    let mode = ["OFF", "Mode 1", "Mode 2", "Mode 3", "Mode 4", "Mode 5"]
+    @State var selectedMode: String? = nil
+    
     var body: some View {
         ZStack {
             NavigationView {
                 Form {
-                    List {
-                        Text("Mode 1")
-                        Text("Mode 2")
-                        Text("Mode 3")
-                        Text("Mode 4")
-                        Text("Mode 5")
-                        Text("Mode 6")
-                        Text("Mode 7")
-                        Text("Mode 8")
-                        Text("Mode 9")
-                        Text("Mode 10")
-                    }
+                    ForEach(mode, id: \.self) { item in
+                                    SelectionCell(mode: item, selectedMode: self.$selectedMode)
+                                }
                 }
                 .navigationBarTitle(Text("My Visuals"))
                 .navigationBarItems(leading:
@@ -39,5 +33,24 @@ struct VisulizerView: View {
                         )
             }.ignoresSafeArea()
         }
+    }
+}
+
+struct SelectionCell: View {
+
+    let mode: String
+    @Binding var selectedMode: String?
+
+    var body: some View {
+        HStack {
+            Text(mode)
+            Spacer()
+            if mode == selectedMode {
+                Image(systemName: "checkmark")
+                    .foregroundColor(.accentColor)
+            }
+        }   .onTapGesture {
+                self.selectedMode = self.mode
+            }
     }
 }
