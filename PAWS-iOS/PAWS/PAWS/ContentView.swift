@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
-
     var body: some View {
-        TabView(selection: $selection){
+        TabView {
             SongView()
                 .tabItem {
-                Image(systemName: "circle.fill")
+                Image(systemName: "music.note.list")
                 Text("Music")
+            }.tag(0)
+            SongView()
+                .tabItem {
+                Image(systemName: "waveform")
+                Text("Visulizer")
             }.tag(0)
             HomeView()
                 .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
             }.tag(0)
+            HomeView()
+                .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }.tag(0)
             AccountView()
                 .tabItem {
-                Image(systemName: "person.crop.circle")
+                Image(systemName: "person")
                 Text("Account")
             }.tag(1)
         }

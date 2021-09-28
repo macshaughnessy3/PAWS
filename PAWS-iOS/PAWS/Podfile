@@ -1,0 +1,5 @@
+source 'https://github.com/delannoyk/SoundcloudSDK.git'
+
+target 'PAWS' do
+  pod 'Soundcloud'
+end
