@@ -11,15 +11,25 @@ import SwiftUI
 struct SongView: View {
     var body: some View {
         ZStack {
-            Color(.purple)
+        
             NavigationView {
                 Form {
                     List {
-                        Text("Hello World")
-                        Text("Hello World")
+                        Text("Placeholder")
+                        
                     }
                 }
-                .navigationBarTitle(Text("PAWS"))
+                .navigationBarTitle(Text("My Music"))
+                .navigationBarItems(leading:
+                                HStack {
+                                    Image("clemson-logo")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    .padding(UIScreen.main.bounds.size.width)
+                                }
+                        )
             }.ignoresSafeArea()
         }
     }

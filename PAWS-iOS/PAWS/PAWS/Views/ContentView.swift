@@ -23,7 +23,7 @@ struct ContentView: View {
                 Image(systemName: "waveform")
                 Text("Visulizer")
             }.tag(1)
-            HomeView()
+            HomeView(viewModel: viewModel)
                 .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
@@ -43,6 +43,7 @@ struct ContentView: View {
         .onAppear() {
             UITabBar.appearance().backgroundColor = .systemIndigo
             UITabBar.appearance().unselectedItemTintColor = .systemGray3
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemIndigo]
         }
         .accentColor(.orange)
     }

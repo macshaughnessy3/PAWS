@@ -15,11 +15,23 @@ struct AccountView: View {
             NavigationView {
                 Form {
                     List {
-                        Text("Hello World")
-                        Text("Hello World")
+                        Text("My Services")
+                        Text("Support")
+                        Text("System")
+                        Text("Device")
                     }
                 }
-                .navigationBarTitle(Text("PAWS"))
+                .navigationBarTitle(Text("My Account"))
+                .navigationBarItems(leading:
+                                HStack {
+                                    Image("clemson-logo")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40, alignment: .center)
+                                    .padding(UIScreen.main.bounds.size.width)
+                                }
+                        )
             }.ignoresSafeArea()
         }
     }

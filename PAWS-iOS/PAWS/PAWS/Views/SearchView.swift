@@ -12,19 +12,6 @@ struct SearchView: View {
     @ObservedObject var viewModel: SongListViewModel
     
     var body: some View {
-//        SearchBar(text: $searchText)
-//                            .padding(.top, -30)
-//        NavigationView {
-//            if #available(iOS 15.0, *) {
-//                Text("Searching for \(searchText)")
-//                    .searchable(text: $searchText)
-//                    .navigationTitle()
-//            } else {
-//                // Fallback on earlier versions
-//                SearchBar(text: $searchText)
-//            }
-//               }
-//
         VStack {
           SearchBar(searchTerm: $viewModel.searchTerm)
           if viewModel.songs.isEmpty {
@@ -37,44 +24,6 @@ struct SearchView: View {
           }
     }
 }
-    
-    struct SongItemView: View {
-      @ObservedObject var song: SongViewModel
-      
-      var body: some View {
-        HStack {
-          ArtworkView(image: song.artwork)
-            .padding(.trailing)
-          VStack(alignment: .leading) {
-            Text(song.trackName)
-            Text(song.artistName)
-              .font(.footnote)
-              .foregroundColor(.gray)
-          }
-        }
-        .padding()
-      }
-    }
-
-    struct ArtworkView: View {
-      let image: Image?
-      
-      var body: some View {
-        ZStack {
-          if image != nil {
-            image
-          } else {
-            Color(.systemIndigo)
-            Image(systemName: "music.note")
-              .font(.largeTitle)
-              .foregroundColor(.white)
-          }
-        }
-        .frame(width: 50, height: 50)
-        .shadow(radius: 5)
-        .padding(.trailing, 5)
-      }
-    }
 
     struct EmptyStateView: View {
       var body: some View {
