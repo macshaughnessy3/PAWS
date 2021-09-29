@@ -13,12 +13,9 @@ struct VisulizerView: View {
         let id = UUID().uuidString
         var name: String
     }
-    var i=0;
 
     var modes = [SelectableItem(name: "OFF")] + Array(0...5).map{SelectableItem(name: "Mode \($0)")}
-
     @State var selectedItem: SelectableItem?
-    
     
     var body: some View {
         NavigationView {
@@ -31,16 +28,7 @@ struct VisulizerView: View {
                 }
             }
             .navigationBarTitle(Text("My Visuals"))
-            .navigationBarItems(leading:
-                            HStack {
-                                Image("clemson-logo")
-                                    .resizable()
-                                    .foregroundColor(.white)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40, alignment: .center)
-                                .padding(UIScreen.main.bounds.size.width)
-                            }
-                    )
+            .navigationBarItems(leading:ClemsonLogoView())
         }.ignoresSafeArea()
     }
 }
