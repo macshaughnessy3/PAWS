@@ -21,16 +21,7 @@ struct HomeView: View {
                     }
                 }
                 .navigationBarTitle(Text("Home"))
-                .navigationBarItems(leading:
-                                HStack {
-                                    Image("clemson-logo")
-                                        .resizable()
-                                        .foregroundColor(.white)
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                    .padding(UIScreen.main.bounds.size.width)
-                                }
-                        )
+                .navigationBarItems(leading:ClemsonLogoView())
             }
         }
         .ignoresSafeArea()

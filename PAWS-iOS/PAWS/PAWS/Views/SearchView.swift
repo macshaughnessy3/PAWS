@@ -12,16 +12,19 @@ struct SearchView: View {
     @ObservedObject var viewModel: SongListViewModel
     
     var body: some View {
-        VStack {
-          SearchBar(searchTerm: $viewModel.searchTerm)
-          if viewModel.songs.isEmpty {
-            EmptyStateView()
-          } else {
-            List(viewModel.songs) { song in
-              SongItemView(song: song)
-            }
-            .listStyle(PlainListStyle())
-          }
+        NavigationView {
+                VStack {
+                    SearchBar(searchTerm: $viewModel.searchTerm)
+                    if viewModel.songs.isEmpty {
+                        EmptyStateView()
+                    } else {
+                        List(viewModel.songs) { song in
+                            SongItemView(song: song)
+                        }
+                    }
+                }
+            .navigationBarTitle(Text("Search"))
+            .navigationBarItems(leading:ClemsonLogoView())
     }
 }
 
