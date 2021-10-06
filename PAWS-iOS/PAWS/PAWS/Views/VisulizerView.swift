@@ -75,23 +75,3 @@ struct CheckmarkModifier: ViewModifier {
         }
     }
 }
-
-//struct SelectionCell: View {
-//
-//    let mode: String
-//    @Binding var selectedMode: String?
-//
-//    var body: some View {
-//        HStack {
-//            Text(mode)
-//            Spacer()
-//            if mode == selectedMode {
-//                Image(systemName: "checkmark")
-//                    .foregroundColor(.accentColor)
-//            }
-//        }.onTapGesture {
-//            self.selectedMode = self.mode
-//            print("\(mode)")
-//        }
-//    }
-//}
