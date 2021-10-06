@@ -1,5 +1,4 @@
 # Ignore MacOS temp files
-**/.DS_Store
 /PAWS-iOS/PAWS/.DS_Store
 /PAWS-iOS/.DS_Store
 .DS_Store
