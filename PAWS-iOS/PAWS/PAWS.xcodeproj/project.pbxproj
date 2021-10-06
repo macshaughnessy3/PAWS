@@ -108,9 +108,9 @@
 				0C19B7612703B63E00B983D3 /* VisulizerView.swift */,
 				3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */,
 				0C19B75F2703B59D00B983D3 /* HomeView.swift */,
-				0C19B7542703B43200B983D3 /* SearchView.swift */,
 				3FBA6A162703BDDB008BD663 /* SongItemView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
+				0C19B7542703B43200B983D3 /* SearchView.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
 			);
 			path = Views;

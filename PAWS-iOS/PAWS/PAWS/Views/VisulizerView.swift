@@ -22,7 +22,7 @@ struct VisulizerView: View {
             Form{
             Button("Connect"){
                 print("yo")
-                mqttClient.connect()
+                _ = mqttClient.connect()
             }
             Button("Mode 1")
                 {

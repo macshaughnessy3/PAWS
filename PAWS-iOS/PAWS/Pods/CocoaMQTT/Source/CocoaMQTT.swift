@@ -133,7 +133,7 @@ protocol CocoaMQTTClient {
 /**
  * MQTT Reader Delegate
  */
-protocol CocoaMQTTReaderDelegate: class {
+protocol CocoaMQTTReaderDelegate: AnyObject {
     func didReceiveConnAck(_ reader: CocoaMQTTReader, connack: UInt8)
     func didReceivePublish(_ reader: CocoaMQTTReader, message: CocoaMQTTMessage, id: UInt16)
     func didReceivePubAck(_ reader: CocoaMQTTReader, msgid: UInt16)
