@@ -58,8 +58,8 @@ struct LoginView: ViewModifier {
             .overlay(
                 ZStack {
                     if !spotify.isAuthorized || Self.debugAlwaysShowing {
-                        Color.black.opacity(0.25)
-                            .edgesIgnoringSafeArea(.all)
+                        //Color.black.opacity(0.25)
+                           // .edgesIgnoringSafeArea(.all)
                         if self.finishedViewLoadDelay || Self.debugAlwaysShowing {
                             loginView
                         }
@@ -79,16 +79,7 @@ struct LoginView: ViewModifier {
     
     var loginView: some View {
         spotifyButton
-            .padding()
-            .padding(.vertical, 50)
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(20)
-            .overlay(retrievingTokensView)
-            .shadow(radius: 5)
-            .transition(
-                AnyTransition.scale(scale: 1.2)
-                    .combined(with: .opacity)
-            )
+            
     }
     
     var spotifyButton: some View {
@@ -100,13 +91,14 @@ struct LoginView: ViewModifier {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 40)
-                Text("Log in with Spotify")
+                Text("Login with Spotify")
                     .font(.title)
             }
             .padding()
             .background(backgroundGradient)
             .clipShape(Capsule())
             .shadow(radius: 5)
+            
         }
         .accessibility(identifier: "Log in with Spotify Identifier")
         .buttonStyle(PlainButtonStyle())

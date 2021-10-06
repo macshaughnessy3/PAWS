@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 struct SongView: View {
+    @StateObject var spotify = Spotify()
     var body: some View {
         ZStack {
             NavigationView {
                 Form {
                     List {
-                        Text("Placeholder")
-                        
+                        RootView().environmentObject(spotify)
                     }
                 }
                 .navigationBarTitle(Text("My Music"))

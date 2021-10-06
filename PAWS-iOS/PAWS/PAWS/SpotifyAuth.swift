@@ -34,7 +34,7 @@ final class Spotify: ObservableObject {
     /// The URL that Spotify will redirect to after the user either authorizes
     /// or denies authorization for your application.
     let loginCallbackURL = URL(
-        string: "spotify-api-example-app://login-callback"
+        string: "spotify-api-senior-design://login-callback"
     )!
     
     /// A cryptographically-secure random string used to ensure than an incoming
@@ -70,7 +70,7 @@ final class Spotify: ObservableObject {
     @Published var currentUser: SpotifyUser? = nil
     
     /// The keychain to store the authorization information in.
-    let keychain = Keychain(service: "com.Peter-Schorn.SpotifyAPIExampleApp")
+    let keychain = Keychain(service: "com.spotify.PAWS")
     
     /// An instance of `SpotifyAPI` that you use to make requests to the Spotify
     /// web API.

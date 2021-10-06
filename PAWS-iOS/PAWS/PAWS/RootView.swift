@@ -20,7 +20,6 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             ExamplesListView()
-                .navigationBarTitle("Spotify Example App")
                 .navigationBarItems(trailing: logoutButton)
                 .disabled(!spotify.isAuthorized)
         }
