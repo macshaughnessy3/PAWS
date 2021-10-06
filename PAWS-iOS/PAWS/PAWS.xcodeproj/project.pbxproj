@@ -41,7 +41,7 @@
 		8357030D270D50EC00BEDF2B /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357030B270D50EC00BEDF2B /* TrackView.swift */; };
 		8357030F270D518600BEDF2B /* SpotifyAPIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357030E270D518600BEDF2B /* SpotifyAPIExtensions.swift */; };
 		83570310270D518600BEDF2B /* SpotifyAPIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8357030E270D518600BEDF2B /* SpotifyAPIExtensions.swift */; };
-		83570313270D56A600BEDF2B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83570312270D56A600BEDF2B /* XCTest.framework */; };
+		83570313270D56A600BEDF2B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83570312270D56A600BEDF2B /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -582,8 +582,15 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/,
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					XCTEST,
+					"-weak-lXCTestSwiftSupport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Clemson2021Group1.PAWS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -612,8 +619,15 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/,
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/,
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					XCTEST,
+					"-weak-lXCTestSwiftSupport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Clemson2021Group1.PAWS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

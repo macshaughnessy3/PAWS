@@ -139,7 +139,7 @@ struct LoginView_Previews: PreviewProvider {
     static let spotify = Spotify()
     
     static var previews: some View {
-        RootView()
+        SongView()
             .environmentObject(spotify)
             .onAppear(perform: onAppear)
     }
