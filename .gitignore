@@ -4,7 +4,7 @@
 .DS_Store
 
 # Ignore xcuserdatad for UserInterfaceState.xcuserstate
-PAWS-iOS/PAWS/PAWS.xcworkspace/xcuserdata/macseansc3.xcuserdatad/UserInterfaceState.xcuserstate
+/PAWS-iOS/PAWS/PAWS.xcworkspace/xcuserdata/macseansc3.xcuserdatad/UserInterfaceState.xcuserstate
 
 /PAWS-iOS/PAWS/PAWS.xcworkspace/xcuserdata/macseansc3.xcuserdatad/WorkspaceSettings.xcsettings
 
