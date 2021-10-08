@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import CocoaMQTT
-let mqttClient = CocoaMQTT(clientID: "App", host: "172.22.37.4", port: 1883)
+let mqttClient = CocoaMQTT(clientID: "App", host: "172.22.38.53", port: 1883)
 
 struct SelectableItem: Identifiable {
     let id = UUID().uuidString

@@ -15,6 +15,8 @@
 		0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75F2703B59D00B983D3 /* HomeView.swift */; };
 		0C19B7622703B63E00B983D3 /* VisulizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B7612703B63E00B983D3 /* VisulizerView.swift */; };
 		0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B7632703BBBC00B983D3 /* DataModel.swift */; };
+		0C402F19270FBF1E0092C102 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F18270FBF1E0092C102 /* BLEManager.swift */; };
+		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
 		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
 		3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */; };
@@ -55,6 +57,8 @@
 		0C19B75F2703B59D00B983D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0C19B7612703B63E00B983D3 /* VisulizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisulizerView.swift; sourceTree = "<group>"; };
 		0C19B7632703BBBC00B983D3 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		1D65303E4F601D69D2EAC54A /* Pods-PAWS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.release.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				3FBA6A162703BDDB008BD663 /* SongItemView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
+				0C402F18270FBF1E0092C102 /* BLEManager.swift */,
+				0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,8 +388,10 @@
 				0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */,
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
+				0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */,
 				3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */,
 				0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */,
+				0C402F19270FBF1E0092C102 /* BLEManager.swift in Sources */,
 				3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */,
 				0C19B7552703B43200B983D3 /* SearchView.swift in Sources */,
 				3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */,
