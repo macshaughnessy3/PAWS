@@ -26,6 +26,7 @@
 		3F0E5FB127026F4600B4E9B7 /* PAWSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FB027026F4600B4E9B7 /* PAWSTests.swift */; };
 		3F0E5FBB27026F4600B4E9B7 /* PAWSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FBA27026F4600B4E9B7 /* PAWSUITests.swift */; };
 		3F0E5FBD27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */; };
+		3F561E652711244300937917 /* VisulizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F561E642711244300937917 /* VisulizerView.swift */; };
 		3FBA6A172703BDDB008BD663 /* SongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A162703BDDB008BD663 /* SongItemView.swift */; };
 		3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		3F0E5FB627026F4600B4E9B7 /* PAWSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PAWSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0E5FBA27026F4600B4E9B7 /* PAWSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSUITests.swift; sourceTree = "<group>"; };
 		3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F561E642711244300937917 /* VisulizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisulizerView.swift; sourceTree = "<group>"; };
 		3FBA6A162703BDDB008BD663 /* SongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItemView.swift; sourceTree = "<group>"; };
 		3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClemsonLogoView.swift; sourceTree = "<group>"; };
 		3FD61D22270D4D5C00DF54FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				0C19B75F2703B59D00B983D3 /* HomeView.swift */,
 				3FBA6A162703BDDB008BD663 /* SongItemView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
+				3F561E642711244300937917 /* VisulizerView.swift */,
 				0C19B7542703B43200B983D3 /* SearchView.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
 				0C402F18270FBF1E0092C102 /* BLEManager.swift */,
@@ -388,6 +391,7 @@
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
 				0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */,
+				3F561E652711244300937917 /* VisulizerView.swift in Sources */,
 				3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */,
 				0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */,
 				0C402F19270FBF1E0092C102 /* BLEManager.swift in Sources */,
