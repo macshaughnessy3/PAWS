@@ -13,10 +13,12 @@ struct AccountView: View {
         ZStack {
             NavigationView {
                 Form {
+                    
                     List {
                         Text("My Services")
                         Text("Support")
                         Text("System")
+                        NavigationLink("Device", destination: BluetoothDeviceView())
                         Text("Device")
                     }
                 }
