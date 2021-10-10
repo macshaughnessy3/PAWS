@@ -9,7 +9,6 @@ import json
 clientName = "pi"
 serverAddress = "macseansc-pi"
 mqttClient = mqtt.Client(clientName)
-
 def connectionStatus(client, userdata, flags, rc):
     print("subscribing")
     mqttClient.subscribe("raspberrypi/mode")
@@ -17,7 +16,7 @@ def connectionStatus(client, userdata, flags, rc):
 
 def messageDecoder(client, userdata, msg):
     message = msg.payload.decode(encoding='UTF-8')
-    print(message)
+    print("Mode" + message)
     # if message == "mode1":
     #     print("Entered Mode 1!")
     # elif message == "mode2":
