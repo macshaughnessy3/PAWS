@@ -25,7 +25,7 @@ Next, make a crontab to run at start up so that our program automatically runs.
 On the command line type:
 
 ```bash
-sudo crontab -e
+# sudo crontab -e
 ```
 
 On the bottom of the file add:
