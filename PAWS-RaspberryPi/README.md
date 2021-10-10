@@ -1,9 +1,12 @@
 # PAWS-RaspberryPi
+
 `PAWS-RaspberryPi` serves as a companion to the `PAWS-iOS` app. The raspberry pi software can be setup by following the instructions below.
 
 ## Install
+
 Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following the guide [here](https://github.com/mikebrady/shairport-sync/blob/master/INSTALL.md) or enter the following:
-```
+
+```bash
 # apt-get update
 # apt-get upgrade
 # iwconfig wlan0 power off
@@ -20,11 +23,15 @@ $ sudo make install
 
 Next, make a crontab to run at start up so that our program automatically runs.
 On the command line type:
+
+```bash
+sudo crontab -e
 ```
-$ sudo crontab -e
-```
+
 On the bottom of the file add:
-```
+
+```text
 @reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/*.py &
 ```
+
 this will run any python program in the startup folder to run when turn on.

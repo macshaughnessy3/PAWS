@@ -1,7 +1,9 @@
 # Hardware Overview
+
 The hardware used and steps to assemble our projects housing are described in the following document. This includes design files, components and assembly steps for the various circuits in our system.
 
 ## Components
+
 A comprehensive list of build materials, files and settings for tools used in the construction of our speaker and housing.
 Hardware | Links
 ---| ---
@@ -17,16 +19,18 @@ AdaFruit Electret Microphone Amplifier | [AdaFruit Electret Microphone Amplifier
 3 pieces of 2'x 2' x 3/8" wood | [Lowe's 3 pieces of 2'x 2' x 3/8" wood](https://www.lowes.com/pd/1-4-in-Common-Pine-Sanded-Plywood-Application-as-2-x-2/1000068959)
 
 ## Design Files
+
 The initial concepts for our projects housing looked as follows:
 
 <!-- ![Hand Sketches](https://github.com/macshaughnessy3/PAWS/blob/main/Hardware/Led%20matrix%20-%2032%20x%2064%20%20(10”%20x%205”).jpeg) -->
 <img src="Led matrix - 32 x 64  (10” x 5”).jpeg" alt="drawing" width="500"/>
 
-These choices were  narrowed down and we opted for the first design where the box would be 11" x 11" x 1'10". This led us to use adobe illustrator to design a file for a laser cutter. This file includes cutouts designed to the cut at desired locations as well as add engraving for our team name. These design files are `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai`. 
+These choices were  narrowed down and we opted for the first design where the box would be 11" x 11" x 1'10". This led us to use adobe illustrator to design a file for a laser cutter. This file includes cutouts designed to the cut at desired locations as well as add engraving for our team name. These design files are `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai`.
 
 ## Assembly
 
 ### 1. Laser Cutting
+
 The `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai` files were used for cutting and engraving our box pictured below. These files were sent to the laser cutter using various settings such as power and speed to engrave our pieces off wood. It is important to ensure the wood is perfectly flat in the cutting bed.
 
 ### 2. Speaker circuit
@@ -36,4 +40,3 @@ The `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai` files were used for
 ### 4. Matrix Circuit
 
 ## Tips
-
