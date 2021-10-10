@@ -11,12 +11,12 @@ Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following 
 # apt-get upgrade
 # iwconfig wlan0 power off
 # apt install --no-install-recommends build-essential git xmltoman autoconf automake libtool libpopt-dev libconfig-dev libasound2-dev avahi-daemon libavahi-client-dev libssl-dev libsoxr-dev
-$ git clone https://github.com/mikebrady/shairport-sync.git
-$ cd shairport-sync
-$ autoreconf -fi
-$ ./configure --sysconfdir=/etc --with-alsa --with-soxr --with-avahi --with-ssl=openssl --with-systemd
-$ make
-$ sudo make install
+# git clone https://github.com/mikebrady/shairport-sync.git
+# cd shairport-sync
+# autoreconf -fi
+# ./configure --sysconfdir=/etc --with-alsa --with-soxr --with-avahi --with-ssl=openssl --with-systemd
+# make
+# sudo make install
 # systemctl enable shairport-sync
 # systemctl start shairport-sync
 ```
