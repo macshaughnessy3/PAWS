@@ -35,6 +35,8 @@ The `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai` files were used for
 
 ### 2. Speaker circuit
 
+The speaker circuit uses the audio amplifier.
+
 ### 3. Raspberry Pi Circuit
 
 ### 4. Matrix Circuit
