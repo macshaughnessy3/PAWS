@@ -11,7 +11,7 @@ import SwiftUI
 struct PAWSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: SongListViewModel())
+            ContentView(viewModel: SongListViewModel()).environmentObject(CoreBluetoothViewModel())
         }
     }
 }
