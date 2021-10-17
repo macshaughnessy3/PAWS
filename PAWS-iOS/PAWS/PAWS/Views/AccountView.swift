@@ -9,15 +9,13 @@ import Foundation
 import SwiftUI
 
 struct AccountView: View {
+    @StateObject var spotify = Spotify()
     var body: some View {
         ZStack {
             NavigationView {
                 Form {
                     List {
-                        Text("My Services")
-                        Text("Support")
-                        Text("System")
-                        Text("Device")
+                        RootView().environmentObject(spotify)
                     }
                 }
                 .navigationBarTitle(Text("My Account"))
