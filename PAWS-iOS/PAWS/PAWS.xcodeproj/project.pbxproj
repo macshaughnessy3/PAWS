@@ -26,6 +26,8 @@
 		3F0E5FBD27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */; };
 		3FBA6A172703BDDB008BD663 /* SongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A162703BDDB008BD663 /* SongItemView.swift */; };
 		3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */; };
+		8303A7DC271BEEA600CF128D /* DebugMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8303A7DB271BEEA600CF128D /* DebugMenuView.swift */; };
+		8303A7DE271BEEB900CF128D /* MiscellaneousUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8303A7DD271BEEB900CF128D /* MiscellaneousUtilities.swift */; };
 		835702F0270D44DE00BEDF2B /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 835702EF270D44DE00BEDF2B /* SpotifyAPI */; };
 		835702F2270D44DE00BEDF2B /* _SpotifyAPITestUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 835702F1270D44DE00BEDF2B /* _SpotifyAPITestUtilities */; };
 		835702F4270D459D00BEDF2B /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835702F3270D459D00BEDF2B /* SpotifyAuth.swift */; };
@@ -81,6 +83,9 @@
 		3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3FBA6A162703BDDB008BD663 /* SongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItemView.swift; sourceTree = "<group>"; };
 		3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClemsonLogoView.swift; sourceTree = "<group>"; };
+		8303A7DA271BE61F00CF128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8303A7DB271BEEA600CF128D /* DebugMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugMenuView.swift; path = "../../../../../../../Downloads/SpotifyAPIExampleApp-main/SpotifyAPIExampleApp/Views/DebugMenuView.swift"; sourceTree = "<group>"; };
+		8303A7DD271BEEB900CF128D /* MiscellaneousUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiscellaneousUtilities.swift; path = "../../../../../../../Downloads/SpotifyAPIExampleApp-main/SpotifyAPIExampleApp/Project Utilities/MiscellaneousUtilities.swift"; sourceTree = "<group>"; };
 		835702F3270D459D00BEDF2B /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
 		835702F8270D497F00BEDF2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		835702FC270D4B7C00BEDF2B /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 				0C19B7542703B43200B983D3 /* SearchView.swift */,
 				3FBA6A162703BDDB008BD663 /* SongItemView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
+				8303A7DB271BEEA600CF128D /* DebugMenuView.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
 			);
 			path = Views;
@@ -179,6 +185,7 @@
 		3F0E5F9E27026F4400B4E9B7 /* PAWS */ = {
 			isa = PBXGroup;
 			children = (
+				8303A7DA271BE61F00CF128D /* Info.plist */,
 				835702FB270D4B4900BEDF2B /* Utilities */,
 				0C19B7572703B4A200B983D3 /* ArtworkLoader.swift */,
 				0C19B7632703BBBC00B983D3 /* DataModel.swift */,
@@ -221,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				83AE18AD270DFE56001C3499 /* SpotifyAPIExtensions.swift */,
+				8303A7DD271BEEB900CF128D /* MiscellaneousUtilities.swift */,
 				835702FC270D4B7C00BEDF2B /* ImageNames.swift */,
 			);
 			path = Utilities;
@@ -378,6 +386,7 @@
 				0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */,
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
+				8303A7DC271BEEA600CF128D /* DebugMenuView.swift in Sources */,
 				3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */,
 				835702F4270D459D00BEDF2B /* SpotifyAuth.swift in Sources */,
 				835702FE270D4BFA00BEDF2B /* ImageNames.swift in Sources */,
@@ -394,6 +403,7 @@
 				0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */,
 				835702F9270D497F00BEDF2B /* LoginView.swift in Sources */,
 				83AE18AF270DFF7F001C3499 /* AlertItem.swift in Sources */,
+				8303A7DE271BEEB900CF128D /* MiscellaneousUtilities.swift in Sources */,
 				83570302270D4C9700BEDF2B /* ExamplesListView.swift in Sources */,
 				3FBA6A172703BDDB008BD663 /* SongItemView.swift in Sources */,
 			);
@@ -569,6 +579,7 @@
 				DEVELOPMENT_TEAM = 3876SS7AW8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PAWS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -606,6 +617,7 @@
 				DEVELOPMENT_TEAM = 3876SS7AW8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PAWS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

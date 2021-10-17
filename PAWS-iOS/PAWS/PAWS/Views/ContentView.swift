@@ -21,14 +21,14 @@ struct ContentView: View {
             VisulizerView()
                 .tabItem {
                 Image(systemName: "waveform")
-                Text("Visulizer")
+                Text("Visualizer")
             }.tag(1)
             HomeView(viewModel: viewModel)
                 .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
             }.tag(2)
-            SearchView(viewModel: viewModel)
+            SearchForTracksView()
                 .tabItem {
                 Image(systemName: "magnifyingglass")
                 Text("Search")
@@ -50,7 +50,19 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    //static var previews: some View {
+       // ContentView(viewModel: SongListViewModel())
+    //}
+    static let spotify: Spotify = {
+        let spotify = Spotify()
+        spotify.isAuthorized = true
+        return spotify
+    }()
+    
     static var previews: some View {
-        ContentView(viewModel: SongListViewModel())
+        NavigationView {
+            ContentView(viewModel: SongListViewModel())
+                .environmentObject(spotify)
+        }
     }
 }
