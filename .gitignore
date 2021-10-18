@@ -1,0 +1,13 @@
+
+# Ignore MacOS temp files
+/PAWS-iOS/PAWS/PAWS/.DS_Store
+/PAWS-iOS/PAWS/.DS_Store
+/PAWS-iOS/.DS_Store
+.DS_Store
+
+# Ignore Xcode user data files
+**/UserInterfaceState.xcuserstate
+*xcuserdatad
+*xcuserdata
+PAWS.xcodeproj/xcuserdata
+Pods/Pods.xcodeproj/xcuserdata

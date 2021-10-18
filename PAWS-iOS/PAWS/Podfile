@@ -1,5 +1,7 @@
-source 'https://github.com/delannoyk/SoundcloudSDK.git'
+platform :ios, '14.0'
 
 target 'PAWS' do
-  pod 'Soundcloud'
+  use_frameworks!
+
+  pod 'CocoaMQTT'
 end

@@ -14,8 +14,14 @@ struct AccountView: View {
         ZStack {
             NavigationView {
                 Form {
+                    
                     List {
                         RootView().environmentObject(spotify)
+                        Text("My Services")
+                        Text("Support")
+                        Text("System")
+                        NavigationLink("Device", destination: BluetoothDeviceView())
+                        Text("Device")
                     }
                 }
                 .navigationBarTitle(Text("My Account"))

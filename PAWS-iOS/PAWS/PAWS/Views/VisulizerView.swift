@@ -7,20 +7,29 @@
 
 import Foundation
 import SwiftUI
+import CocoaMQTT
+let mqttClient = CocoaMQTT(clientID: "App", host: "100.64.12.87", port: 1883)
+
+struct SelectableItem {
+    var name: String
+    var mode: Int
+}
+extension SelectableItem: Identifiable {
+    var id: Int { return mode }
+}
 
 struct VisulizerView: View {
-    struct SelectableItem: Identifiable {
-        let id = UUID().uuidString
-        var name: String
+    var modes = [SelectableItem(name: "OFF", mode: -1)] + Array(0...5).map{SelectableItem(name: "Mode \($0)", mode: $0)}
+    @State var selectedItem: SelectableItem?
+
+    init() {
+        _ = mqttClient.connect()
     }
 
-    var modes = [SelectableItem(name: "OFF")] + Array(0...5).map{SelectableItem(name: "Mode \($0)")}
-    @State var selectedItem: SelectableItem?
-    
     var body: some View {
         NavigationView {
             Form {
-                SingleSelectionList(items: modes, selectedItem: $selectedItem) { (item) in
+                SingleSelectionList(items: modes, selectedItem: $selectedItem) { item in
                     HStack {
                         Text(item.name)
                         Spacer()
@@ -37,7 +46,6 @@ struct SingleSelectionList<Item: Identifiable, Content: View>: View {
     var items: [Item]
     @Binding var selectedItem: Item?
     var rowContent: (Item) -> Content
-    
     var body: some View {
         List(items) { item in
             rowContent(item)
@@ -45,6 +53,7 @@ struct SingleSelectionList<Item: Identifiable, Content: View>: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.selectedItem = item
+                    mqttClient.publish("raspberrypi/mode", withString: "\(item.id)")
                 }
         }
     }
@@ -64,26 +73,6 @@ struct CheckmarkModifier: ViewModifier {
             } else {
                 content
             }
-        }
-    }
-}
-
-struct SelectionCell: View {
-
-    let mode: String
-    @Binding var selectedMode: String?
-
-    var body: some View {
-        HStack {
-            Text(mode)
-            Spacer()
-            if mode == selectedMode {
-                Image(systemName: "checkmark")
-                    .foregroundColor(.accentColor)
-            }
-        }
-        .onTapGesture {
-            self.selectedMode = self.mode
         }
     }
 }
