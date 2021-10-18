@@ -9,7 +9,7 @@
 import Foundation
 import Dispatch
 
-protocol CocoaMQTTDeliverProtocol: AnyObject {
+protocol CocoaMQTTDeliverProtocol: class {
     
     var dispatchQueue: DispatchQueue { get set }
     
@@ -91,8 +91,8 @@ class CocoaMQTTDeliver: NSObject {
     func cleanAll() {
         deliverQueue.async { [weak self] in
             guard let wself = self else { return }
-            wself.mqueue.removeAll()
-            wself.inflight.removeAll()
+            _ = wself.mqueue.removeAll()
+            _ = wself.inflight.removeAll()
         }
     }
 }
