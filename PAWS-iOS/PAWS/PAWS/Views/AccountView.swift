@@ -20,7 +20,7 @@ struct AccountView: View {
                         Text("My Services")
                         Text("Support")
                         Text("System")
-                        NavigationLink("Device", destination: BluetoothDeviceView())
+//                        NavigationLink("Device", destination: BluetoothDeviceView())
                         Text("Device")
                     }
                 }

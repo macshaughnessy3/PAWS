@@ -18,7 +18,7 @@ struct ContentView: View {
                 Image(systemName: "music.note.list")
                 Text("Music")
             }.tag(0)
-            VisulizerView()
+            VisualizerView()
                 .tabItem {
                 Image(systemName: "waveform")
                 Text("Visualizer")
