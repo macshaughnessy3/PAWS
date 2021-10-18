@@ -15,6 +15,7 @@
 		0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75F2703B59D00B983D3 /* HomeView.swift */; };
 		0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B7632703BBBC00B983D3 /* DataModel.swift */; };
 		0C1BA253271DE8990004B296 /* PlaylistDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */; };
+		0C1BA255271DF0920004B296 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA254271DF0920004B296 /* SearchView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
 		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
 		3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */; };
@@ -78,6 +79,7 @@
 		0C19B75F2703B59D00B983D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0C19B7632703BBBC00B983D3 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDeduplicator.swift; sourceTree = "<group>"; };
+		0C1BA254271DF0920004B296 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				83570301270D4C9700BEDF2B /* ExamplesListView.swift */,
 				83AE18A7270DFDF6001C3499 /* TrackView.swift */,
 				83AE18A6270DFDF6001C3499 /* SearchForTracksView.swift */,
+				0C1BA254271DF0920004B296 /* SearchView.swift */,
 				83AE18A8270DFDF6001C3499 /* SpotifyAPIExtensions.swift */,
 				3F0E5FA127026F4400B4E9B7 /* ContentView.swift */,
 				0C19B75B2703B57B00B983D3 /* SongView.swift */,
@@ -304,7 +307,6 @@
 				19B6FE1F34E4AC5059334F2D /* Pods-PAWS.debug.xcconfig */,
 				08B21AB4A4998FA5A75D48E9 /* Pods-PAWS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -501,6 +503,7 @@
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
 				8303A7DC271BEEA600CF128D /* DebugMenuView.swift in Sources */,
 				8303A7E1271C8C5C00CF128D /* PlaylistsListView.swift in Sources */,
+				0C1BA255271DF0920004B296 /* SearchView.swift in Sources */,
 				8303A7E6271C8C9800CF128D /* SavedAlbumsGridView.swift in Sources */,
 				3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */,
 				835702F4270D459D00BEDF2B /* SpotifyAuth.swift in Sources */,
