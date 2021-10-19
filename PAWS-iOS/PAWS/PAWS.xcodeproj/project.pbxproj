@@ -586,7 +586,6 @@
 /* Begin XCBuildConfiguration section */
 		3F0E5FBE27026F4600B4E9B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -653,7 +652,6 @@
 		};
 		3F0E5FBF27026F4600B4E9B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
