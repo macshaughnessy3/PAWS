@@ -738,7 +738,6 @@
 					XCTEST,
 					"-weak-lXCTestSwiftSupport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Clemson2021Group1.PAWS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -774,7 +773,6 @@
 					XCTEST,
 					"-weak-lXCTestSwiftSupport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Clemson2021Group1.PAWS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
