@@ -90,6 +90,7 @@
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		0CEE8AA9271F655E00EE5C2F /* LocalConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LocalConfig.xcconfig; sourceTree = "<group>"; };
 		19B6FE1F34E4AC5059334F2D /* Pods-PAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.debug.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.debug.xcconfig"; sourceTree = "<group>"; };
 		3F0E5F9C27026F4400B4E9B7 /* PAWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PAWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */,
+				0CEE8AA9271F655E00EE5C2F /* LocalConfig.xcconfig */,
 				0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */,
 				0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */,
 			);
