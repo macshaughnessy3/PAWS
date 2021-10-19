@@ -4,6 +4,7 @@
 /PAWS-iOS/PAWS/.DS_Store
 /PAWS-iOS/.DS_Store
 .DS_Store
+/PAWS-iOS/PAWS/Config/LocalConfig.xcconfig
 
 # Ignore Xcode user data files
 **/UserInterfaceState.xcuserstate

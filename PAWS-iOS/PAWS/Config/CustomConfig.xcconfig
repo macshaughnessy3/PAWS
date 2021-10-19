@@ -1,0 +1,26 @@
+//
+//  Config.xcconfig
+//  PAWS
+//
+//  Created by Mac Shaughnessy on 10/19/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+// Overridable settings with some defaults
+
+PRODUCT_BUNDLE_IDENTIFIER = com.Clemson2021Group1.PAWS
+DEVELOPMENT_TEAM = ""
+CODE_SIGN_STYLE = Manual
+
+// Optionally include `LocalConfig.xcconfig`
+// that includes local overrides if it exists.
+// `#include?` is supported as of Xcode 8
+
+#include? "LocalConfig.xcconfig"
+
+//  Basic LocalConfig.xcconfig file contains:
+//
+//PRODUCT_BUNDLE_IDENTIFIER = com.myOtherDomain.myApps.MyOtherAppName
+//DEVELOPMENT_TEAM = ABCDEF
+//CODE_SIGN_STYLE = Automatic
