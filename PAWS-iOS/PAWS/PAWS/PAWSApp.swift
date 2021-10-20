@@ -17,9 +17,9 @@ struct PAWSApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: SongListViewModel()).environmentObject(spotify)
-            //RootView()
-                //.environmentObject(spotify)
+            //ContentView(viewModel: SongListViewModel()).environmentObject(spotify)
+            RootView()
+                .environmentObject(spotify)
         }
     }
 }

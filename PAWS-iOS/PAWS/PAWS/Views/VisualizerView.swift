@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import CocoaMQTT
-let mqttClient = CocoaMQTT(clientID: "App", host: "100.64.12.87", port: 1883)
+let mqttClient = CocoaMQTT(clientID: "App", host: "10.191.106.215", port: 1883)
 var connected:Bool=false;
 
 struct SelectableItem {

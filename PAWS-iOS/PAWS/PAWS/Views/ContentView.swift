@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel: SongListViewModel
+    @EnvironmentObject var spotify: Spotify
     
     var body: some View {
         TabView {
             SongView()
+                .environmentObject(spotify)
                 .tabItem {
                 Image(systemName: "music.note.list")
                 Text("Music")
@@ -24,6 +26,7 @@ struct ContentView: View {
                 Text("Visualizer")
             }.tag(1)
             HomeView(viewModel: viewModel)
+                .environmentObject(spotify)
                 .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
