@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CocoaMQTT
 let mqttClient = CocoaMQTT(clientID: "App", host: "100.64.12.87", port: 1883)
+var connected:Bool=false;
 
 struct SelectableItem {
     var name: String
@@ -23,7 +24,14 @@ struct VisualizerView: View {
     @State var selectedItem: SelectableItem?
 
     init() {
-        _ = mqttClient.connect()
+        mqttClient.willMessage = CocoaMQTTWill(topic: "/will", message: "dieout")
+//        mqttClient.keepAlive = 15
+        connected = mqttClient.connect()
+        if connected {
+            print("MQTT Connected")
+        } else { 
+            print("MQTT was not connected")
+        }
     }
 
     var body: some View {
