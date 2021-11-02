@@ -1,4 +1,4 @@
-var bleno = require('bleno');
+var bleno = require('@abandonware/bleno');
 var exec = require('child_process').exec;
 
 var CHUNK_SIZE = 20;
