@@ -20,13 +20,14 @@ struct AccountView: View {
                         Text("My Services")
                         Text("Support")
                         Text("System")
-//                        NavigationLink("Device", destination: BluetoothDeviceView())
-                        Text("Device")
+                        NavigationLink("Device", destination: BluetoothDeviceView())
                     }
                 }
                 .navigationBarTitle(Text("My Account"))
                 .navigationBarItems(leading:ClemsonLogoView())
-            }.ignoresSafeArea()
+            }
+            .ignoresSafeArea()
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

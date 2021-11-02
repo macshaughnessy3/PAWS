@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift">
+   </FileRef>
+   <FileRef
       location = "group:PAWS.xcodeproj">
    </FileRef>
    <FileRef

@@ -13,6 +13,8 @@
 		0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75D2703B58800B983D3 /* AccountView.swift */; };
 		0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75F2703B59D00B983D3 /* HomeView.swift */; };
 		0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B7632703BBBC00B983D3 /* DataModel.swift */; };
+		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
+		0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */; };
 		0C1BA253271DE8990004B296 /* PlaylistDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */; };
 		0C1BA257271E0B100004B296 /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA256271E0B100004B296 /* VisualizerView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
@@ -27,6 +29,19 @@
 		3F0E5FBD27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */; };
 		3FBA6A172703BDDB008BD663 /* SongItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A162703BDDB008BD663 /* SongItemView.swift */; };
 		3FBA6A192703ED22008BD663 /* ClemsonLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */; };
+		3FCAE5E42719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5CE2719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift */; };
+		3FCAE5E52719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5CF2719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */; };
+		3FCAE5E62719285D00723FCD /* CoreBluetoothViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5D02719285D00723FCD /* CoreBluetoothViewModel.swift */; };
+		3FCAE5E82719285D00723FCD /* CBCentralManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5D62719285D00723FCD /* CBCentralManagerMock.swift */; };
+		3FCAE5E92719285D00723FCD /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5D72719285D00723FCD /* Mock.swift */; };
+		3FCAE5EA2719285D00723FCD /* CBPeripheralMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5D82719285D00723FCD /* CBPeripheralMock.swift */; };
+		3FCAE5EB2719285D00723FCD /* ServiceCharacteristicsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5D92719285D00723FCD /* ServiceCharacteristicsMock.swift */; };
+		3FCAE5EC2719285D00723FCD /* CBPeripheralProtcolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5DB2719285D00723FCD /* CBPeripheralProtcolDelegate.swift */; };
+		3FCAE5ED2719285D00723FCD /* Peripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5DD2719285D00723FCD /* Peripheral.swift */; };
+		3FCAE5EE2719285D00723FCD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5DE2719285D00723FCD /* Service.swift */; };
+		3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5DF2719285D00723FCD /* Characteristic.swift */; };
+		3FCAE5F02719285D00723FCD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5E12719285D00723FCD /* DetailView.swift */; };
+		3FCAE5F12719285D00723FCD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCAE5E22719285D00723FCD /* ListView.swift */; };
 		539610E62ED50846F48FD38D /* Pods_PAWS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A077658EE1977C2407B7B0CE /* Pods_PAWS.framework */; };
 		8303A7DC271BEEA600CF128D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8303A7E1271C8C5C00CF128D /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -81,12 +96,14 @@
 		0C19B75D2703B58800B983D3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		0C19B75F2703B59D00B983D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0C19B7632703BBBC00B983D3 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDeduplicator.swift; sourceTree = "<group>"; };
-		0C1BA256271E0B100004B296 /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
-		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = "/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift"; sourceTree = "<absolute>"; };
+		3E8E90702F4CA5964CBF4C43 /* Pods-PAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.debug.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.debug.xcconfig"; sourceTree = "<group>"; };
+		0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDeduplicator.swift; sourceTree = "<group>"; };
+		0C1BA256271E0B100004B296 /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
+		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -104,7 +121,21 @@
 		3F0E5FBC27026F4600B4E9B7 /* PAWSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3FBA6A162703BDDB008BD663 /* SongItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongItemView.swift; sourceTree = "<group>"; };
 		3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClemsonLogoView.swift; sourceTree = "<group>"; };
-		8303A7DA271BE61F00CF128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FCAE5CE2719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreBluetoothViewModelExtension+Delegate.swift"; sourceTree = "<group>"; };
+		3FCAE5CF2719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreBluetoothViewModelExtension+SwiftUIView.swift.swift"; sourceTree = "<group>"; };
+		3FCAE5D02719285D00723FCD /* CoreBluetoothViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreBluetoothViewModel.swift; sourceTree = "<group>"; };
+		3FCAE5D62719285D00723FCD /* CBCentralManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCentralManagerMock.swift; sourceTree = "<group>"; };
+		3FCAE5D72719285D00723FCD /* Mock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		3FCAE5D82719285D00723FCD /* CBPeripheralMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralMock.swift; sourceTree = "<group>"; };
+		3FCAE5D92719285D00723FCD /* ServiceCharacteristicsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCharacteristicsMock.swift; sourceTree = "<group>"; };
+		3FCAE5DB2719285D00723FCD /* CBPeripheralProtcolDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralProtcolDelegate.swift; sourceTree = "<group>"; };
+		3FCAE5DD2719285D00723FCD /* Peripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
+		3FCAE5DE2719285D00723FCD /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3FCAE5DF2719285D00723FCD /* Characteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characteristic.swift; sourceTree = "<group>"; };
+		3FCAE5E12719285D00723FCD /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3FCAE5E22719285D00723FCD /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		3FD61D22270D4D5C00DF54FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DD441597C402C453C818C41D /* Pods-PAWS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.release.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.release.xcconfig"; sourceTree = "<group>"; };
 		835702F3270D459D00BEDF2B /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
 		835702F8270D497F00BEDF2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		835702FC270D4B7C00BEDF2B /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
@@ -173,6 +204,7 @@
 				835B8F74271DEFF300774067 /* RecentlyPlayedView.swift */,
 				83AE18A8270DFDF6001C3499 /* SpotifyAPIExtensions.swift */,
 				3F0E5FA127026F4400B4E9B7 /* ContentView.swift */,
+				0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */,
 				0C1BA256271E0B100004B296 /* VisualizerView.swift */,
 				0C19B75B2703B57B00B983D3 /* SongView.swift */,
 				3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */,
@@ -181,7 +213,6 @@
 				835B8F72271DEFD100774067 /* DebugMenuView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
-				0C402F18270FBF1E0092C102 /* BLEManager.swift */,
 				0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */,
 			);
 			path = Views;
@@ -241,7 +272,10 @@
 		3F0E5F9E27026F4400B4E9B7 /* PAWS */ = {
 			isa = PBXGroup;
 			children = (
-				8303A7DA271BE61F00CF128D /* Info.plist */,
+				3FCAE5D32719285D00723FCD /* Model */,
+				3FCAE5E02719285D00723FCD /* View */,
+				3FCAE5CC2719285D00723FCD /* ViewModel */,
+				3FD61D22270D4D5C00DF54FC /* Info.plist */,
 				835702FB270D4B4900BEDF2B /* Utilities */,
 				0C19B7572703B4A200B983D3 /* ArtworkLoader.swift */,
 				835B8F78271DF0F700774067 /* MiscellaneousUtilities.swift */,
@@ -282,6 +316,90 @@
 			path = PAWSUITests;
 			sourceTree = "<group>";
 		};
+		3FCAE5CC2719285D00723FCD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5CD2719285D00723FCD /* CoreBluetooth */,
+				3FCAE5D12719285D00723FCD /* Navigation */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3FCAE5CD2719285D00723FCD /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5CE2719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift */,
+				3FCAE5CF2719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift */,
+				3FCAE5D02719285D00723FCD /* CoreBluetoothViewModel.swift */,
+			);
+			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
+		3FCAE5D12719285D00723FCD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		3FCAE5D32719285D00723FCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5D42719285D00723FCD /* CoreBluetooth */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FCAE5D42719285D00723FCD /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5D52719285D00723FCD /* Mock */,
+				3FCAE5DA2719285D00723FCD /* Delegate */,
+				3FCAE5DC2719285D00723FCD /* Store */,
+			);
+			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
+		3FCAE5D52719285D00723FCD /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5D62719285D00723FCD /* CBCentralManagerMock.swift */,
+				3FCAE5D72719285D00723FCD /* Mock.swift */,
+				3FCAE5D82719285D00723FCD /* CBPeripheralMock.swift */,
+				3FCAE5D92719285D00723FCD /* ServiceCharacteristicsMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3FCAE5DA2719285D00723FCD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5DB2719285D00723FCD /* CBPeripheralProtcolDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		3FCAE5DC2719285D00723FCD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5DD2719285D00723FCD /* Peripheral.swift */,
+				3FCAE5DE2719285D00723FCD /* Service.swift */,
+				3FCAE5DF2719285D00723FCD /* Characteristic.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		3FCAE5E02719285D00723FCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FCAE5E12719285D00723FCD /* DetailView.swift */,
+				3FCAE5E22719285D00723FCD /* ListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9678E9AA472FC9CC7E9E247C /* Pods */ = {
 		8303A7DF271C8C3400CF128D /* PlaylistViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,12 +631,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */,
+				3FCAE5EE2719285D00723FCD /* Service.swift in Sources */,
 				0C19B75C2703B57B00B983D3 /* SongView.swift in Sources */,
+				3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */,
 				0C19B7592703B4A200B983D3 /* ArtworkLoader.swift in Sources */,
 				835B8F6B271DEF3700774067 /* SavedAlbumsGridView.swift in Sources */,
 				0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */,
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,
+				3FCAE5E52719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift in Sources */,
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
+				0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */,
+				3FCAE5E82719285D00723FCD /* CBCentralManagerMock.swift in Sources */,
+				3F561E652711244300937917 /* VisulizerView.swift in Sources */,
+				3FCAE5EA2719285D00723FCD /* CBPeripheralMock.swift in Sources */,
+				3FCAE5E62719285D00723FCD /* CoreBluetoothViewModel.swift in Sources */,
+				3FCAE5E42719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift in Sources */,
 				835B8F6D271DEF6D00774067 /* AlbumGridItemView.swift in Sources */,
 				835B8F6F271DEF7F00774067 /* AlbumTracksView.swift in Sources */,
 				8303A7DC271BEEA600CF128D /* (null) in Sources */,
@@ -530,17 +658,24 @@
 				835702FE270D4BFA00BEDF2B /* ImageNames.swift in Sources */,
 				835B8F75271DEFF300774067 /* RecentlyPlayedView.swift in Sources */,
 				0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */,
-				83AE18AC270DFDF7001C3499 /* SpotifyAPIExtensions.swift in Sources */,
+				3FCAE5F02719285D00723FCD /* DetailView.swift in Sources */,
 				3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */,
+				0C19B7552703B43200B983D3 /* SearchView.swift in Sources */,
+				3FCAE5EC2719285D00723FCD /* CBPeripheralProtcolDelegate.swift in Sources */,
+				3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */,
+				3FCAE5E92719285D00723FCD /* Mock.swift in Sources */,
+				3FCAE5ED2719285D00723FCD /* Peripheral.swift in Sources */,
+				0C19B75A2703B4A200B983D3 /* SongListViewModel.swift in Sources */,
+				3FCAE5F12719285D00723FCD /* ListView.swift in Sources */,
+				0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */,
+				3FCAE5EB2719285D00723FCD /* ServiceCharacteristicsMock.swift in Sources */,
+				83AE18AC270DFDF7001C3499 /* SpotifyAPIExtensions.swift in Sources */,
 				0C1BA253271DE8990004B296 /* PlaylistDeduplicator.swift in Sources */,
 				835B8F77271DF01300774067 /* PlaylistsListView.swift in Sources */,
 				83AE18AB270DFDF7001C3499 /* SearchForTracksView.swift in Sources */,
-				3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */,
 				83AE18AA270DFDF6001C3499 /* TrackView.swift in Sources */,
 				835B8F69271DEED800774067 /* PlaylistCellView.swift in Sources */,
-				0C19B75A2703B4A200B983D3 /* SongListViewModel.swift in Sources */,
 				83570300270D4C2900BEDF2B /* RootView.swift in Sources */,
-				0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */,
 				835B8F73271DEFD100774067 /* DebugMenuView.swift in Sources */,
 				835B8F79271DF0F700774067 /* MiscellaneousUtilities.swift in Sources */,
 				835702F9270D497F00BEDF2B /* LoginView.swift in Sources */,
