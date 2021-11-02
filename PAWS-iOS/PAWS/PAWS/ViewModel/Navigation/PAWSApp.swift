@@ -19,6 +19,7 @@ struct PAWSApp: App {
         WindowGroup {
             ContentView(viewModel: SongListViewModel())
                 .environmentObject(coreBluetoothViewModel)
+            // RootView()
                 .environmentObject(spotify)
         }
     }

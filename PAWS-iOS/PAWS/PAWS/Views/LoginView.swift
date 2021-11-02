@@ -78,8 +78,18 @@ struct LoginView: ViewModifier {
     }
     
     var loginView: some View {
-        spotifyButton
-            
+             spotifyButton
+
+                 .padding()
+                 .padding(.vertical, 50)
+                 .background(Color(.secondarySystemBackground))
+                 .cornerRadius(20)
+                 .overlay(retrievingTokensView)
+                 .shadow(radius: 5)
+                 .transition(
+                     AnyTransition.scale(scale: 1.2)
+                         .combined(with: .opacity)
+                 )
     }
     
     var spotifyButton: some View {
@@ -131,7 +141,7 @@ struct LoginView_Previews: PreviewProvider {
     static let spotify = Spotify()
     
     static var previews: some View {
-        SongView()
+        RootView()
             .environmentObject(spotify)
             .onAppear(perform: onAppear)
     }
