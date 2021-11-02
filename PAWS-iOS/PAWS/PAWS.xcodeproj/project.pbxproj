@@ -18,6 +18,7 @@
 		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
 		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
+		0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */; };
 		3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */; };
 		3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA127026F4400B4E9B7 /* ContentView.swift */; };
 		3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = "/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift"; sourceTree = "<absolute>"; };
 		3E8E90702F4CA5964CBF4C43 /* Pods-PAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.debug.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.debug.xcconfig"; sourceTree = "<group>"; };
 		3F0E5F9C27026F4400B4E9B7 /* PAWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PAWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0E5FA127026F4400B4E9B7 /* ContentView.swift */,
+				0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */,
 				0C19B75B2703B57B00B983D3 /* SongView.swift */,
 				3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */,
 				0C19B75F2703B59D00B983D3 /* HomeView.swift */,
@@ -493,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */,
 				3FCAE5EE2719285D00723FCD /* Service.swift in Sources */,
 				0C19B75C2703B57B00B983D3 /* SongView.swift in Sources */,
 				3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */,
