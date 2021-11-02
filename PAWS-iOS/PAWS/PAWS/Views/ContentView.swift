@@ -80,8 +80,20 @@ extension ContentView {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    // static var previews: some View {
+    //    ContentView(viewModel: SongListViewModel())
+    // }
+    static let spotify: Spotify = {
+        let spotify = Spotify()
+        spotify.isAuthorized = true
+        return spotify
+    }()
+    
     static var previews: some View {
-        ContentView(viewModel: SongListViewModel())
+        NavigationView {
+            ContentView(viewModel: SongListViewModel())
+                .environmentObject(spotify)
+        }
     }
 }
 
