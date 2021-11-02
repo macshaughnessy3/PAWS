@@ -1,14 +1,4 @@
-// const bleno = require('bleno');
-// bleno.on('stateChange', function(state) {
-//     console.log('on stateChange: ' + state);
-//     if (state === 'poweredOn') {
-//       bleno.startAdvertising('macseansc-pi', ['1803']);
-//     } else {
-//       bleno.stopAdvertising();
-//     }
-// });
-
-var bleno = require('bleno');
+var bleno = require('@abandonware/bleno');
 var exec = require('child_process').exec;
 
 var CHUNK_SIZE = 20;
@@ -28,29 +18,36 @@ var START_CHAR = String.fromCharCode(002); //START OF TEXT CHAR
 var END_CHAR = String.fromCharCode(003);   //END OF TEXT CHAR
 
 function sliceUpResponse(callback, responseText) {
-  if (!responseText || !responseText.trim()) return;
-  callback(new Buffer(START_CHAR));
-  while(responseText !== '') {
-      callback(new Buffer(responseText.substring(0, CHUNK_SIZE)));
-      responseText = responseText.substring(CHUNK_SIZE);
-  }
-  callback(new Buffer(END_CHAR));
+    if (!responseText || !responseText.trim()) return;
+    callback(new Buffer(START_CHAR));
+    while (responseText !== '') {
+        callback(new Buffer(responseText.substring(0, CHUNK_SIZE)));
+        responseText = responseText.substring(CHUNK_SIZE);
+    }
+    callback(new Buffer(END_CHAR));
 }
 
+var Descriptor = bleno.Descriptor;
+
+var ipAddressDescription = new Descriptor({
+    uuid: '2901',
+    value: 'IP ADDRESS' // static value, must be of type Buffer or string if set
+});
+
 var terminal = new bleno.Characteristic({
-    uuid : '8bacc104-15eb-4b37-bea6-0df3ac364199',
-    properties : ['write','read','notify'],
-    onReadRequest : function(offset, callback) {
+    uuid: '8bacc104-15eb-4b37-bea6-0df3ac364199',
+    properties: ['write', 'read', 'notify'],
+    onReadRequest: function (offset, callback) {
         console.log("Read request");
         callback(bleno.Characteristic.RESULT_SUCCESS, new Buffer(terminalResponse).slice(offset));
     },
-    onWriteRequest : function(newData, offset, withoutResponse, callback) {
-        if(offset) {
+    onWriteRequest: function (newData, offset, withoutResponse, callback) {
+        if (offset) {
             callback(bleno.Characteristic.RESULT_ATTR_NOT_LONG);
         } else {
             var data = newData.toString('utf8');
             console.log("Command received: [" + data + "]");
-            dir = exec(data, function(err, stdout, stderr) {
+            dir = exec(data, function (err, stdout, stderr) {
                 if (err) {
                     var stringError = JSON.stringify(err);
                     console.log(stringError);
@@ -65,33 +62,52 @@ var terminal = new bleno.Characteristic({
             });
         }
     },
-    onSubscribe: function(maxValueSize, updateValueCallback) {
-       console.log("onSubscribe called");
-       terminalCallback = updateValueCallback;
+    onSubscribe: function (maxValueSize, updateValueCallback) {
+        console.log("onSubscribe called");
+        terminalCallback = updateValueCallback;
     },
-    onUnsubscribe: function() {
+    onUnsubscribe: function () {
         terminalCallback = null;
         console.log("onUnsubscribe");
     }
 });
 
-bleno.on('stateChange', function(state) {
+var sendIpAddress = new bleno.Characteristic({
+    uuid: '8bacc105-15eb-4b37-bea6-0df3ac364199',
+    properties: ['write', 'read', 'notify'],
+    descriptors: [ipAddressDescription],
+    onReadRequest: function (offset, callback) {
+        console.log("Read request");
+        callback(bleno.Characteristic.RESULT_SUCCESS, new Buffer(terminalResponse).slice(offset));
+    },
+    onSubscribe: function (maxValueSize, updateValueCallback) {
+        console.log("onSubscribe called");
+        terminalCallback = updateValueCallback;
+    },
+    onUnsubscribe: function () {
+        terminalCallback = null;
+        console.log("onUnsubscribe");
+    }
+});
+
+bleno.on('stateChange', function (state) {
     console.log('on -> stateChange: ' + state);
     if (state === 'poweredOn') {
-        bleno.startAdvertising(deviceName,[myId]);
+        bleno.startAdvertising(deviceName, [myId]);
     } else {
         bleno.stopAdvertising();
     }
 });
 
-bleno.on('advertisingStart', function(error) {
+bleno.on('advertisingStart', function (error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
     if (!error) {
         bleno.setServices([
             new bleno.PrimaryService({
-                uuid : myId,
-                characteristics : [
+                uuid: myId,
+                characteristics: [
                     // add characteristics here
+                    sendIpAddress,
                     terminal
                 ]
             })
@@ -100,10 +116,11 @@ bleno.on('advertisingStart', function(error) {
     }
 });
 
-bleno.on('accept', function(clientAddress) {
+bleno.on('accept', function (clientAddress) {
     console.log("Accepted connection from: " + clientAddress);
+    // TODO: Save client address and make it a known bluetooth device
 });
 
-bleno.on('disconnect', function(clientAddress) {
+bleno.on('disconnect', function (clientAddress) {
     console.log("Disconnected from: " + clientAddress);
 });
