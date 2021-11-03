@@ -70,7 +70,7 @@ struct LoginView: ViewModifier {
                 // After the app first launches, add a short delay before
                 // showing this view so that the animation can be seen.
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    withAnimation(LoginView.animation) {
+                    withAnimation(Animation.spring()) {
                         self.finishedViewLoadDelay = true
                     }
                 }
