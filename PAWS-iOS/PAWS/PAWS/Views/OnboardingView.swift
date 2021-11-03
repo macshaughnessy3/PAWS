@@ -10,6 +10,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @EnvironmentObject var bleManager: CoreBluetoothViewModel
+    @StateObject var spotify = Spotify()
 
     var body: some View {
         
@@ -17,6 +18,10 @@ struct OnboardingView: View {
             VStack {
                 Spacer(minLength: 150)
                 TabView {
+                    VStack {
+                        Text("Connect to spotify")
+//                        RootView().environmentObject(spotify)
+                    }
                     VStack {
                         Text("Connect to the PAWS Speaker")
                             .font(Font.title2.bold().lowercaseSmallCaps())
