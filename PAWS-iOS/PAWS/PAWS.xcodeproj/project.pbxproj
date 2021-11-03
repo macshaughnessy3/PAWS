@@ -17,9 +17,9 @@
 		0C1BA257271E0B100004B296 /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA256271E0B100004B296 /* VisualizerView.swift */; };
 		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
 		0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585627320D3500642C8B /* PAWSApp.swift */; };
+		0C8F585B2732139E00642C8B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585A2732139E00642C8B /* OnboardingView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
 		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
-		0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */; };
 		3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA127026F4400B4E9B7 /* ContentView.swift */; };
 		3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */; };
 		3F0E5FA727026F4600B4E9B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA627026F4600B4E9B7 /* Preview Assets.xcassets */; };
@@ -100,9 +100,9 @@
 		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
 		0C8F585627320D3500642C8B /* PAWSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
+		0C8F585A2732139E00642C8B /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
-		0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = "/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift"; sourceTree = "<absolute>"; };
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 				0CB35C022703A8B1009F4B5F /* SearchBar.swift */,
 				835702F8270D497F00BEDF2B /* LoginView.swift */,
 				835702FF270D4C2900BEDF2B /* RootView.swift */,
+				0C8F585A2732139E00642C8B /* OnboardingView.swift */,
 				83AE18AE270DFE5C001C3499 /* AlertItem.swift */,
 				83570301270D4C9700BEDF2B /* ExamplesListView.swift */,
 				83AE18A7270DFDF6001C3499 /* TrackView.swift */,
@@ -201,7 +202,6 @@
 				835B8F74271DEFF300774067 /* RecentlyPlayedView.swift */,
 				83AE18A8270DFDF6001C3499 /* SpotifyAPIExtensions.swift */,
 				3F0E5FA127026F4400B4E9B7 /* ContentView.swift */,
-				0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */,
 				0C1BA256271E0B100004B296 /* VisualizerView.swift */,
 				0C19B75B2703B57B00B983D3 /* SongView.swift */,
 				3FBA6A182703ED22008BD663 /* ClemsonLogoView.swift */,
@@ -626,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */,
 				3FCAE5EE2719285D00723FCD /* Service.swift in Sources */,
 				0C19B75C2703B57B00B983D3 /* SongView.swift in Sources */,
 				3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */,
@@ -670,6 +669,7 @@
 				83570300270D4C2900BEDF2B /* RootView.swift in Sources */,
 				0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */,
 				835B8F73271DEFD100774067 /* DebugMenuView.swift in Sources */,
+				0C8F585B2732139E00642C8B /* OnboardingView.swift in Sources */,
 				835B8F79271DF0F700774067 /* MiscellaneousUtilities.swift in Sources */,
 				835702F9270D497F00BEDF2B /* LoginView.swift in Sources */,
 				83AE18AF270DFF7F001C3499 /* AlertItem.swift in Sources */,
