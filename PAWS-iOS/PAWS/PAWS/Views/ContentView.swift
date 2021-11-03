@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @ObservedObject var viewModel: SongListViewModel
     @State private var appSetupState = "App NOT setup ☹️"
     @AppStorage("needsAppOnboarding") private var needsAppOnboarding: Bool = true
     
@@ -51,21 +49,16 @@ extension ContentView {
                     Image(systemName: "waveform")
                     Text("Visulizer")
                 }.tag(1)
-                HomeView(viewModel: viewModel)
-                    .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }.tag(2)
                 SearchForTracksView()
                     .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
-                }.tag(3)
+                }.tag(2)
                 AccountView()
                     .tabItem {
                     Image(systemName: "person")
                     Text("Account")
-                }.tag(4)
+                }.tag(3)
             }
             .edgesIgnoringSafeArea(.top)
             .onAppear() {
@@ -91,8 +84,7 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            ContentView(viewModel: SongListViewModel())
-                .environmentObject(spotify)
+            ContentView().environmentObject(spotify)
         }
     }
 }

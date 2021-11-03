@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel: SongListViewModel
     var body: some View {
         ZStack {
             NavigationView {

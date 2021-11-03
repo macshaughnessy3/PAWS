@@ -19,7 +19,7 @@ struct RootView: View {
     
     var body: some View {
         NavigationView {
-            ContentView(viewModel: SongListViewModel())
+            ContentView()
                 .navigationBarItems(trailing: logoutButton)
                 .disabled(!spotify.isAuthorized)
         }
