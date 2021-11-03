@@ -13,14 +13,13 @@
 		0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75D2703B58800B983D3 /* AccountView.swift */; };
 		0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B75F2703B59D00B983D3 /* HomeView.swift */; };
 		0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B7632703BBBC00B983D3 /* DataModel.swift */; };
-		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
-		0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */; };
 		0C1BA253271DE8990004B296 /* PlaylistDeduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */; };
 		0C1BA257271E0B100004B296 /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1BA256271E0B100004B296 /* VisualizerView.swift */; };
+		0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */; };
+		0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585627320D3500642C8B /* PAWSApp.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
 		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
-		0CEE8AA5271F5E3700EE5C2F /* CustomConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */; };
-		3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */; };
+		0CB8B39D2731D3E400C9AD0B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */; };
 		3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA127026F4400B4E9B7 /* ContentView.swift */; };
 		3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */; };
 		3F0E5FA727026F4600B4E9B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA627026F4600B4E9B7 /* Preview Assets.xcassets */; };
@@ -96,21 +95,20 @@
 		0C19B75D2703B58800B983D3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		0C19B75F2703B59D00B983D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0C19B7632703BBBC00B983D3 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
-		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
-		0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = "/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift"; sourceTree = "<absolute>"; };
-		3E8E90702F4CA5964CBF4C43 /* Pods-PAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.debug.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.debug.xcconfig"; sourceTree = "<group>"; };
 		0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistDeduplicator.swift; sourceTree = "<group>"; };
 		0C1BA256271E0B100004B296 /* VisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
 		0C402F18270FBF1E0092C102 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDeviceView.swift; sourceTree = "<group>"; };
+		0C8F585627320D3500642C8B /* PAWSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
+		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		0CB8B39C2731D3E400C9AD0B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = "/Users/m/code/school/PAWS/PAWS-iOS/PAWS/PAWS/Views/OnboardingView.swift"; sourceTree = "<absolute>"; };
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA9271F655E00EE5C2F /* LocalConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LocalConfig.xcconfig; sourceTree = "<group>"; };
 		19B6FE1F34E4AC5059334F2D /* Pods-PAWS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.debug.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.debug.xcconfig"; sourceTree = "<group>"; };
 		3F0E5F9C27026F4400B4E9B7 /* PAWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PAWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
 		3F0E5FA127026F4400B4E9B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F0E5FA627026F4600B4E9B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 		3FCAE5E12719285D00723FCD /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3FCAE5E22719285D00723FCD /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		3FD61D22270D4D5C00DF54FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		DD441597C402C453C818C41D /* Pods-PAWS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAWS.release.xcconfig"; path = "Target Support Files/Pods-PAWS/Pods-PAWS.release.xcconfig"; sourceTree = "<group>"; };
 		835702F3270D459D00BEDF2B /* SpotifyAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuth.swift; sourceTree = "<group>"; };
 		835702F8270D497F00BEDF2B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		835702FC270D4B7C00BEDF2B /* ImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNames.swift; sourceTree = "<group>"; };
@@ -213,6 +210,7 @@
 				835B8F72271DEFD100774067 /* DebugMenuView.swift */,
 				0C19B7582703B4A200B983D3 /* SongListViewModel.swift */,
 				0C19B75D2703B58800B983D3 /* AccountView.swift */,
+				0C402F18270FBF1E0092C102 /* BLEManager.swift */,
 				0C402F1A270FBFA60092C102 /* BluetoothDeviceView.swift */,
 			);
 			path = Views;
@@ -280,7 +278,6 @@
 				0C19B7572703B4A200B983D3 /* ArtworkLoader.swift */,
 				835B8F78271DF0F700774067 /* MiscellaneousUtilities.swift */,
 				0C19B7632703BBBC00B983D3 /* DataModel.swift */,
-				3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */,
 				835702F3270D459D00BEDF2B /* SpotifyAuth.swift */,
 				0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */,
 				0CB35C042703AC17009F4B5F /* Models */,
@@ -338,7 +335,7 @@
 		3FCAE5D12719285D00723FCD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				3F0E5F9F27026F4400B4E9B7 /* PAWSApp.swift */,
+				0C8F585627320D3500642C8B /* PAWSApp.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9678E9AA472FC9CC7E9E247C /* Pods */ = {
 		8303A7DF271C8C3400CF128D /* PlaylistViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,7 +514,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					3F0E5F9B27026F4400B4E9B7 = {
 						CreatedOnToolsVersion = 13.0;
@@ -563,7 +559,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0E5FA727026F4600B4E9B7 /* Preview Assets.xcassets in Resources */,
-				0CEE8AA5271F5E3700EE5C2F /* CustomConfig.xcconfig in Resources */,
 				3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,7 +638,6 @@
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
 				0C402F1B270FBFA60092C102 /* BluetoothDeviceView.swift in Sources */,
 				3FCAE5E82719285D00723FCD /* CBCentralManagerMock.swift in Sources */,
-				3F561E652711244300937917 /* VisulizerView.swift in Sources */,
 				3FCAE5EA2719285D00723FCD /* CBPeripheralMock.swift in Sources */,
 				3FCAE5E62719285D00723FCD /* CoreBluetoothViewModel.swift in Sources */,
 				3FCAE5E42719285D00723FCD /* CoreBluetoothViewModelExtension+Delegate.swift in Sources */,
@@ -660,9 +654,7 @@
 				0C19B7642703BBBC00B983D3 /* DataModel.swift in Sources */,
 				3FCAE5F02719285D00723FCD /* DetailView.swift in Sources */,
 				3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */,
-				0C19B7552703B43200B983D3 /* SearchView.swift in Sources */,
 				3FCAE5EC2719285D00723FCD /* CBPeripheralProtcolDelegate.swift in Sources */,
-				3F0E5FA027026F4400B4E9B7 /* PAWSApp.swift in Sources */,
 				3FCAE5E92719285D00723FCD /* Mock.swift in Sources */,
 				3FCAE5ED2719285D00723FCD /* Peripheral.swift in Sources */,
 				0C19B75A2703B4A200B983D3 /* SongListViewModel.swift in Sources */,
@@ -676,6 +668,7 @@
 				83AE18AA270DFDF6001C3499 /* TrackView.swift in Sources */,
 				835B8F69271DEED800774067 /* PlaylistCellView.swift in Sources */,
 				83570300270D4C2900BEDF2B /* RootView.swift in Sources */,
+				0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */,
 				835B8F73271DEFD100774067 /* DebugMenuView.swift in Sources */,
 				835B8F79271DF0F700774067 /* MiscellaneousUtilities.swift in Sources */,
 				835702F9270D497F00BEDF2B /* LoginView.swift in Sources */,

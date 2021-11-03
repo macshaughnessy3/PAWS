@@ -46,7 +46,7 @@ extension ContentView {
                     Image(systemName: "music.note.list")
                     Text("Music")
                 }.tag(0)
-                VisulizerView()
+                VisualizerView()
                     .tabItem {
                     Image(systemName: "waveform")
                     Text("Visulizer")
@@ -56,7 +56,7 @@ extension ContentView {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }.tag(2)
-                SearchView(viewModel: viewModel)
+                SearchForTracksView()
                     .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
