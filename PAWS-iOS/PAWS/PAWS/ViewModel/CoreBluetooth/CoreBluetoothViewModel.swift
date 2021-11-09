@@ -130,10 +130,6 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         
     }
     
-    func willRestoreState(_ central: CBCentralManagerProtocol, dict: [String : Any]) {
-        
-    }
-    
     func didUpdateANCSAuthorization(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol) {
         
     }
@@ -160,8 +156,8 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
 
                 if characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")){
 
-                    let characteristicValue = characteristic.value!
-                    let ASCIIstring = NSString(data: characteristicValue, encoding: String.Encoding.utf8.rawValue)
+                    let characteristicValue = characteristic.value ?? Data(base64Encoded: "NoData")
+                    let ASCIIstring = NSString(data: characteristicValue!, encoding: String.Encoding.utf8.rawValue)
                     characteristicASCIIValue = ASCIIstring!
                 }
 

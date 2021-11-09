@@ -1,9 +1,5 @@
 //
 //  CBPeripheralProtcolDelegate.swift
-//  factory-tourguide-iOS
-//
-//  Created by kazuya ito on 2020/10/28.
-//
 
 import Foundation
 import CoreBluetooth
@@ -38,9 +34,7 @@ extension CBPeripheral : CBPeripheralProtocol {}
 // MARK: - CBCentralManager
 public protocol CBCentralManagerProtocolDelegate {
     func didUpdateState(_ central: CBCentralManagerProtocol)
-    
-    func willRestoreState(_ central: CBCentralManagerProtocol, dict: [String : Any])
-    
+
     func didDiscover(_ central: CBCentralManagerProtocol,
                      peripheral: CBPeripheralProtocol,
                      advertisementData: [String : Any],

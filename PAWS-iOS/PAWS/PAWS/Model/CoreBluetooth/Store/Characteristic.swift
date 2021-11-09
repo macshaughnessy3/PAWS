@@ -1,9 +1,5 @@
 //
 //  Characteristic.swift
-//  factory-tourguide-iOS
-//
-//  Created by kazuya ito on 2020/10/29.
-//
 
 import CoreBluetooth
 

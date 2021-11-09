@@ -1,9 +1,5 @@
 //
 //  CoreBluetoothViewModelExtension.swift
-//  SwiftUI-BLE-Project
-//
-//  Created by kazuya ito on 2021/02/02.
-//
 
 import CoreBluetooth
 
@@ -28,10 +24,6 @@ extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         didUpdateState(central)
-    }
-
-    func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-        willRestoreState(central, dict: dict)
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
