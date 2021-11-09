@@ -154,8 +154,8 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         }
         
         for characteristic in characteristics {
-//            if characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) || characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
-            if characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
+            if characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) || characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
+//            if characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
                 let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
                                                                        _description: "",
                                                                        _uuid: characteristic.uuid,
@@ -179,33 +179,18 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
 
         print("Value Recieved: \((characteristicASCIIValue as String))")
 
-        NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: "\((characteristicASCIIValue as String))")
+        NotificationCenter.default.post(name:NSNotification.Name("Notify"), object: "\((characteristicASCIIValue as String))")
         if let index = foundCharacteristics.firstIndex(where: { $0.uuid == characteristic.uuid }) {
             foundCharacteristics[index].readValue = characteristicASCIIValue as String
         }
     }
     
     func didWriteValue(_ peripheral: CBPeripheralProtocol, descriptor: CBDescriptor, error: Error?) {
-        
+        guard error == nil else {
+                print("Error discovering services: error")
+                return
+            }
+        print("Function: \(#function),Line: \(#line)")
+        print("Message sent")
     }
 }
-
-
-        //              if characteristic.uuid.isEqual(CBUUIDs.BLE_Characteristic_uuid_Rx)  {
-        //
-        //                rxCharacteristic = characteristic
-        //
-        //                BlePeripheral.connectedRXChar = rxCharacteristic
-        //
-        //                peripheral.setNotifyValue(true, for: rxCharacteristic!)
-        //                peripheral.readValue(for: characteristic)
-        //
-        //                print("RX Characteristic: \(rxCharacteristic.uuid)")
-        //              }
-        //
-        //              if characteristic.uuid.isEqual(CBUUIDs.BLE_Characteristic_uuid_Tx){
-        //                txCharacteristic = characteristic
-        //                BlePeripheral.connectedTXChar = txCharacteristic
-        //                print("TX Characteristic: \(txCharacteristic.uuid)")
-        //              }
-        //            }

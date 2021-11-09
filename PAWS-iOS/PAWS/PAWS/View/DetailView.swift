@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreBluetooth
 
 struct DetailView: View {
     @EnvironmentObject var bleManager: CoreBluetoothViewModel
@@ -24,9 +25,9 @@ struct DetailView: View {
                 Text(bleManager.isBlePower ? "" : "Bluetooth setting is OFF")
                     .padding(10)
                 
-                List {
+//                List {
                     CharacteriticCells()
-                }
+//                }
                 .navigationBarTitle("Connect result")
                 .navigationBarBackButtonHidden(true)
             }
@@ -36,50 +37,51 @@ struct DetailView: View {
     struct CharacteriticCells: View {
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
         let pub = NotificationCenter.default.publisher(for: NSNotification.Name("Notify"))
+        @State private var username: String = ""
 
         var body: some View {
-            ForEach(0..<bleManager.foundServices.count, id: \.self) { num in
-                Section(header: Text("\(bleManager.foundServices[num].uuid.uuidString)")) {
-                    ForEach(0..<bleManager.foundCharacteristics.count, id: \.self) { j in
-                        if bleManager.foundServices[num].uuid == bleManager.foundCharacteristics[j].service.uuid {
-                            Button(action: {
-                                //write action
-                                
-                            }){
-                                VStack {
-                                    HStack {
-                                        Text("uuid: \(bleManager.foundCharacteristics[j].uuid.uuidString)")
-                                            .font(.system(size: 14))
-                                            .padding(.bottom, 2)
-                                        Spacer()
-                                    }
-                                    
-                                    HStack {
-                                        Text("description: \(bleManager.foundCharacteristics[j].description)")
-                                            .font(.system(size: 14))
-                                            .padding(.bottom, 2)
-                                        Spacer()
-                                    }
-                                    HStack {
-                                        Text("value: \(bleManager.foundCharacteristics[j].readValue)")
-                                            .font(.system(size: 14))
-                                            .padding(.bottom, 2)
-                                        Spacer()
-                                    }
-                                }
-                            }.onAppear(perform: loadData).onReceive(pub){ obj in
-                                // Change key as per your "userInfo"
-                                self.loadData(obj,j)
-                             }
+            ForEach(0..<bleManager.foundCharacteristics.count, id: \.self) { j in
+                VStack {
+                    if bleManager.foundCharacteristics[j].uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) {
+                        if !username.isEmpty { // <1>
+                            Text("Welcome \(username)!") // <2>
+                        }
+                        TextField("Username", text: $username)
+                        Spacer()
+                        Button(action: {
+                            bleManager.foundPeripherals[0].peripheral.writeValue((username as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
+                        }) {
+                            Text("Send")
+                        }
+                    } else {
+
+                        HStack {
+                            Text("uuid: \(bleManager.foundCharacteristics[j].uuid.uuidString)")
+                                .font(.system(size: 14))
+                                .padding(.bottom, 2)
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Text("description: \(bleManager.foundCharacteristics[j].description)")
+                                .font(.system(size: 14))
+                                .padding(.bottom, 2)
+                            Spacer()
+                        }
+                        HStack {
+                            Text("value: \(bleManager.foundCharacteristics[j].readValue)")
+                                .font(.system(size: 14))
+                                .padding(.bottom, 2)
+                            Spacer()
                         }
                     }
-                }
+                }.onReceive(pub){ obj in
+                    print(obj.object!)
+                    print(bleManager.foundCharacteristics[j].readValue)                             }
             }
         }
         
-        func loadData(obj: NotificationCenter, j: Int) {
-            print(obj.object)
-            print(bleManager.foundCharacteristics[j].readValue)
-        }
+        func writeOutgoingValue(data: String){
+          }
     }
 }
