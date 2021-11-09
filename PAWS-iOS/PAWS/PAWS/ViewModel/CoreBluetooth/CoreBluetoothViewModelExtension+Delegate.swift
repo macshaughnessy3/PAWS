@@ -25,6 +25,21 @@ extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         didWriteValue(peripheral, descriptor: descriptor, error: error)
     }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        print("*******************************************************")
+      print("Function: \(#function),Line: \(#line)")
+        if (error != nil) {
+            print("Error changing notification state:\(String(describing: error?.localizedDescription))")
+
+        } else {
+            print("Characteristic's value subscribed")
+        }
+
+        if (characteristic.isNotifying) {
+            print ("Subscribed. Notification has begun for: \(characteristic.uuid)")
+        }
+    }
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         didUpdateState(central)
@@ -50,9 +65,7 @@ extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate
         didDisconnect(central, peripheral: peripheral, error: error)
     }
 
-    func centralManager(_ central: CBCentralManager,
-                        connectionEventDidOccur event: CBConnectionEvent,
-                        for peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManager, connectionEventDidOccur event: CBConnectionEvent, for peripheral: CBPeripheral) {
         connectionEventDidOccur(central, event: event, peripheral: peripheral)
     }
 

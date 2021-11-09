@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @EnvironmentObject var bleManager: CoreBluetoothViewModel
+//    let observer = NotificationCenter.default.addObserver(self, selector: #selector(self.appendRxDataToTextView(notification:)), name: NSNotification.Name(rawValue: "Notify"), object: nil)
     
     var body: some View {
         GeometryReader { proxy in
@@ -34,7 +35,8 @@ struct DetailView: View {
     
     struct CharacteriticCells: View {
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
-        
+        let pub = NotificationCenter.default.publisher(for: NSNotification.Name("Notify"))
+
         var body: some View {
             ForEach(0..<bleManager.foundServices.count, id: \.self) { num in
                 Section(header: Text("\(bleManager.foundServices[num].uuid.uuidString)")) {
@@ -42,7 +44,8 @@ struct DetailView: View {
                         if bleManager.foundServices[num].uuid == bleManager.foundCharacteristics[j].service.uuid {
                             Button(action: {
                                 //write action
-                            }) {
+                                
+                            }){
                                 VStack {
                                     HStack {
                                         Text("uuid: \(bleManager.foundCharacteristics[j].uuid.uuidString)")
@@ -64,11 +67,19 @@ struct DetailView: View {
                                         Spacer()
                                     }
                                 }
-                            }
+                            }.onAppear(perform: loadData).onReceive(pub){ obj in
+                                // Change key as per your "userInfo"
+                                self.loadData(obj,j)
+                             }
                         }
                     }
                 }
             }
+        }
+        
+        func loadData(obj: NotificationCenter, j: Int) {
+            print(obj.object)
+            print(bleManager.foundCharacteristics[j].readValue)
         }
     }
 }

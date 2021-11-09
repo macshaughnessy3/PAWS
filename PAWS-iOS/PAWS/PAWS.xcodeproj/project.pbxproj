@@ -19,7 +19,6 @@
 		0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585627320D3500642C8B /* PAWSApp.swift */; };
 		0C8F585B2732139E00642C8B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585A2732139E00642C8B /* OnboardingView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
-		0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C052703AC61009F4B5F /* SearchItem.swift */; };
 		3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA127026F4400B4E9B7 /* ContentView.swift */; };
 		3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */; };
 		3F0E5FA727026F4600B4E9B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA627026F4600B4E9B7 /* Preview Assets.xcassets */; };
@@ -102,7 +101,6 @@
 		0C8F585627320D3500642C8B /* PAWSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
 		0C8F585A2732139E00642C8B /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		0CB35C052703AC61009F4B5F /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -224,14 +222,6 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		0CB35C042703AC17009F4B5F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0CB35C052703AC61009F4B5F /* SearchItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		0CEE8AA0271F5D3E00EE5C2F /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +270,6 @@
 				0C19B7632703BBBC00B983D3 /* DataModel.swift */,
 				835702F3270D459D00BEDF2B /* SpotifyAuth.swift */,
 				0C1BA252271DE8990004B296 /* PlaylistDeduplicator.swift */,
-				0CB35C042703AC17009F4B5F /* Models */,
 				0C19B7562703B48E00B983D3 /* Views */,
 				3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */,
 				3F0E5FA527026F4600B4E9B7 /* Preview Content */,
@@ -631,7 +620,6 @@
 				3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */,
 				0C19B7592703B4A200B983D3 /* ArtworkLoader.swift in Sources */,
 				835B8F6B271DEF3700774067 /* SavedAlbumsGridView.swift in Sources */,
-				0CB35C062703AC61009F4B5F /* SearchItem.swift in Sources */,
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,
 				3FCAE5E52719285D00723FCD /* CoreBluetoothViewModelExtension+SwiftUIView.swift.swift in Sources */,
 				0C19B7602703B59D00B983D3 /* HomeView.swift in Sources */,
