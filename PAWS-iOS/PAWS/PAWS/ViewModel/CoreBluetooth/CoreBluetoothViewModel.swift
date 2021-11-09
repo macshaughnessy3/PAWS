@@ -19,7 +19,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
     @Published var foundCharacteristics: [Characteristic] = []
     
     private var centralManager: CBCentralManagerProtocol!
-    private var connectedPeripheral: Peripheral!
+    @Published var connectedPeripheral: Peripheral!
     
     private let serviceUUID: CBUUID = CBUUID()
     
@@ -156,10 +156,19 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         for characteristic in characteristics {
             if characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) || characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
 //            if characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
+                var characteristicASCIIValue = NSString()
+
+                if characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")){
+
+                    let characteristicValue = characteristic.value!
+                    let ASCIIstring = NSString(data: characteristicValue, encoding: String.Encoding.utf8.rawValue)
+                    characteristicASCIIValue = ASCIIstring!
+                }
+
                 let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
                                                                        _description: "",
                                                                        _uuid: characteristic.uuid,
-                                                                       _readValue: "",
+                                                                       _readValue: characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")) ? characteristicASCIIValue as String : "",
                                                                        _service: characteristic.service!)
                 foundCharacteristics.append(setCharacteristic)
                 peripheral.readValue(for: characteristic)

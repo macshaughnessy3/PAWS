@@ -8,7 +8,7 @@
 import CoreBluetooth
 
 //MARK: ViewModelSetup
-extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate, CBPeripheralManagerDelegate {
+extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         didDiscoverServices(peripheral, error: error)
@@ -24,21 +24,6 @@ extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
         didWriteValue(peripheral, descriptor: descriptor, error: error)
-    }
-    
-    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
-        print("*******************************************************")
-      print("Function: \(#function),Line: \(#line)")
-        if (error != nil) {
-            print("Error changing notification state:\(String(describing: error?.localizedDescription))")
-
-        } else {
-            print("Characteristic's value subscribed")
-        }
-
-        if (characteristic.isNotifying) {
-            print ("Subscribed. Notification has begun for: \(characteristic.uuid)")
-        }
     }
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -72,29 +57,4 @@ extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManager(_ central: CBCentralManager, didUpdateANCSAuthorizationFor peripheral: CBPeripheral) {
         didUpdateANCSAuthorization(central, peripheral: peripheral)
     }
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        switch peripheral.state {
-            case .poweredOn:
-                print("Peripheral Is Powered On.")
-            case .unsupported:
-                print("Peripheral Is Unsupported.")
-            case .unauthorized:
-            print("Peripheral Is Unauthorized.")
-            case .unknown:
-                print("Peripheral Unknown")
-            case .resetting:
-                print("Peripheral Resetting")
-            case .poweredOff:
-              print("Peripheral Is Powered Off.")
-            @unknown default:
-              print("Error")
-        }
-    }
-
-
-    //Check when someone subscribe to our characteristic, start sending the data
-    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
-        print("Device subscribe to characteristic")
-    }
-
 }
