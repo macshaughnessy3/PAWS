@@ -35,6 +35,7 @@ struct DetailView: View {
         @State private var message: String = ""
         @State var editingFlag = false
         @State private var IncomingMessage: String = ""
+        @State var AllIncomingMessages = [""]
         var body: some View {
             ForEach(0..<bleManager.foundCharacteristics.count, id: \.self) { j in
                 VStack {
@@ -52,12 +53,17 @@ struct DetailView: View {
 //                                    .padding(.bottom, 2)
 //                                Spacer()
 //                            }
-                            HStack {
-                                Text("Recieved Value: \(IncomingMessage)")
-                                    .font(.system(size: 14))
-                                    .padding(.top, 5)
+                        if AllIncomingMessages.count > 0 {
+                            ForEach(0..<AllIncomingMessages.count, id: \.self) { j in
+                                if j % 2 == 1 {
+                                    HStack {
+                                        Text("Recieved Value: \(AllIncomingMessages[j])")
+                                            .font(.system(size: 14))
+                                            .padding(.top, 5)
+                                    }
+                                }
                             }
-//                        }
+                        }
                     }
                     if bleManager.foundCharacteristics[j].uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) {
                         if editingFlag { // <1>
@@ -73,11 +79,10 @@ struct DetailView: View {
                         }
                     }
                 }.onAppear(perform: {
-                    print("readValue", bleManager.foundCharacteristics[j].readValue)
                 }).onReceive(pub) { obj in
-                    print("readValue", obj.object!)
                     IncomingMessage = obj.object as! String
-                    print(bleManager.foundCharacteristics[j].readValue)
+                    print(AllIncomingMessages as Any, IncomingMessage)
+                    AllIncomingMessages += [IncomingMessage]
                 }
             }
         }
