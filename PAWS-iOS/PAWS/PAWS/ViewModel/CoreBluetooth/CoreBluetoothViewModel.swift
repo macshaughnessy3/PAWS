@@ -164,6 +164,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
                     let characteristicValue = characteristic.value
                     let ASCIIstring = NSString(data: characteristicValue!, encoding: String.Encoding.utf8.rawValue)
                     characteristicASCIIValue = ASCIIstring! as String
+                    peripheral.setNotifyValue(true, for: characteristic)
                 }
                 let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
                                                                        _description: "",
