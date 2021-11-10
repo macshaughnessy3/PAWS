@@ -34,7 +34,7 @@ struct DetailView: View {
         let pub = NotificationCenter.default.publisher(for: NSNotification.Name("Notify"))
         @State private var message: String = ""
         @State var editingFlag = false
-
+        @State private var IncomingMessage: String = ""
         var body: some View {
             ForEach(0..<bleManager.foundCharacteristics.count, id: \.self) { j in
                 VStack {
@@ -53,7 +53,7 @@ struct DetailView: View {
 //                                Spacer()
 //                            }
                             HStack {
-                                Text("Recieved Value: \(bleManager.foundCharacteristics[j].readValue)")
+                                Text("Recieved Value: \(IncomingMessage)")
                                     .font(.system(size: 14))
                                     .padding(.top, 5)
                             }
@@ -76,6 +76,7 @@ struct DetailView: View {
                     print("readValue", bleManager.foundCharacteristics[j].readValue)
                 }).onReceive(pub) { obj in
                     print("readValue", obj.object!)
+                    IncomingMessage = obj.object as! String
                     print(bleManager.foundCharacteristics[j].readValue)
                 }
             }
