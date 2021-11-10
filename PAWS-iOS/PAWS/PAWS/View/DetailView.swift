@@ -73,9 +73,9 @@ struct DetailView: View {
                         }
                     }
                 }.onAppear(perform: {
-//                    print(bleManager.foundCharacteristics[j].readValue)
+                    print("readValue", bleManager.foundCharacteristics[j].readValue)
                 }).onReceive(pub) { obj in
-                    print(obj.object!)
+                    print("readValue", obj.object!)
                     print(bleManager.foundCharacteristics[j].readValue)
                 }
             }
