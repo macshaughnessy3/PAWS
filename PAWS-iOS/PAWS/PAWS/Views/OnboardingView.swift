@@ -56,6 +56,7 @@ struct OnboardingView: View {
                         spotifyButton().foregroundColor(Color(colorScheme == .dark ? .white : .black))
                         Spacer()
                     }
+                    .onOpenURL(perform: handleURL(_:))
                     VStack {
                         Text("Connect to the PAWS Speaker")
                             .font(Font.title2.bold().lowercaseSmallCaps())
@@ -111,7 +112,6 @@ struct OnboardingView: View {
             .background(Color(.systemGray6))
             .foregroundColor(Color(.systemIndigo))
             .ignoresSafeArea(.all, edges: .all)
-            .onOpenURL(perform: handleURL(_:))
     }
 
 
