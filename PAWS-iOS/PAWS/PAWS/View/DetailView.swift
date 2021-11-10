@@ -37,53 +37,45 @@ struct DetailView: View {
         @State private var IncomingMessage: String = ""
         @State var AllIncomingMessages = [""]
         var body: some View {
-            ForEach(0..<bleManager.foundCharacteristics.count, id: \.self) { j in
-                VStack {
-                    if bleManager.foundCharacteristics[j].uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")) {
-//                            HStack {
-//                                Text("uuid: \(bleManager.foundCharacteristics[j].uuid.uuidString)")
-//                                    .font(.system(size: 14))
-//                                    .padding(.bottom, 2)
-//                                Spacer()
-//                            }
-//
-//                            HStack {
-//                                Text("description: \(bleManager.foundCharacteristics[j].description)")
-//                                    .font(.system(size: 14))
-//                                    .padding(.bottom, 2)
-//                                Spacer()
-//                            }
-                        if AllIncomingMessages.count > 0 {
-                            ForEach(0..<AllIncomingMessages.count, id: \.self) { j in
-                                if j % 2 == 1 {
-                                    Text("Recieved Value: \(AllIncomingMessages.reversed()[j])")
-                                }
-                            }
-                        }
-                    }
-                    if bleManager.foundCharacteristics[j].uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) {
+            VStack {
+                if (bleManager.foundCharacteristics.first(where: { Characteristic in
+                    return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                }) != nil) {
+                    VStack {
                         if editingFlag { // <1>
                             Text("Sent: \(message)") // <2>
                         }
                         TextField("Send a message to your Speaker", text: $message)
                         Spacer()
                         Button(action: {
-                            bleManager.connectedPeripheral.peripheral.writeValue((message as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
+                            bleManager.connectedPeripheral.peripheral.writeValue((message as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                            })!.characteristic, type: CBCharacteristicWriteType.withResponse)
                             self.editingFlag = true
                         }) {
                             Text("Send")
                         }
                     }
-                }.onAppear(perform: {
-                }).onReceive(pub) { obj in
-                    IncomingMessage = obj.object as! String
-                    print("test \(IncomingMessage.removeLast())")
-                    AllIncomingMessages += [IncomingMessage]
                 }
+                if (bleManager.foundCharacteristics.first(where: { Characteristic in
+                    return Characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e"))
+                }) != nil) {
+                    VStack {
+                        if AllIncomingMessages.count > 0 {
+                            ForEach(0..<AllIncomingMessages.count, id: \.self) { j in
+                                Text("Recieved Value: \(AllIncomingMessages.reversed()[j])")
+                            }
+                        }
+                    }
+                }
+            }.onReceive(pub) { obj in
+                IncomingMessage = obj.object as! String
+                IncomingMessage.removeLast()
+                AllIncomingMessages += [IncomingMessage]
             }
         }
         
         func writeOutgoingValue(data: String){
-          }
+        }
     }
 }
