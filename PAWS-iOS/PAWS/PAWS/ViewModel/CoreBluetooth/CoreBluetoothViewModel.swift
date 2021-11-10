@@ -49,6 +49,10 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         centralManager?.scanForPeripherals(withServices: [CBUUID(string: "6e400001-b5a3-f393-e0a9-e50e24dcca9e")], options: scanOption)
         print("# Start Scan")
         isSearching = true
+        
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: false) {_ in
+            self.centralManager?.stopScan()
+        }
     }
     
     func stopScan(){
@@ -115,6 +119,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         isConnected = true
         connectedPeripheral.peripheral.delegate = self
         connectedPeripheral.peripheral.discoverServices(nil)
+        centralManager?.stopScan()
     }
     
     func didFailToConnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, error: Error?) {
@@ -152,21 +157,21 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         for characteristic in characteristics {
             if characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) || characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
 //            if characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
-                var characteristicASCIIValue = NSString()
+                var characteristicASCIIValue = String()
 
-                if characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")){
-
-                    let characteristicValue = characteristic.value ?? Data(base64Encoded: "NoData")
+                if characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")) && characteristic.value != nil {
+//?? Data(base64Encoded: "NoData")
+                    let characteristicValue = characteristic.value
                     let ASCIIstring = NSString(data: characteristicValue!, encoding: String.Encoding.utf8.rawValue)
-                    characteristicASCIIValue = ASCIIstring!
+                    characteristicASCIIValue = ASCIIstring! as String
                 }
-
                 let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
                                                                        _description: "",
                                                                        _uuid: characteristic.uuid,
-                                                                       _readValue: characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")) ? characteristicASCIIValue as String : "",
+                                                                       _readValue: characteristicASCIIValue,
                                                                        _service: characteristic.service!)
                 foundCharacteristics.append(setCharacteristic)
+                peripheral.setNotifyValue(true, for: characteristic)
                 peripheral.readValue(for: characteristic)
             }
         }
@@ -174,6 +179,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
 
     func didUpdateValue(_ peripheral: CBPeripheralProtocol, characteristic: CBCharacteristic, error: Error?) {
         var characteristicASCIIValue = NSString()
+        print("Value Recieved here: \((characteristic))")
 
         guard characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")),
 
