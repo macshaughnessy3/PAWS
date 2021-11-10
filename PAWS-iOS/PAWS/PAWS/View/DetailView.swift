@@ -56,11 +56,7 @@ struct DetailView: View {
                         if AllIncomingMessages.count > 0 {
                             ForEach(0..<AllIncomingMessages.count, id: \.self) { j in
                                 if j % 2 == 1 {
-                                    HStack {
-                                        Text("Recieved Value: \(AllIncomingMessages[j])")
-                                            .font(.system(size: 14))
-                                            .padding(.top, 5)
-                                    }
+                                    Text("Recieved Value: \(AllIncomingMessages.reversed()[j])")
                                 }
                             }
                         }
@@ -81,7 +77,7 @@ struct DetailView: View {
                 }.onAppear(perform: {
                 }).onReceive(pub) { obj in
                     IncomingMessage = obj.object as! String
-                    print(AllIncomingMessages as Any, IncomingMessage)
+                    print("test \(IncomingMessage.removeLast())")
                     AllIncomingMessages += [IncomingMessage]
                 }
             }
