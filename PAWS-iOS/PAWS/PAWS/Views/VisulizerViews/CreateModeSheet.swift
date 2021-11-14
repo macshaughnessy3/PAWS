@@ -8,12 +8,36 @@
 import Foundation
 import SwiftUI
 
+extension Color {
+    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, opacity: CGFloat) {
+
+        #if canImport(UIKit)
+        typealias NativeColor = UIColor
+        #elseif canImport(AppKit)
+        typealias NativeColor = NSColor
+        #endif
+
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var o: CGFloat = 0
+
+        guard NativeColor(self).getRed(&r, green: &g, blue: &b, alpha: &o) else {
+            // You can handle the failure here as you want
+            return (0, 0, 0, 0)
+        }
+
+        return (r, g, b, o)
+    }
+}
+
 struct CreateModeSheet: View {
     @ObservedObject var viewModel = MainListViewModel()
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-    @State var selectedPriority = 0
     private var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
+    @State var rgbColour = RGB(r: 0, g: 1, b: 1)
+    @State var brightness: CGFloat = 1
 
     var body: some View {
         List() {
@@ -22,8 +46,10 @@ struct CreateModeSheet: View {
                  onCommit: {print("New task title entered. \(viewModel.newTaskTitle)")})
             }
             
+            ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness)
+
 //            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
-            FinalView()
+//            FinalView()
         
             Section {
                 Picker(selection: $viewModel.selectedIndex, label: Text("Select visualizer display mode")) {
@@ -40,7 +66,7 @@ struct CreateModeSheet: View {
 //                        .foregroundColor(.gray)
 //                }
 //            }
-            saveView(newTaskTitle: viewModel.newTaskTitle, selectedIndex: viewModel.selectedIndex)
+            saveView(newTaskTitle: viewModel.newTaskTitle, newModeColor: "\(rgbColour.r)_\(rgbColour.g)_\(rgbColour.b)", selectedIndex: viewModel.selectedIndex)
         }
     }
 }
@@ -50,12 +76,14 @@ struct saveView: View {
     @ObservedObject var viewModel = MainListViewModel()
     @FetchRequest(entity: Mode.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Mode.createdAt, ascending: false)]) var modeItems : FetchedResults<Mode>
     let newTaskTitle: String
+    let newModeColor: String
     let selectedIndex: Int
     
     var body: some View {
         Button("Save Mode") {
             presentationMode.wrappedValue.dismiss()
             viewModel.newTaskTitle = newTaskTitle
+            viewModel.newModeColor = newModeColor
             viewModel.newModeItem = modeItems.count+1
             viewModel.selectedIndex = selectedIndex
             viewModel.addItem()

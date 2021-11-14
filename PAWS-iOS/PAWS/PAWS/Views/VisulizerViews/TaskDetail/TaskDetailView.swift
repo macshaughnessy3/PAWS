@@ -37,6 +37,7 @@ struct TaskDetailView: View {
 //                    }
 //                }.pickerStyle(SegmentedPickerStyle())
                 Text("Your mode is \(modeArray[Int(task.displayMode)])")
+                Text("Your color is \(task.color)")
             }
             .navigationBarTitle("\(task.title)", displayMode: .inline)
 //            .listStyle(GroupedListStyle())
