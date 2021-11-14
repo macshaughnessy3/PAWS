@@ -32,7 +32,7 @@ struct VisualizerView: View {
     var body: some View {
         NavigationView {
             Form {
-                ForEach(modeItems, id:\.self) { item in
+                ForEach(modeItems) { item in
                         HStack {
                             Text(item.id)
                             Spacer()
