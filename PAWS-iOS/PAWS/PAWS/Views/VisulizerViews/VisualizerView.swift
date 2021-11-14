@@ -18,47 +18,37 @@ import CoreData
 
 struct VisualizerView: View {
     @EnvironmentObject var bleManager: CoreBluetoothViewModel
-//    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var viewModel = MainListViewModel()
     
-    struct Layout {
-        static let cellRowHeight: CGFloat = 50
-    }
     
     @FetchRequest(entity: Mode.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Mode.createdAt, ascending: false)]) var modeItems : FetchedResults<Mode>
-//    let fetchRequest: NSFetchRequest<Mode>
-//    let context = PersistenceController.preview
-//    var fetchRequest = Mode.fetchRequest()
 
     @State var newTaskTitle : String = ""
-
-//    var sampleTasks = ["Task One" , "Task Two", "Task Three"]
 //    var modes = [SelectableItem(name: "OFF", mode: -1)] + Array(0...5).map{SelectableItem(name: "Mode \($0)", mode: $0)}
     @State var selectedItem: Mode?
-//        @FetchRequest(entity: Mode.entity(), sortDescriptors: [], predicate: NSPredicate(format: "status != %@", Status.completed.rawValue))
-//    @FetchRequest(entity: Mode.entity(), sortDescriptors: [])
     @State var showCreateModeSheet = false
 
     var body: some View {
         NavigationView {
             Form {
-
-                    List(modeItems) { item in
+                ForEach(modeItems, id:\.self) { item in
                         HStack {
-                            Text(item.title)
+                            Text(item.id)
+                            Spacer()
                         }
                         .modifier(CheckmarkModifier(checked: item.id == self.selectedItem?.id))
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 self.selectedItem = item
                                 print("\(self.selectedItem?.mode ?? 0)")
-                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(self.selectedItem?.mode ?? 0)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.mode)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
                                     return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
                                 })!.characteristic, type: CBCharacteristicWriteType.withResponse)
          //                    bleManager.connectedPeripheral.peripheral.writeValue(("\(self.selectedItem?.mode ?? 0)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  self.bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
-                        }
-                     }
+                            }
+                     }.onDelete(perform: deleteTask)
+
 //                Section {
 //                    HStack {
 //                        TextField("Add task...", text: $viewModel.newTaskTitle,
@@ -96,8 +86,6 @@ struct VisualizerView: View {
             }
         }.ignoresSafeArea()
     }
-//    func currentTopics(subject: Subject, topics: FetchedResults<Topic>) -> Set<Topic> {
-
     
 //    var body: some View {
 //        List() {

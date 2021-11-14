@@ -13,16 +13,12 @@ struct CreateModeSheet: View {
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
     @State var selectedPriority = 0
-    
+
     var body: some View {
         List() {
             Section {
-                TextField("Title", text: $viewModel.newTaskTitle,
+                TextField("Mode Name", text: $viewModel.newTaskTitle,
                  onCommit: {print("New task title entered.")})
-
-//                TextField("Notes", text: $task.message,
-//                 onCommit: {print("New task title entered.")})
-//                CharacteriticView(task: task)
             }
             
 //            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
@@ -36,6 +32,19 @@ struct CreateModeSheet: View {
                         .foregroundColor(.gray)
                 }
             }
+            DismissingView()
+        }
+    }
+}
+
+struct DismissingView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = MainListViewModel()
+
+    var body: some View {
+        Button("Dismiss Me") {
+            presentationMode.wrappedValue.dismiss()
+            viewModel.addItem()
         }
     }
 }
