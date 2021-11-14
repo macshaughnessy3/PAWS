@@ -66,7 +66,7 @@ struct CreateModeSheet: View {
 //                        .foregroundColor(.gray)
 //                }
 //            }
-            saveView(newTaskTitle: viewModel.newTaskTitle, newModeColor: "\(rgbColour.r)_\(rgbColour.g)_\(rgbColour.b)", selectedIndex: viewModel.selectedIndex)
+            saveView(newTaskTitle: viewModel.newTaskTitle, newModeColor: "\(Int(round(rgbColour.r*255)))_\(Int(round(rgbColour.g*255)))_\(Int(round(rgbColour.b*255)))", selectedIndex: viewModel.selectedIndex)
         }
     }
 }
