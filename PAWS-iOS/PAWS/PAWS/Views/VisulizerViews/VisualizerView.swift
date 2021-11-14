@@ -42,10 +42,12 @@ struct VisualizerView: View {
                             .onTapGesture {
                                 self.selectedItem = item
                                 print("\(self.selectedItem?.mode ?? 0)")
-                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.mode)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
-                                    return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
-                                })!.characteristic, type: CBCharacteristicWriteType.withResponse)
-         //                    bleManager.connectedPeripheral.peripheral.writeValue(("\(self.selectedItem?.mode ?? 0)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  self.bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
+                                if self.bleManager.isConnected {
+                                    self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.mode)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                        return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                                    })!.characteristic, type: CBCharacteristicWriteType.withResponse)
+             //                    bleManager.connectedPeripheral.peripheral.writeValue(("\(self.selectedItem?.mode ?? 0)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  self.bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
+                                }
                             }
                      }.onDelete(perform: deleteTask)
 
