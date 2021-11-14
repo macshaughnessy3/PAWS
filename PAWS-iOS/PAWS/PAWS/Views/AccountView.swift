@@ -41,8 +41,13 @@ struct AccountView: View {
                     }
                 }
                 .navigationBarTitle(Text("My Account"))
-                .navigationBarItems(leading:ClemsonLogoView())
-            }
+                .toolbar { // <2>
+                            ToolbarItem(placement: .principal) { // <3>
+                                VStack {
+                                    ClemsonLogoView()
+                                }
+                            }
+                        }            }
             .ignoresSafeArea()
             .navigationViewStyle(StackNavigationViewStyle())
             .onOpenURL(perform: handleURL(_:))

@@ -44,7 +44,7 @@ struct VisualizerView: View {
                             self.selectedItem = item
                             print("\(self.selectedItem?.mode ?? 0)")
                             if self.bleManager.isConnected {
-                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.color)_\(item.displayMode)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.color)_\(item.displayMode)_\(item.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
                                     return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
                                 })!.characteristic, type: CBCharacteristicWriteType.withResponse)
          //                    bleManager.connectedPeripheral.peripheral.writeValue(("\(self.selectedItem?.mode ?? 0)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  self.bleManager.foundCharacteristics[0].characteristic, type: CBCharacteristicWriteType.withResponse)
@@ -75,7 +75,13 @@ struct VisualizerView: View {
 //                }
             }
             .navigationBarTitle(Text("My Visuals"))
-            .navigationBarItems(leading:ClemsonLogoView())
+            .toolbar { // <2>
+                        ToolbarItem(placement: .principal) { // <3>
+                            VStack {
+                                ClemsonLogoView()
+                            }
+                        }
+                    }
             .listStyle(PlainListStyle())
             .navigationTitle("My Orders")
             .navigationBarItems(trailing: Button(action: {

@@ -38,6 +38,7 @@ struct CreateModeSheet: View {
     private var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
     @State var rgbColour = RGB(r: 0, g: 1, b: 1)
     @State var brightness: CGFloat = 1
+    @State var editingFlag = false
 
     var body: some View {
         List() {

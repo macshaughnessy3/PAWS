@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ClemsonLogoView: View {
+//    var padding : Int
     var body: some View {
         HStack {
             Image("clemson-logo")
@@ -16,7 +17,7 @@ struct ClemsonLogoView: View {
                 .foregroundColor(.white)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40, alignment: .center)
-            .padding(UIScreen.main.bounds.size.width)
+//            .padding(UIScreen.main.bounds.size.width)
         }
     }
 }

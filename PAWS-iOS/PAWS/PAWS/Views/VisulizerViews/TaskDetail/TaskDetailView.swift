@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import CoreBluetooth
 
 struct TaskDetailView: View {
-    
+    @EnvironmentObject var bleManager: CoreBluetoothViewModel
     @ObservedObject var task : Mode
     
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
 //    @State var selectedPriority = 0
+    @State var editingFlag = false
 
     var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
     var body: some View {
@@ -28,7 +30,6 @@ struct TaskDetailView: View {
             }
             
 //            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
-            FinalView()
             
             Section {
 //                Picker(selection: $task.displayMode, label: Text("Select visualizer display mode")) {
@@ -37,14 +38,38 @@ struct TaskDetailView: View {
 //                    }
 //                }.pickerStyle(SegmentedPickerStyle())
                 Text("Your mode is \(modeArray[Int(task.displayMode)])")
+            }
+            Section {
+                if task.displayMode == 3 {
+                    if self.bleManager.isConnected {
+                        VStack {
+                            if editingFlag { // <1>
+                                Text("Sent: \(task.message)") // <2>
+                            }
+                            TextField("Send a message to your Speaker", text: $task.message)
+                            Spacer()
+                            Button(action: {
+                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(task.color)_\(task.displayMode)_\(task.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                    return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                                })!.characteristic, type: CBCharacteristicWriteType.withResponse)
+                                self.editingFlag = true
+                            }) {
+                                Text("Send")
+                            }
+                        }
+                    }
+                }
+            }
+            Section {
                 Text("Your color is \(task.color)")
             }
-            .navigationBarTitle("\(task.title)", displayMode: .inline)
+        }
+        .navigationBarTitle("\(task.title)", displayMode: .inline)
 //            .listStyle(GroupedListStyle())
 //            .toolbar {
 //                EditButton()
 //            }
-        }
+//        }
     }
 }
 
