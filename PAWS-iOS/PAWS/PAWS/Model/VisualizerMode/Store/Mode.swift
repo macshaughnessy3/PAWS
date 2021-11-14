@@ -12,13 +12,16 @@ import CoreData
 public class Mode : NSManagedObject
 {
     public let id = UUID().uuidString
-    @NSManaged public var title            : String
-    @NSManaged public var mode             : Int16
-    @NSManaged public var modeDescription  : String
-    @NSManaged public var displayMode      : Int16
-    @NSManaged public var message          : String
-    @NSManaged public var color            : String
-    @NSManaged public var createdAt        : Date
+    @NSManaged public var title             : String
+    @NSManaged public var mode              : Int16
+    @NSManaged public var newModeColorR     : Double
+    @NSManaged public var newModeColorG     : Double
+    @NSManaged public var newModeColorB     : Double
+    @NSManaged public var modeDescription   : String
+    @NSManaged public var displayMode       : Int16
+    @NSManaged public var message           : String
+    @NSManaged public var color             : String
+    @NSManaged public var createdAt         : Date
 }
 
 extension Mode: Identifiable {

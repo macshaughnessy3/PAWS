@@ -61,10 +61,12 @@ struct TaskDetailView: View {
                 }
             }
             Section {
-                Text("Your color is \(task.color)")
+//                Text("Your color is \((task.color.split(separator: "_")[0] as NSString).integerValue)")
             }
         }
         .navigationBarTitle("\(task.title)", displayMode: .inline)
+        .foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
+
 //            .listStyle(GroupedListStyle())
 //            .toolbar {
 //                EditButton()

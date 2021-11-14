@@ -67,7 +67,7 @@ struct CreateModeSheet: View {
 //                        .foregroundColor(.gray)
 //                }
 //            }
-            saveView(newTaskTitle: viewModel.newTaskTitle, newModeColor: "\(Int(round(rgbColour.r*255)))_\(Int(round(rgbColour.g*255)))_\(Int(round(rgbColour.b*255)))", selectedIndex: viewModel.selectedIndex)
+            saveView(newTaskTitle: viewModel.newTaskTitle, newModeColorR: rgbColour.r, newModeColorG: rgbColour.g, newModeColorB: rgbColour.b, selectedIndex: viewModel.selectedIndex)
         }
     }
 }
@@ -77,14 +77,19 @@ struct saveView: View {
     @ObservedObject var viewModel = MainListViewModel()
     @FetchRequest(entity: Mode.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Mode.createdAt, ascending: false)]) var modeItems : FetchedResults<Mode>
     let newTaskTitle: String
-    let newModeColor: String
+//    let newModeColor: String
+    let newModeColorR: CGFloat
+    let newModeColorG: CGFloat
+    let newModeColorB: CGFloat
     let selectedIndex: Int
-    
+
     var body: some View {
         Button("Save Mode") {
             presentationMode.wrappedValue.dismiss()
             viewModel.newTaskTitle = newTaskTitle
-            viewModel.newModeColor = newModeColor
+            viewModel.newModeColorR = newModeColorR
+            viewModel.newModeColorG = newModeColorG
+            viewModel.newModeColorB = newModeColorB
             viewModel.newModeItem = modeItems.count+1
             viewModel.selectedIndex = selectedIndex
             viewModel.addItem()
