@@ -13,8 +13,9 @@ struct TaskDetailView: View {
     
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-    @State var selectedPriority = 0
-    
+//    @State var selectedPriority = 0
+
+    var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
     var body: some View {
         List() {
             Section {
@@ -30,18 +31,18 @@ struct TaskDetailView: View {
             FinalView()
             
             Section {
-                NavigationLink(destination: Text("Priority")) {
-                    Text("Priority")
-                    Spacer()
-                    Text("Low")
-                        .foregroundColor(.gray)
-                }
+//                Picker(selection: $task.displayMode, label: Text("Select visualizer display mode")) {
+//                    ForEach(0 ..< modeArray.count) {
+//                        Text(self.modeArray[$0])
+//                    }
+//                }.pickerStyle(SegmentedPickerStyle())
+                Text("Your mode is \(modeArray[Int(task.displayMode)])")
             }
-        }
-        .navigationBarTitle("\(task.title)", displayMode: .inline)
-        .listStyle(GroupedListStyle())
-        .toolbar {
-            EditButton()
+            .navigationBarTitle("\(task.title)", displayMode: .inline)
+//            .listStyle(GroupedListStyle())
+//            .toolbar {
+//                EditButton()
+//            }
         }
     }
 }

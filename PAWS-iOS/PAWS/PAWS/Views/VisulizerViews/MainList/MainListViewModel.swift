@@ -11,16 +11,20 @@ class MainListViewModel : ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     
     @Published var newTaskTitle : String = ""
-    
+    @Published var newModeColor : String = ""
+    @Published var newModeItem : Int = 0
+    @Published var selectedIndex : Int = 0
+
+
     func addItem() {
         withAnimation {
             let newItem = Mode(context: self.viewContext)
             
             newItem.createdAt = Date()
-            newItem.color = ""
-            newItem.message = ""
-            newItem.modeDescription = ""
-            newItem.displayMode = 0
+            newItem.title = newTaskTitle
+            newItem.color = newModeColor
+            newItem.mode = Int16(newModeItem+1)
+            newItem.displayMode = Int16(selectedIndex)
 
             do {
                 try self.viewContext.save()
@@ -31,6 +35,6 @@ class MainListViewModel : ObservableObject {
         }
         
         //Reset TextField String
-        self.newTaskTitle = ""
+//        self.newTaskTitle = ""
     }
 }

@@ -13,37 +13,51 @@ struct CreateModeSheet: View {
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
     @State var selectedPriority = 0
+    private var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
 
     var body: some View {
         List() {
             Section {
                 TextField("Mode Name", text: $viewModel.newTaskTitle,
-                 onCommit: {print("New task title entered.")})
+                 onCommit: {print("New task title entered. \(viewModel.newTaskTitle)")})
             }
             
 //            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
             FinalView()
-            
+        
             Section {
-                NavigationLink(destination: Text("Priority")) {
-                    Text("Priority")
-                    Spacer()
-                    Text("Low")
-                        .foregroundColor(.gray)
-                }
+                Picker(selection: $viewModel.selectedIndex, label: Text("Select visualizer display mode")) {
+                    ForEach(0 ..< modeArray.count) {
+                        Text(self.modeArray[$0])
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                Text("Your mode is \(modeArray[viewModel.selectedIndex])")
             }
-            DismissingView()
+//                NavigationLink(destination: Text("Priority")) {
+//                    Text("Priority")
+//                    Spacer()
+//                    Text("Low")
+//                        .foregroundColor(.gray)
+//                }
+//            }
+            saveView(newTaskTitle: viewModel.newTaskTitle, selectedIndex: viewModel.selectedIndex)
         }
     }
 }
 
-struct DismissingView: View {
+struct saveView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = MainListViewModel()
-
+    @FetchRequest(entity: Mode.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Mode.createdAt, ascending: false)]) var modeItems : FetchedResults<Mode>
+    let newTaskTitle: String
+    let selectedIndex: Int
+    
     var body: some View {
-        Button("Dismiss Me") {
+        Button("Save Mode") {
             presentationMode.wrappedValue.dismiss()
+            viewModel.newTaskTitle = newTaskTitle
+            viewModel.newModeItem = modeItems.count+1
+            viewModel.selectedIndex = selectedIndex
             viewModel.addItem()
         }
     }
