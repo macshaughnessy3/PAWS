@@ -8,34 +8,11 @@
 import Foundation
 import SwiftUI
 
-extension Color {
-    var components: (red: CGFloat, green: CGFloat, blue: CGFloat, opacity: CGFloat) {
-
-        #if canImport(UIKit)
-        typealias NativeColor = UIColor
-        #elseif canImport(AppKit)
-        typealias NativeColor = NSColor
-        #endif
-
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var o: CGFloat = 0
-
-        guard NativeColor(self).getRed(&r, green: &g, blue: &b, alpha: &o) else {
-            // You can handle the failure here as you want
-            return (0, 0, 0, 0)
-        }
-
-        return (r, g, b, o)
-    }
-}
-
 struct CreateModeSheet: View {
     @ObservedObject var viewModel = MainListViewModel()
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-    private var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
+    private var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text", "Rainbow"]
     @State var rgbColour = RGB(r: 0, g: 1, b: 1)
     @State var brightness: CGFloat = 1
     @State var editingFlag = false
@@ -47,19 +24,22 @@ struct CreateModeSheet: View {
                  onCommit: {print("New task title entered. \(viewModel.newTaskTitle)")})
             }
             
-            ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness)
-
-//            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
-//            FinalView()
-        
             Section {
                 Picker(selection: $viewModel.selectedIndex, label: Text("Select visualizer display mode")) {
                     ForEach(0 ..< modeArray.count) {
                         Text(self.modeArray[$0])
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-                Text("Your mode is \(modeArray[viewModel.selectedIndex])")
             }
+            
+            if viewModel.selectedIndex != 4 {
+                Text("Pick a Color to display on the Visualizer:")
+                ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness)
+            }
+
+//            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
+//            FinalView()
+        
 //                NavigationLink(destination: Text("Priority")) {
 //                    Text("Priority")
 //                    Spacer()

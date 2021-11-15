@@ -14,72 +14,67 @@ struct TaskDetailView: View {
     
     @State var number : Int = 0
     @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
-//    @State var selectedPriority = 0
+    var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text", "Rainbow"]
+    @State var rgbColour = RGB(r: 0, g: 1, b: 1)
+    @State var brightness: CGFloat = 1
     @State var editingFlag = false
+    @State private var selectedColor = 0
+    
+//    init() {
+//        rgbColour = RGB(r: self.task.newModeColorR,g: self.task.newModeColorG, b: self.task.newModeColorB)
+//    }
 
-    var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text"]
+
     var body: some View {
         List() {
-            Section {
+            Section(header: Text("Rename mode:")) {
                 TextField("Title", text: $task.title,
                  onCommit: {print("New task title entered.")})
+            }
+            Section(header: Text("Select visualizer display mode:")) {
+                Picker(selection: $task.displayModeAsInt, label: Text("Select visualizer display mode")) {
+                    ForEach(0 ..< modeArray.count) {
+                        Text(self.modeArray[$0])
+                    }.onChange(of: task.displayMode, perform: { _ in
+                        task.displayMode = Int16(task.displayMode)
+                        print(selectedColor, task.displayMode)
+                    })
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            if task.displayModeAsInt != 4 {
+                Section(header: Text("Pick a Color to display:")) {
+                    ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness).foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
 
-//                TextField("Notes", text: $task.message,
-//                 onCommit: {print("New task title entered.")})
-//                CharacteriticView(task: task)
+                    Button("Update Color"){
+                        task.newModeColorR = rgbColour.r
+                        task.newModeColorG = rgbColour.g
+                        task.newModeColorB = rgbColour.b
+                    }.foregroundColor(Color(.displayP3, red: rgbColour.r, green: rgbColour.g, blue: rgbColour.b))
+                }
             }
-            
-//            ColorPicker("test", selection: $displayColor, supportsOpacity: false)
-            
-            Section {
-//                Picker(selection: $task.displayMode, label: Text("Select visualizer display mode")) {
-//                    ForEach(0 ..< modeArray.count) {
-//                        Text(self.modeArray[$0])
-//                    }
-//                }.pickerStyle(SegmentedPickerStyle())
-                Text("Your mode is \(modeArray[Int(task.displayMode)])")
-            }
-            Section {
-                if task.displayMode == 3 {
-                    if self.bleManager.isConnected {
+            if task.displayModeAsInt == 3 {
+                if self.bleManager.isConnected {
+                    Section(header: Text("Enter a message to Display:")) {
                         VStack {
                             if editingFlag { // <1>
                                 Text("Sent: \(task.message)") // <2>
                             }
-                            TextField("Send a message to your Speaker", text: $task.message)
-                            Spacer()
-                            Button(action: {
-                                self.bleManager.connectedPeripheral.peripheral.writeValue(("\(task.color)_\(task.displayMode)_\(task.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
-                                    return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
-                                })!.characteristic, type: CBCharacteristicWriteType.withResponse)
-                                self.editingFlag = true
-                            }) {
-                                Text("Send")
-                            }
+                            TextField("Your message", text: $task.message)
                         }
+                        Button("Send") {
+                            self.bleManager.connectedPeripheral.peripheral.writeValue(("\(task.color)_\(task.displayMode)_\(task.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                                return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                            })!.characteristic, type: CBCharacteristicWriteType.withResponse)
+                            self.editingFlag = true
+                        }.foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
                     }
                 }
             }
-            Section {
-//                Text("Your color is \((task.color.split(separator: "_")[0] as NSString).integerValue)")
-            }
         }
         .navigationBarTitle("\(task.title)", displayMode: .inline)
-        .foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
-
-//            .listStyle(GroupedListStyle())
-//            .toolbar {
-//                EditButton()
-//            }
-//        }
     }
 }
 
-//struct TaskDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TaskDetailView()
-//    }
-//}
 internal protocol HSBColorPickerDelegate : NSObjectProtocol {
     func HSBColorColorPickerTouched(sender:HSBColorPicker, color:UIColor, point:CGPoint, state:UIGestureRecognizer.State)
 }

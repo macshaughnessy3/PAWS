@@ -14,18 +14,18 @@ struct DetailView: View {
                     bleManager.disconnectPeripheral()
                     bleManager.stopScan()
                 }) {
-                    bleManager.UIButtonView(proxy: proxy, text: "Disconnect")
+                    bleManager.UIButtonView(proxy: proxy, text: "Disconnect \(bleManager.connectedPeripheral.peripheral.name ?? "")")
                 }
                 
                 Text(bleManager.isBlePower ? "" : "Bluetooth setting is OFF")
                     .padding(10)
                 
                 List {
-                    CharacteriticCells()
+//                    CharacteriticCells()
                 }
-                .navigationBarTitle("Connect result")
-                .navigationBarBackButtonHidden(true)
             }
+//            .navigationBarTitle(bleManager.connectedPeripheral.peripheral.name ?? "Connected")
+            .navigationBarBackButtonHidden(true)
         }
     }
     

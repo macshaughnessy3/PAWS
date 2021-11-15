@@ -33,3 +33,15 @@ extension Mode: Identifiable {
 //        return UUID().uuidString
 //    }
 //}
+
+extension Mode {
+    var displayModeAsInt: Int {
+        get {
+//            guard let displayMode = self.displayMode else { return 0 }
+            return Int(truncating: NSNumber(value: displayMode))
+        }
+        set {
+            self.displayMode = Int16(truncating: NSNumber(value: newValue))
+        }
+    }
+}
