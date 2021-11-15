@@ -118,10 +118,8 @@ struct OnboardingView: View {
     }
     
     struct BluetoothOnboardingView: View{
-//        @Binding var tabSelection: Int
+        @Binding var tabSelection: Int
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
-        
-//        if $bleManager.isConnected
 
         var body: some View{
             VStack {
@@ -144,11 +142,11 @@ struct OnboardingView: View {
                         }
                     }
                 }
-//                        .foregroundColor(Color.orange)
                 VStack {
                     Spacer()
                     Button(action: {
                         bleManager.isSearching ? bleManager.stopScan() : bleManager.startScan()
+                        self.tabSelection = 4
                     }) {
                         Text(bleManager.isSearching ? "Stop scanning" : "Start scanning")
                             .padding()
