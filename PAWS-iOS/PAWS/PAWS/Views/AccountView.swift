@@ -32,11 +32,7 @@ struct AccountView: View {
                             .onAppear(perform: onAppearLogout)
                     }
                     List {
-                        HStack{
-                            Text("Support")
-                            Spacer()
-                            Image(systemName: "info.circle")
-                        }
+                        NavigationLink("Support", destination: SupportView())
                         NavigationLink("Device", destination: BluetoothDeviceView())
                     }
                 }

@@ -18,6 +18,7 @@
 		0C8F585727320D3500642C8B /* PAWSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585627320D3500642C8B /* PAWSApp.swift */; };
 		0C8F585B2732139E00642C8B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F585A2732139E00642C8B /* OnboardingView.swift */; };
 		0CB35C032703A8B1009F4B5F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB35C022703A8B1009F4B5F /* SearchBar.swift */; };
+		0CD196252742D124006B3CBC /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD196242742D124006B3CBC /* SupportView.swift */; };
 		3F0E5FA227026F4400B4E9B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA127026F4400B4E9B7 /* ContentView.swift */; };
 		3F0E5FA427026F4600B4E9B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA327026F4600B4E9B7 /* Assets.xcassets */; };
 		3F0E5FA727026F4600B4E9B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E5FA627026F4600B4E9B7 /* Preview Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		0C8F585627320D3500642C8B /* PAWSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAWSApp.swift; sourceTree = "<group>"; };
 		0C8F585A2732139E00642C8B /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		0CB35C022703A8B1009F4B5F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		0CD196242742D124006B3CBC /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		0CEE8AA4271F5E3700EE5C2F /* CustomConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomConfig.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA7271F61A100EE5C2F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		0CEE8AA8271F61C600EE5C2F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		0C19B7562703B48E00B983D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0CD196232742D112006B3CBC /* AccountViews */,
 				8303A7E4271C8C8700CF128D /* AlbumViews */,
 				8303A7DF271C8C3400CF128D /* PlaylistViews */,
 				3FCCB42A2741601900B82A6D /* VisulizerViews */,
@@ -248,6 +251,14 @@
 				0C19B7542703B43200B983D3 /* SearchView.swift */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		0CD196232742D112006B3CBC /* AccountViews */ = {
+			isa = PBXGroup;
+			children = (
+				0CD196242742D124006B3CBC /* SupportView.swift */,
+			);
+			path = AccountViews;
 			sourceTree = "<group>";
 		};
 		0CEE8AA0271F5D3E00EE5C2F /* Config */ = {
@@ -717,6 +728,7 @@
 				0C19B75C2703B57B00B983D3 /* SongView.swift in Sources */,
 				3FCCB42827415F9F00B82A6D /* Persistence.swift in Sources */,
 				3FCAE5EF2719285D00723FCD /* Characteristic.swift in Sources */,
+				0CD196252742D124006B3CBC /* SupportView.swift in Sources */,
 				0C19B7592703B4A200B983D3 /* ArtworkLoader.swift in Sources */,
 				835B8F6B271DEF3700774067 /* SavedAlbumsGridView.swift in Sources */,
 				0C19B75E2703B58800B983D3 /* AccountView.swift in Sources */,

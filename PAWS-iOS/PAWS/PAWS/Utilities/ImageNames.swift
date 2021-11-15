@@ -14,6 +14,8 @@ enum ImageName: String {
     case spotifyLogoGreen = "spotify logo green"
     case spotifyLogoWhite = "spotify logo white"
     case spotifyLogoBlack = "spotify logo black"
+    case githubLogoBlack = "github logo black"
+    case githubLogoWhite = "github logo white"
     case spotifyAlbumPlaceholder = "spotify album placeholder"
 }
 
