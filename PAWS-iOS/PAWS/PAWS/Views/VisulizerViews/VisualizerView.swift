@@ -38,7 +38,7 @@ struct VisualizerView: View {
                             Text(item.title)
                             Spacer()
                         }
-                        .modifier(CheckmarkModifier(checked: item.id == self.selectedItem?.id))
+                        .modifier(CheckmarkModifier(checked: item.id == self.selectedItem?.id && bleManager.isConnected))
                         .contentShape(Rectangle())
                         .onTapGesture {
                             self.selectedItem = item

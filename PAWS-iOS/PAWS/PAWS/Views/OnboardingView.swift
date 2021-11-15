@@ -145,11 +145,14 @@ struct OnboardingView: View {
                     Spacer()
                     Button(action: {
                         bleManager.isSearching ? bleManager.stopScan() : bleManager.startScan()
-                        self.tabSelection = 4
                     }) {
                         Text(bleManager.isSearching ? "Stop scanning" : "Start scanning")
                             .padding()
                     }
+                }
+            }.onChange(of: bleManager.isConnected) { _ in
+                withAnimation {
+                    self.tabSelection = 4
                 }
             }
         }

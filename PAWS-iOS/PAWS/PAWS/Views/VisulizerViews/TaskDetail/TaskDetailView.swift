@@ -13,17 +13,12 @@ struct TaskDetailView: View {
     @ObservedObject var task : Mode
     
     @State var number : Int = 0
-    @State var displayColor: Color = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
     var modeArray = ["Fast FFT", "Slow FFT", "Time", "Text", "Rainbow"]
-    @State var rgbColour = RGB(r: 0, g: 1, b: 1)
+    @State var rgbColour = RGB(r: 1, g: 1, b: 1)
     @State var brightness: CGFloat = 1
     @State var editingFlag = false
     @State private var selectedColor = 0
     
-//    init() {
-//        rgbColour = RGB(r: self.task.newModeColorR,g: self.task.newModeColorG, b: self.task.newModeColorB)
-//    }
-
 
     var body: some View {
         List() {
@@ -37,20 +32,18 @@ struct TaskDetailView: View {
                         Text(self.modeArray[$0])
                     }.onChange(of: task.displayMode, perform: { _ in
                         task.displayMode = Int16(task.displayMode)
-                        print(selectedColor, task.displayMode)
                     })
                 }.pickerStyle(SegmentedPickerStyle())
             }
             if task.displayModeAsInt != 4 {
                 Section(header: Text("Pick a Color to display:")) {
                     ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness).foregroundColor(Color(.displayP3, red: 0, green: 0, blue: 0)).listRowBackground(Color(.displayP3, red: rgbColour.r, green: rgbColour.g, blue: rgbColour.b))
-
-                    Button("Update Color"){
-                        task.newModeColorR = rgbColour.r
-                        task.newModeColorG = rgbColour.g
-                        task.newModeColorB = rgbColour.b
-                    }.foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
                 }
+                Button("Update Color"){
+                    task.newModeColorR = rgbColour.r
+                    task.newModeColorG = rgbColour.g
+                    task.newModeColorB = rgbColour.b
+                }.foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
             }
             if task.displayModeAsInt == 3 {
                 if self.bleManager.isConnected {
