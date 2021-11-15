@@ -42,6 +42,10 @@ struct VisualizerView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             self.selectedItem = item
+                            for mode in modeItems {
+                                mode.isSelected = false
+                            }
+                            item.isSelected = true
                             print("\(self.selectedItem?.mode ?? 0)")
                             if self.bleManager.isConnected {
                                 self.bleManager.connectedPeripheral.peripheral.writeValue(("\(item.color)_\(item.displayMode)_\(item.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in

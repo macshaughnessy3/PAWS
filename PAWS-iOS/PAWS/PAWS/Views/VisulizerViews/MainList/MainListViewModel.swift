@@ -31,6 +31,7 @@ class MainListViewModel : ObservableObject {
             newItem.color = "\(newModeColorR*255)_\(newModeColorG*255)_\(newModeColorB*255)"
             newItem.mode = Int16(newModeItem+1)
             newItem.displayMode = Int16(selectedIndex)
+            newItem.isSelected = false
 
             do {
                 try self.viewContext.save()

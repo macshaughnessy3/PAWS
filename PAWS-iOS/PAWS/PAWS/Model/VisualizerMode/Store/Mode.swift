@@ -22,6 +22,7 @@ public class Mode : NSManagedObject
     @NSManaged public var message           : String
     @NSManaged public var color             : String
     @NSManaged public var createdAt         : Date
+    @NSManaged public var isSelected        : Bool
 }
 
 extension Mode: Identifiable {

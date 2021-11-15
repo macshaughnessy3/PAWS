@@ -43,7 +43,16 @@ struct TaskDetailView: View {
                     task.newModeColorR = rgbColour.r
                     task.newModeColorG = rgbColour.g
                     task.newModeColorB = rgbColour.b
-                }.foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
+                    task.color = "\(task.newModeColorR*255)_\(task.newModeColorG*255)_\(task.newModeColorB*255)"
+                    if task.isSelected {
+                        self.bleManager.connectedPeripheral.peripheral.writeValue(("\(task.color)_\(task.displayMode)_\(task.message)" as NSString).data(using: String.Encoding.utf8.rawValue)!, for:  bleManager.foundCharacteristics.first(where: { Characteristic in
+                            return Characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e"))
+                        })!.characteristic, type: CBCharacteristicWriteType.withResponse)
+                    }
+                    self.editingFlag = true
+                }
+                .listRowBackground(Color(.systemGray4))
+                .foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
             }
             if task.displayModeAsInt == 3 {
                 if self.bleManager.isConnected {
