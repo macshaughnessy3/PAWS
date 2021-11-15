@@ -59,8 +59,7 @@ struct OnboardingView: View {
                     }
                     .onOpenURL(perform: handleURL(_:))
                     .tag(2)
-                    //BluetoothOnboardingView(tabSelection: $tabSelection)
-                    BluetoothOnboardingView()
+                    BluetoothOnboardingView(tabSelection: $tabSelection)
                         .tabItem{
                             //Text("Tab 1")
                         }

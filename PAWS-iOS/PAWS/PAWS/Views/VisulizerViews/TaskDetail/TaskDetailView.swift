@@ -43,13 +43,13 @@ struct TaskDetailView: View {
             }
             if task.displayModeAsInt != 4 {
                 Section(header: Text("Pick a Color to display:")) {
-                    ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness).foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
+                    ColourWheel(radius: 300, rgbColour: $rgbColour, brightness: $brightness).foregroundColor(Color(.displayP3, red: 0, green: 0, blue: 0)).listRowBackground(Color(.displayP3, red: rgbColour.r, green: rgbColour.g, blue: rgbColour.b))
 
                     Button("Update Color"){
                         task.newModeColorR = rgbColour.r
                         task.newModeColorG = rgbColour.g
                         task.newModeColorB = rgbColour.b
-                    }.foregroundColor(Color(.displayP3, red: rgbColour.r, green: rgbColour.g, blue: rgbColour.b))
+                    }.foregroundColor(Color(.displayP3, red: task.newModeColorR, green: task.newModeColorG, blue: task.newModeColorB))
                 }
             }
             if task.displayModeAsInt == 3 {
