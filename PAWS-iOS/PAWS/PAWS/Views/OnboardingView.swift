@@ -4,7 +4,7 @@ import SpotifyWebAPI
 import Combine
 
 struct OnboardingView: View {
-    @EnvironmentObject var bleManager: CoreBluetoothViewModel
+    
     @Environment(\.colorScheme) var colorScheme
     
     @EnvironmentObject var spotify: Spotify
@@ -12,6 +12,7 @@ struct OnboardingView: View {
     @State private var alert: AlertItem? = nil
 
     @State private var cancellables: Set<AnyCancellable> = []
+    @State private var tabSelection = 1
     
     init(){
         UIPageControl.appearance().currentPageIndicatorTintColor = .systemOrange
@@ -20,11 +21,10 @@ struct OnboardingView: View {
     
     
     var body: some View {
-        
         // #1
             VStack {
                 Spacer(minLength: 150)
-                TabView {
+                TabView(selection: $tabSelection) {
                     VStack {
                         Image("clemson-logo")
                             .resizable()
@@ -47,46 +47,24 @@ struct OnboardingView: View {
                         }
                         Spacer(minLength: 200)
                     }
+                    .tag(1)
                     VStack {
                         Text("Connect to the Spotify")
                             .font(Font.title2.bold().lowercaseSmallCaps())
                             .multilineTextAlignment(.center)
                         Text("For easy music control connect to spotify")
                         Spacer(minLength: 20)
-                        spotifyButton().foregroundColor(Color(colorScheme == .dark ? .white : .black))
+                        spotifyButton(tabSelection: $tabSelection).foregroundColor(Color(colorScheme == .dark ? .white : .black))
                         Spacer()
                     }
-                    VStack {
-                        Text("Connect to the PAWS Speaker")
-                            .font(Font.title2.bold().lowercaseSmallCaps())
-                            .multilineTextAlignment(.center)
-                        Text("Setup and initialization for visualization")
-                        List {
-                            ForEach(0..<bleManager.foundPeripherals.count, id: \.self) { num in
-                                if(bleManager.foundPeripherals[num].name != "NoName"){
-                                    Button(action: {
-                                        bleManager.connectPeripheral(bleManager.foundPeripherals[num])
-                                    }) {
-                                        HStack {
-                                            Text("\(bleManager.foundPeripherals[num].name)")
-                                            Spacer()
-                                            Text("\(bleManager.foundPeripherals[num].rssi) dBm")
-                                        }
-                                    }
-                                }
-                            }
+                    .onOpenURL(perform: handleURL(_:))
+                    .tag(2)
+                    //BluetoothOnboardingView(tabSelection: $tabSelection)
+                    BluetoothOnboardingView()
+                        .tabItem{
+                            //Text("Tab 1")
                         }
-//                        .foregroundColor(Color.orange)
-                        VStack {
-                            Spacer()
-                            Button(action: {
-                                bleManager.isSearching ? bleManager.stopScan() : bleManager.startScan()
-                            }) {
-                                Text(bleManager.isSearching ? "Stop scanning" : "Start scanning")
-                                    .padding()
-                            }
-                        }
-                    }
+                        .tag(3)
                     VStack {
                         Image("clemson-logo")
                             .resizable()
@@ -105,13 +83,13 @@ struct OnboardingView: View {
                         }
                         OnboardingButton()
                     }
+                    .tag(4)
                 }
                 .tabViewStyle(.page)
             }
             .background(Color(.systemGray6))
             .foregroundColor(Color(.systemIndigo))
             .ignoresSafeArea(.all, edges: .all)
-            .onOpenURL(perform: handleURL(_:))
     }
 
 
@@ -138,8 +116,50 @@ struct OnboardingView: View {
             }
         }
     }
+    
+    struct BluetoothOnboardingView: View{
+//        @Binding var tabSelection: Int
+        @EnvironmentObject var bleManager: CoreBluetoothViewModel
+        
+//        if $bleManager.isConnected
+
+        var body: some View{
+            VStack {
+                Text("Connect to the PAWS Speaker")
+                    .font(Font.title2.bold().lowercaseSmallCaps())
+                    .multilineTextAlignment(.center)
+                Text("Setup and initialization for visualization")
+                List {
+                    ForEach(0..<bleManager.foundPeripherals.count, id: \.self) { num in
+                        if(bleManager.foundPeripherals[num].name != "NoName"){
+                            Button(action: {
+                                bleManager.connectPeripheral(bleManager.foundPeripherals[num])
+                            }) {
+                                HStack {
+                                    Text("\(bleManager.foundPeripherals[num].name)")
+                                    Spacer()
+                                    Text("\(bleManager.foundPeripherals[num].rssi) dBm")
+                                }
+                            }
+                        }
+                    }
+                }
+//                        .foregroundColor(Color.orange)
+                VStack {
+                    Spacer()
+                    Button(action: {
+                        bleManager.isSearching ? bleManager.stopScan() : bleManager.startScan()
+                    }) {
+                        Text(bleManager.isSearching ? "Stop scanning" : "Start scanning")
+                            .padding()
+                    }
+                }
+            }
+        }
+    }
 
     struct spotifyButton: View {
+        @Binding var tabSelection: Int
         @EnvironmentObject var spotify: Spotify
         @Environment(\.colorScheme) var colorScheme
         let backgroundGradient = LinearGradient(
@@ -154,7 +174,7 @@ struct OnboardingView: View {
         }
         
         var body: some View {
-            Button(action: spotify.authorize) {
+            Button(action: {spotify.authorize(); self.tabSelection = 3}) {
                 HStack {
                     Image(spotifyLogo)
                         .interpolation(.high)

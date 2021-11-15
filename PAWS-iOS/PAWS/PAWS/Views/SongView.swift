@@ -27,8 +27,13 @@ struct SongView: View {
                     }
                 }
                 .navigationBarTitle(Text("My Music"))
-                .navigationBarItems(leading:ClemsonLogoView())
-            }.ignoresSafeArea()
+                .toolbar { // <2>
+                            ToolbarItem(placement: .principal) { // <3>
+                                VStack {
+                                    ClemsonLogoView()
+                                }
+                            }
+                        }            }.ignoresSafeArea()
         }
     }
 }

@@ -22,9 +22,14 @@ struct AccountView: View {
             NavigationView {
                 Form {
                     if !spotify.isAuthorized{
-                        spotifyLoginButton().disabled(spotify.isAuthorized)
+                        spotifyLoginButton()
+                            .disabled(spotify.isAuthorized)
+                            .onAppear(perform: onAppearLogin)
+                        
                     } else{
-                        spotifyLogoutButton().disabled(!spotify.isAuthorized)
+                        spotifyLogoutButton()
+                            .disabled(!spotify.isAuthorized)
+                            .onAppear(perform: onAppearLogout)
                     }
                     List {
                         HStack{
@@ -36,10 +41,16 @@ struct AccountView: View {
                     }
                 }
                 .navigationBarTitle(Text("My Account"))
-                .navigationBarItems(leading:ClemsonLogoView())
-            }
+                .toolbar { // <2>
+                            ToolbarItem(placement: .principal) { // <3>
+                                VStack {
+                                    ClemsonLogoView()
+                                }
+                            }
+                        }            }
             .ignoresSafeArea()
             .navigationViewStyle(StackNavigationViewStyle())
+            .onOpenURL(perform: handleURL(_:))
         }
     }
     struct spotifyLoginButton: View {
@@ -49,6 +60,8 @@ struct AccountView: View {
             colorScheme == .dark ? .spotifyLogoWhite
                     : .spotifyLogoBlack
         }
+        
+        
         
         var body: some View {
             Button(action: spotify.authorize) {
@@ -69,6 +82,7 @@ struct AccountView: View {
             // tokens is currently in progress.
             .allowsHitTesting(!spotify.isRetrievingTokens)
             .padding(.bottom, 5)
+            
         }
     }
 
@@ -116,6 +130,16 @@ struct AccountView: View {
             .allowsHitTesting(!spotify.isRetrievingTokens)
 //            .padding(.bottom, 5)
         }
+    }
+    
+    func onAppearLogin() {
+        spotify.isAuthorized = false
+        spotify.isRetrievingTokens = true
+    }
+    
+    func onAppearLogout() {
+        spotify.isAuthorized = true
+        spotify.isRetrievingTokens = false
     }
     
     func handleURL(_ url: URL) {

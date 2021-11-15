@@ -68,6 +68,8 @@ final class Spotify: ObservableObject {
     
     @Published var currentUser: SpotifyUser? = nil
     
+    @Published var currentSong: CurrentlyPlayingContext? = nil
+    
     /// The keychain to store the authorization information in.
     let keychain = Keychain(service: "com.spotify.PAWS")
     
@@ -294,6 +296,22 @@ final class Spotify: ObservableObject {
             )
             .store(in: &cancellables)
         
+    }
+    
+    func getCurrentSong(){
+        self.api.currentPlayback()
+            .receive(on: RunLoop.main)
+            .sink(
+                receiveCompletion: { completion in
+                    if case .failure(let error) = completion {
+                        print("couldn't retrieve current song: \(error)")
+                    }
+                },
+                receiveValue: { song in
+                    self.currentSong = song
+                }
+            )
+            .store(in: &cancellables)
     }
 
 }

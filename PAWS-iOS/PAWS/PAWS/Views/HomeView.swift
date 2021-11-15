@@ -20,8 +20,13 @@ struct HomeView: View {
                     }
                 }
                 .navigationBarTitle(Text("Home"))
-                .navigationBarItems(leading:ClemsonLogoView())
-            }
+                .toolbar { // <2>
+                            ToolbarItem(placement: .principal) { // <3>
+                                VStack {
+                                    ClemsonLogoView()
+                                }
+                            }
+                        }            }
         }
         .ignoresSafeArea()
     }
