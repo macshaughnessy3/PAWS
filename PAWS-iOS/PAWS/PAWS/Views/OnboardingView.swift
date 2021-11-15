@@ -119,6 +119,7 @@ struct OnboardingView: View {
     struct BluetoothOnboardingView: View{
         @Binding var tabSelection: Int
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
+        @State private var loading = false
 
         var body: some View{
             VStack {
@@ -131,11 +132,15 @@ struct OnboardingView: View {
                         if(bleManager.foundPeripherals[num].name != "NoName"){
                             Button(action: {
                                 bleManager.connectPeripheral(bleManager.foundPeripherals[num])
+                                loading = true
                             }) {
                                 HStack {
                                     Text("\(bleManager.foundPeripherals[num].name)")
                                     Spacer()
-                                    Text("\(bleManager.foundPeripherals[num].rssi) dBm")
+                                    if !loading { Text("\(bleManager.foundPeripherals[num].rssi) dBm") }
+                                    else {
+                                        ProgressView()
+                                    }
                                 }
                             }
                         }
@@ -153,6 +158,7 @@ struct OnboardingView: View {
             }.onChange(of: bleManager.isConnected) { _ in
                 withAnimation {
                     self.tabSelection = 4
+                    self.loading = false
                 }
             }
         }

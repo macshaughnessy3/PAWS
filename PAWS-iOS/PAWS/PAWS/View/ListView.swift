@@ -62,19 +62,28 @@ struct ListView: View {
     
     struct PeripheralCells: View {
         @EnvironmentObject var bleManager: CoreBluetoothViewModel
-        
+        @State private var loading = false
+
         var body: some View {
             ForEach(0..<bleManager.foundPeripherals.count, id: \.self) { num in
                 if(bleManager.foundPeripherals[num].name != "NoName"){
                     Button(action: {
                         bleManager.connectPeripheral(bleManager.foundPeripherals[num])
+                        loading = true
                     }) {
                         HStack {
                             Text("\(bleManager.foundPeripherals[num].name)")
                             Spacer()
-                            Text("\(bleManager.foundPeripherals[num].rssi) dBm")
+                            if !loading { Text("\(bleManager.foundPeripherals[num].rssi) dBm") }
+                            else {
+                                ProgressView()
+                            }
                         }
                     }
+                }
+            }.onChange(of: bleManager.isConnected) { _ in
+                withAnimation {
+                    self.loading = false
                 }
             }
         }
