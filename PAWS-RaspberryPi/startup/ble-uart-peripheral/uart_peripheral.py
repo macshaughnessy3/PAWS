@@ -1,10 +1,14 @@
 import sys
+import time
 import dbus, dbus.mainloop.glib
 from gi.repository import GLib
 from example_advertisement import Advertisement
 from example_advertisement import register_ad_cb, register_ad_error_cb
 from example_gatt_server import Service, Characteristic
 from example_gatt_server import register_app_cb, register_app_error_cb
+#from multiprocessing import Process,Pipe
+
+
 
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
@@ -14,8 +18,9 @@ GATT_CHRC_IFACE =              'org.bluez.GattCharacteristic1'
 UART_SERVICE_UUID =            '6e400001-b5a3-f393-e0a9-e50e24dcca9e'
 UART_RX_CHARACTERISTIC_UUID =  '6e400002-b5a3-f393-e0a9-e50e24dcca9e'
 UART_TX_CHARACTERISTIC_UUID =  '6e400003-b5a3-f393-e0a9-e50e24dcca9e'
-LOCAL_NAME =                   'rpi-gatt-server'
 mainloop = None
+
+
 
 class TxCharacteristic(Characteristic):
     def __init__(self, bus, index, service):
@@ -40,6 +45,8 @@ class TxCharacteristic(Characteristic):
             value.append(dbus.Byte(c.encode()))
         self.PropertiesChanged(GATT_CHRC_IFACE, {'Value': value}, [])
 
+
+
     def StartNotify(self):
         if self.notifying:
             return
@@ -57,6 +64,9 @@ class RxCharacteristic(Characteristic):
 
     def WriteValue(self, value, options):
         print('remote: {}'.format(bytearray(value).decode()))
+        with open('/home/pi/Code/PAWS/PAWS-RaspberryPi/startup/ble-uart-peripheral/info.txt', 'a') as f:
+            f.write("\n")
+            f.write('{}'.format(bytearray(value).decode()))
 
 class UartService(Service):
     def __init__(self, bus, index):
@@ -107,7 +117,11 @@ def find_adapter(bus):
             return o
     return None
 
+
+
+
 def main():
+
     global mainloop
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
     bus = dbus.SystemBus()
