@@ -40,5 +40,3 @@ The speaker circuit uses the audio amplifier.
 ### 3. Raspberry Pi Circuit
 
 ### 4. Matrix Circuit
-
-## Tips

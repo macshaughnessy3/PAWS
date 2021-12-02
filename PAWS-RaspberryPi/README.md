@@ -31,7 +31,15 @@ On the command line type:
 On the bottom of the file add:
 
 ```text
-@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/*.py &
+@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/BLEControl/uart_peripheral.py
+@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/MatrixControl/MatrixControl.py
+@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/VolumeControl.py
 ```
 
-this will run any python program in the startup folder to run when turn on.
+After saving the file, reboot for the programs to start begin using:
+
+```bash
+# reboot
+```
+
+Congratulations! PAWS is now running on the Raspberry Pi!
