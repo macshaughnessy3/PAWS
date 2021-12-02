@@ -4,11 +4,13 @@ A Portable Audio visualizer (Wave) Speaker or PAWS designed by Mac Shaughnessy (
 
 <img src="Assets/Clemson University ECE 4960 Team 1 PAWS Team Picture.jpeg" alt="Clemson University ECE 4960 Team 1 PAWS Team Picture" width="500"/>
 
-## Overview
+## PAWS Overview
 
-Using the resources in the repo under `PAWS-Hardware`, `PAWS-RaspberryPi` and `PAWS-iOS` a speaker capable of displaying an audio visualizer can be created. Follow the READMEs in the respective folders for more detail on each component.
+Using the resources in the repository under `PAWS-Hardware`, `PAWS-RaspberryPi` and `PAWS-iOS` a speaker capable of displaying an audio visualizer can be created. Follow the READMEs in the respective folders for more detail on each component.
 
-## Demo
+## PAWS Demo
+
+A video demonstration of our completed project is linked below. The video is gives a breif technical overview as well as shows the device being used.
 
 [<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="Watch our Demo Clemson University ECE 4960 Team 1 PAWS Final Demo 2021" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
 
