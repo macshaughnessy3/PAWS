@@ -2,9 +2,18 @@
 
 `PAWS-iOS` is the driving app behind the PAWS system. Controlling music, visulization, volume and more.
 
-## Install
+## 1. Setup and Requirments
 
-In order to Install Paws on your iPhone you must add a `LocalConfig.xcconfig` to the Config folder
+Xcode 12 or newer is required to run the PAWS application along with a device on iOS 14 and up.
+
+1. Navigate to the `PAWS/PAWS-iOS/PAWS` folder and run `pod install`
+2. Install swift resources
+
+After these steps, Xcode can compile and run PAWS using a simulator.
+
+## 2. Installing PAWS on a Device
+
+In order to install PAWS on your iPhone you must add a `LocalConfig.xcconfig` to the Config folder
 
 ```text
 //
