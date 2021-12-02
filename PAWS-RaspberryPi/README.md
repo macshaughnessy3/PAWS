@@ -1,6 +1,6 @@
 # PAWS-RaspberryPi
 
-`PAWS-RaspberryPi` serves as a companion to the `PAWS-iOS` app. The raspberry pi software can be setup by following the instructions below.
+`PAWS-RaspberryPi` serves as a companion to the `PAWS-iOS` app. The Raspberry Pi software can be setup by following the instructions below. A Raspberry Pi 4B is recommended. 
 
 ## Install
 

@@ -2,7 +2,7 @@
 
 `PAWS-iOS` is the driving app behind the PAWS system. Controlling music, visulization, volume and more.
 
-## 1. Setup and Requirments
+## Setup and Requirments
 
 Xcode 12 or newer is required to run the PAWS application along with a device on iOS 14 and up.
 
@@ -11,7 +11,7 @@ Xcode 12 or newer is required to run the PAWS application along with a device on
 
 After these steps, Xcode can compile and run PAWS using a simulator.
 
-## 2. Installing PAWS on a Device
+## Installing PAWS on a Device
 
 In order to install PAWS on your iPhone you must add a `LocalConfig.xcconfig` to the Config folder
 

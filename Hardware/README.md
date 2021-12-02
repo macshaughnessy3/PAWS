@@ -30,18 +30,18 @@ These choices were  narrowed down and we opted for the first design where the bo
 
 ## Assembly
 
-### 1. Laser Cutting
+### Laser Cutting
 
 The `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai` files were used for cutting and engraving our box pictured below. These files were sent to the laser cutter using various settings such as power and speed to engrave our pieces off wood. It is important to ensure the wood is perfectly flat in the cutting bed.
 
-### 2. Speaker circuit
+### Speaker circuit
 
 The speaker uses a 12-V Class D Audio Amplifier to power 2 30W speakers. The output volume is set digitally over an I2C communication connection.
 
-### 3. Raspberry Pi Circuit
+### Raspberry Pi Circuit
 
 The Raspberry Pi is connected to a 5V battery that is capable of supplying 3 Amps steadily. All outputs are connected to Raspberry Pi via GPIO pins.
 
-### 4. Matrix Circuit
+### Matrix Circuit
 
 The LED matrix is connected via the RGB matrix hat that connects 5V power and a decoded signal to the matrix.
