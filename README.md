@@ -9,7 +9,7 @@ Using the resources in the repo under `PAWS-Hardware`, `PAWS-RaspberryPi` and `P
 
 ## Demo
 
-[<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="drawing" width="500"/>](https://youtu.be/vt5fpE0bzSY)
+[<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="drawing" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
 
 ## Resources
 https://github.com/Peter-Schorn/SpotifyAPI
