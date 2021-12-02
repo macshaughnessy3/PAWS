@@ -11,7 +11,7 @@ Using the resources in the repo under `PAWS-Hardware`, `PAWS-RaspberryPi` and `P
 
 [<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="drawing" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
 
-## Resources
+## Resources and Credit
 https://github.com/Peter-Schorn/SpotifyAPI
 
 https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project
@@ -19,3 +19,5 @@ https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project
 https://github.com/Priva28/SwiftUIColourWheel
 
 https://github.com/hzeller/rpi-rgb-led-matrix
+
+Special thanks to the [Clemson University Department of Electrical and Computer Engineering](https://www.clemson.edu/cecas/departments/ece/academics/undergrad/seniordesign.html) for providing the funding and materials necessary for this project. Additional thanks to Dr. Hassan Raza for the oversight of the project.
