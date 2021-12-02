@@ -1,10 +1,12 @@
 //
 //  CBPeripheralProtcolDelegate.swift
+//
+//  Created by Mac Shaughnessy on 11/9/21.
+//
 
 import Foundation
 import CoreBluetooth
 
-// MARK: - CBPeripheral
 protocol CBPeripheralProtocolDelegate {
     func didDiscoverServices(_ peripheral: CBPeripheralProtocol, error: Error?)
     func didDiscoverCharacteristics(_ peripheral: CBPeripheralProtocol, service: CBService, error: Error?)
@@ -14,7 +16,6 @@ protocol CBPeripheralProtocolDelegate {
 
 public protocol CBPeripheralProtocol {
     var delegate: CBPeripheralDelegate? { get set }
-
     var name: String? { get }
     var identifier: UUID { get }
     var state: CBPeripheralState { get }
@@ -31,25 +32,13 @@ public protocol CBPeripheralProtocol {
 
 extension CBPeripheral : CBPeripheralProtocol {}
 
-// MARK: - CBCentralManager
 public protocol CBCentralManagerProtocolDelegate {
     func didUpdateState(_ central: CBCentralManagerProtocol)
-
-    func didDiscover(_ central: CBCentralManagerProtocol,
-                     peripheral: CBPeripheralProtocol,
-                     advertisementData: [String : Any],
-                     rssi: NSNumber)
-    
+    func didDiscover(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, advertisementData: [String : Any], rssi: NSNumber)
     func didConnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol)
- 
     func didFailToConnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, error: Error?)
-
     func didDisconnect(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol, error: Error?)
-
-    func connectionEventDidOccur(_ central: CBCentralManagerProtocol,
-                                 event: CBConnectionEvent,
-                                 peripheral: CBPeripheralProtocol)
-
+    func connectionEventDidOccur(_ central: CBCentralManagerProtocol, event: CBConnectionEvent,peripheral: CBPeripheralProtocol)
     func didUpdateANCSAuthorization(_ central: CBCentralManagerProtocol, peripheral: CBPeripheralProtocol)
 }
 

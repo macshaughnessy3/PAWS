@@ -1,3 +1,10 @@
+//
+//  SearchForTrackView.swift
+//  PAWS
+//
+//  Created by Molly Pabst on 10/5/21.
+//
+
 import SwiftUI
 import SpotifyWebAPI
 import Combine

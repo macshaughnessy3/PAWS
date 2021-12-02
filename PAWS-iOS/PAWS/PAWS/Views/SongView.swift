@@ -27,8 +27,8 @@ struct SongView: View {
                     }
                 }
                 .navigationBarTitle(Text("My Music"))
-                .toolbar { // <2>
-                            ToolbarItem(placement: .principal) { // <3>
+                .toolbar {
+                            ToolbarItem(placement: .principal) {
                                 VStack {
                                     ClemsonLogoView()
                                 }

@@ -2,7 +2,7 @@
 //  SongListItemView.swift
 //  PAWS
 //
-//  Created by macseansc3 on 9/28/21.
+//  Created by Mac Shaughnessy on 9/28/21.
 //
 
 import Foundation

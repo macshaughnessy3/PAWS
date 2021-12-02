@@ -1,8 +1,8 @@
 //
 //  CoreBluetoothViewModel.swift
-//  SwiftUI-BLE-Project
+//  PAWS
 //
-//  Created by kazuya ito on 2021/02/02.
+//  Created by Mac Shaughnessy on 11/03/21.
 //
 
 import SwiftUI
@@ -43,7 +43,6 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         }
     }
     
-    //Control Func
     func startScan() {
         let scanOption = [CBCentralManagerScanOptionAllowDuplicatesKey: true]
         centralManager?.scanForPeripherals(withServices: [CBUUID(string: "6e400001-b5a3-f393-e0a9-e50e24dcca9e")], options: scanOption)
@@ -73,7 +72,6 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         centralManager.cancelPeripheralConnection(connectedPeripheral.peripheral)
     }
     
-    //MARK: CoreBluetooth CentralManager Delegete Func
     func didUpdateState(_ central: CBCentralManagerProtocol) {
         if central.state == .poweredOn {
             isBlePower = true
@@ -94,11 +92,7 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
             _name = String(peripheral.name!)
         }
       
-        let foundPeripheral: Peripheral = Peripheral(_peripheral: peripheral,
-                                                     _name: _name,
-                                                     _advData: advertisementData,
-                                                     _rssi: rssi,
-                                                     _discoverCount: 0)
+        let foundPeripheral: Peripheral = Peripheral(_peripheral: peripheral, _name: _name, _advData: advertisementData, _rssi: rssi, _discoverCount: 0)
         
         if let index = foundPeripherals.firstIndex(where: { $0.peripheral.identifier.uuidString == peripheral.identifier.uuidString }) {
             if foundPeripherals[index].discoverCount % 50 == 0 {
@@ -139,7 +133,6 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         
     }
     
-    //MARK: CoreBluetooth Peripheral Delegate Func
     func didDiscoverServices(_ peripheral: CBPeripheralProtocol, error: Error?) {
         peripheral.services?.forEach { service in
             let setService = Service(_uuid: service.uuid, _service: service)
@@ -156,21 +149,15 @@ class CoreBluetoothViewModel: NSObject, ObservableObject, CBPeripheralProtocolDe
         
         for characteristic in characteristics {
             if characteristic.uuid.isEqual(CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")) || characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
-//            if characteristic.uuid.isEqual(CBUUID(string: "6E400003-B5A3-F393-E0A9-E50E24DCCA9E")) {
                 var characteristicASCIIValue = String()
 
                 if characteristic.uuid.isEqual(CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")) && characteristic.value != nil {
-//?? Data(base64Encoded: "NoData")
                     let characteristicValue = characteristic.value
                     let ASCIIstring = NSString(data: characteristicValue!, encoding: String.Encoding.utf8.rawValue)
                     characteristicASCIIValue = ASCIIstring! as String
                     peripheral.setNotifyValue(true, for: characteristic)
                 }
-                let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic,
-                                                                       _description: "",
-                                                                       _uuid: characteristic.uuid,
-                                                                       _readValue: characteristicASCIIValue,
-                                                                       _service: characteristic.service!)
+                let setCharacteristic: Characteristic = Characteristic(_characteristic: characteristic, _description: "", _uuid: characteristic.uuid, _readValue: characteristicASCIIValue, _service: characteristic.service!)
                 foundCharacteristics.append(setCharacteristic)
                 peripheral.setNotifyValue(true, for: characteristic)
                 peripheral.readValue(for: characteristic)

@@ -1,8 +1,8 @@
 //
 //  CBPeripheralMock.swift
-//  factory-tourguide-iOS
+//  PAWS
 //
-//  Created by kazuya ito on 2020/10/28.
+//  Created by Mac Shaughnessy on 11/08/21.
 //
 
 import Foundation
@@ -68,9 +68,7 @@ class CBPeripheralMock: Mock, CBPeripheralProtocol {
         
         if let _ = mutableCharacteristic.value {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                delegate.didUpdateValue(self,
-                                        characteristic: characteristic,
-                                        error: nil)
+                delegate.didUpdateValue(self, characteristic: characteristic, error: nil)
             }
         }
     }
@@ -88,9 +86,7 @@ class CBPeripheralMock: Mock, CBPeripheralProtocol {
         
         if let _ = mutableCharacteristic.value {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                delegate.didUpdateValue(self,
-                                        characteristic: characteristic,
-                                        error: nil)
+                delegate.didUpdateValue(self, characteristic: characteristic, error: nil)
             }
         }
     }

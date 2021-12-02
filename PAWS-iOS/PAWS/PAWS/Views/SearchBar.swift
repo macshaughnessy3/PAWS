@@ -5,8 +5,6 @@
 //  Created by Mac Shaughnessy on 9/28/21.
 //
 
-//import Foundation
-
 import SwiftUI
 
 struct SearchBar: View {
@@ -32,7 +30,6 @@ struct SearchBar: View {
                         if isEditing {
                             Button(action: {
                                 self.text = ""
-                                
                             }) {
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
@@ -50,8 +47,6 @@ struct SearchBar: View {
                 Button(action: {
                     self.isEditing = false
                     self.text = ""
-                    
-                    // Dismiss the keyboard
                     UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 }) {
                     Text("Cancel")

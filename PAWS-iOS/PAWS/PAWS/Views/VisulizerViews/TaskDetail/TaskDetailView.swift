@@ -1,8 +1,8 @@
 //
 //  TaskDetailView.swift
-//  SimpleTodo
+//  PAWS
 //
-//  Created by David B. on 28.11.20.
+//  Created by Mac Shaughnessy on 11/10/21.
 //
 
 import SwiftUI
@@ -58,8 +58,8 @@ struct TaskDetailView: View {
                 if self.bleManager.isConnected {
                     Section(header: Text("Enter a message to Display:")) {
                         VStack {
-                            if editingFlag { // <1>
-                                Text("Sent: \(task.message)") // <2>
+                            if editingFlag {
+                                Text("Sent: \(task.message)")
                             }
                             TextField("Your message", text: $task.message)
                         }

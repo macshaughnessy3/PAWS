@@ -1,8 +1,8 @@
 //
 //  Mock.swift
-//  factory-tourguide-iOS
+//  PAWS
 //
-//  Created by kazuya ito on 2020/10/28.
+//  Created by Mac Shaughnessy on 11/08/21.
 //
 
 import Foundation

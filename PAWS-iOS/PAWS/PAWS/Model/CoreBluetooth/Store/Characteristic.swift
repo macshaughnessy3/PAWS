@@ -1,6 +1,9 @@
 //
 //  Characteristic.swift
-
+//  PAWS
+//
+//  Created by Mac Shaughnessy on 11/15/21.
+//
 import CoreBluetooth
 
 class Characteristic: Identifiable {

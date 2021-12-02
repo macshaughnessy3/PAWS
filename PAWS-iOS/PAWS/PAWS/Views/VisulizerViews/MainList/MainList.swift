@@ -1,8 +1,8 @@
 //
 //  MainList.swift
-//  SimpleTodo
+//  PAWS
 //
-//  Created by David B. on 28.11.20.
+//  Created by Mac Shaughnessy on 11/10/21.
 //
 
 import SwiftUI

@@ -12,15 +12,13 @@ from example_gatt_server import register_app_cb, register_app_error_cb
 
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
-LE_ADVERTISING_MANAGER_IFACE = 'org.bluez.LEAdvertisingManager1'
-GATT_MANAGER_IFACE =           'org.bluez.GattManager1'
-GATT_CHRC_IFACE =              'org.bluez.GattCharacteristic1'
+LE_ADVERTISING_MANAGER_IFACE = 'org.bluez.LEAdvertisingManagerPAWS'
+GATT_MANAGER_IFACE =           'org.bluez.GattManagerPAWS'
+GATT_CHRC_IFACE =              'org.bluez.GattCharacteristicPAWS'
 UART_SERVICE_UUID =            '6e400001-b5a3-f393-e0a9-e50e24dcca9e'
 UART_RX_CHARACTERISTIC_UUID =  '6e400002-b5a3-f393-e0a9-e50e24dcca9e'
 UART_TX_CHARACTERISTIC_UUID =  '6e400003-b5a3-f393-e0a9-e50e24dcca9e'
 mainloop = None
-
-
 
 class TxCharacteristic(Characteristic):
     def __init__(self, bus, index, service):
@@ -45,8 +43,6 @@ class TxCharacteristic(Characteristic):
             value.append(dbus.Byte(c.encode()))
         self.PropertiesChanged(GATT_CHRC_IFACE, {'Value': value}, [])
 
-
-
     def StartNotify(self):
         if self.notifying:
             return
@@ -64,7 +60,7 @@ class RxCharacteristic(Characteristic):
 
     def WriteValue(self, value, options):
         print('remote: {}'.format(bytearray(value).decode()))
-        with open('/home/pi/Code/PAWS/PAWS-RaspberryPi/startup/ble-uart-peripheral/info.txt', 'a') as f:
+        with open('/home/pi/Code/PAWS/PAWS-RaspberryPi/data/messages.txt', 'a') as f:
             f.write("\n")
             f.write('{}'.format(bytearray(value).decode()))
 
@@ -116,9 +112,6 @@ def find_adapter(bus):
         if LE_ADVERTISING_MANAGER_IFACE in props:
             return o
     return None
-
-
-
 
 def main():
 

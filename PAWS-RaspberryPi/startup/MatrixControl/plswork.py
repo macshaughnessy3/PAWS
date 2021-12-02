@@ -18,7 +18,7 @@ printfourier=np.zeros(64)
 
 #for m in range(1):
 while(1):
-    with open("/home/pi/Code/PAWS/PAWS-RaspberryPi/startup/ble-uart-peripheral/info.txt", "rb") as file:
+    with open("/home/pi/Code/PAWS/PAWS-RaspberryPi/data/messages.txt", "rb") as file:
         file.seek(-2, 2)
         while file.read(1) != b'\n':
             file.seek(-2, 1)

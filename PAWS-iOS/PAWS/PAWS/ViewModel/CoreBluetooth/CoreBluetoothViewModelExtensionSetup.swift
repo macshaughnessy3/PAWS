@@ -1,9 +1,12 @@
 //
-//  CoreBluetoothViewModelExtension.swift
+//  CoreBluetoothViewModelExtensionSetup.swift
+//  PAWS
+//
+//  Created by Mac Shaughnessy on 11/03/21.
+//
 
 import CoreBluetooth
 
-//MARK: ViewModelSetup
 extension CoreBluetoothViewModel: CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {

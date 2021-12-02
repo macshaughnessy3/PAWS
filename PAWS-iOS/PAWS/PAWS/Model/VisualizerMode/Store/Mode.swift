@@ -2,7 +2,7 @@
 //  Mode.swift
 //  PAWS
 //
-//  Created by macseansc3 on 11/9/21.
+//  Created by Mac Shaughnessy on 11/9/21.
 //
 import Foundation
 import CoreData
@@ -28,17 +28,10 @@ public class Mode : NSManagedObject
 extension Mode: Identifiable {
 
 }
-//
-//extension Mode?: Identifiable {
-//    public var id: ObjectIdentifier {
-//        return UUID().uuidString
-//    }
-//}
 
 extension Mode {
     var displayModeAsInt: Int {
         get {
-//            guard let displayMode = self.displayMode else { return 0 }
             return Int(truncating: NSNumber(value: displayMode))
         }
         set {

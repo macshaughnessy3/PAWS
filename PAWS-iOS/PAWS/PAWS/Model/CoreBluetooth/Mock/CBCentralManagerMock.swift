@@ -1,8 +1,8 @@
 //
 //  CBCentralManagerMock.swift
-//  factory-tourguide-iOS
+//  PAWS
 //
-//  Created by kazuya ito on 2020/10/28.
+//  Created by Mac Shaughnessy on 11/08/21.
 //
 
 import Foundation
@@ -34,14 +34,8 @@ public class CBCentralManagerMock : Mock, CBCentralManagerProtocol {
         isScanning = true
         
         if let delegate = delegate as? CoreBluetoothViewModel {
-            let discoveredPeripheral = CBPeripheralMock(identifier: UUID(),
-                                                        name: deviceLocalName,
-                                                        manager: self)
-            //dummy peripheral
-            delegate.didDiscover(self,
-                                 peripheral: discoveredPeripheral,
-                                 advertisementData: [:],
-                                 rssi: -30)
+            let discoveredPeripheral = CBPeripheralMock(identifier: UUID(), name: deviceLocalName, manager: self)           
+            delegate.didDiscover(self, peripheral: discoveredPeripheral, advertisementData: [:], rssi: -30)
         }
     }
     
@@ -52,31 +46,21 @@ public class CBCentralManagerMock : Mock, CBCentralManagerProtocol {
     
     public func connect(_ peripheral: CBPeripheralProtocol, options: [String : Any]? = nil) {
         log(#function)
-
         if let delegate = delegate as? CBCentralManagerProtocolDelegate {
-            delegate.didConnect(self,
-                                peripheral: peripheral)
+            delegate.didConnect(self, peripheral: peripheral)
         }
     }
 
     public func cancelPeripheralConnection(_ peripheral: CBPeripheralProtocol) {
         log(#function)
-
         if let delegate = delegate as? CBCentralManagerProtocolDelegate {
-            
-            delegate.didDisconnect(self,
-                                   peripheral: peripheral,
-                                   error: nil)
-            
+            delegate.didDisconnect(self, peripheral: peripheral, error: nil)
         }
     }
     
     public func retrievePeripherals(_ identifiers: [UUID]) -> [CBPeripheralProtocol] {
         log(#function)
-
-        return identifiers.map { CBPeripheralMock(identifier: $0,
-                                                  name: deviceLocalName,
-                                                  manager: self) }
+        return identifiers.map { CBPeripheralMock(identifier: $0, name: deviceLocalName, manager: self) }
     }
     
 }

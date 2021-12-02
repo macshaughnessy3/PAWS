@@ -94,7 +94,7 @@ class SlowFFT(SampleBase):
             graphics.DrawLine(canvas, i, 31, i, 31-printfourier[i], color)
 
 def main():
-    with open("/home/pi/Code/PAWS/PAWS-RaspberryPi/startup/ble-uart-peripheral/info.txt", "rb") as file:
+    with open("/home/pi/Code/PAWS/PAWS-RaspberryPi/data/messages.txt", "rb") as file:
         file.seek(-2, 2)
         while file.read(1) != b'\n':
             file.seek(-2, 1)

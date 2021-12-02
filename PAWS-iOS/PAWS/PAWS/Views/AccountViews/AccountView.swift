@@ -37,8 +37,8 @@ struct AccountView: View {
                     }
                 }
                 .navigationBarTitle(Text("My Account"))
-                .toolbar { // <2>
-                            ToolbarItem(placement: .principal) { // <3>
+                .toolbar {
+                            ToolbarItem(placement: .principal) {
                                 VStack {
                                     ClemsonLogoView()
                                 }
@@ -119,12 +119,10 @@ struct AccountView: View {
                 }
             }
             .accessibility(identifier: "Log out of Spotify Identifier")
-//            .buttonStyle(PlainButtonStyle())
 //            // Prevent the user from trying to login again
 //            // if a request to retrieve the access and refresh
 //            // tokens is currently in progress.
             .allowsHitTesting(!spotify.isRetrievingTokens)
-//            .padding(.bottom, 5)
         }
     }
     
