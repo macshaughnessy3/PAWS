@@ -1,7 +1,7 @@
 # PAWS
 A Portable Audio visualizer (Wave) Speaker or PAWS designed by Mac Shaughnessy ([macshaughnessy3](https://github.com/macshaughnessy3)), Kevin Murray ([kevinmur24](https://github.com/kevinmur24)), Molly Pabst ([mollypabst](https://github.com/mollypabst)), Griffin Myslow ([gmyslow](https://github.com/gmyslow)) and Chas Porter ([chasporter00](https://github.com/chasporter00)).
 
-<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Team Picture.jpeg" alt="drawing" width="500"/>
+<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Team Picture.jpeg" alt="Clemson University ECE 4960 Team 1 PAWS Team Picture" width="500"/>
 
 ## Overview
 
@@ -9,7 +9,7 @@ Using the resources in the repo under `PAWS-Hardware`, `PAWS-RaspberryPi` and `P
 
 ## Demo
 
-[<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="drawing" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
+[<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="Watch our Demo Clemson University ECE 4960 Team 1 PAWS Final Demo 2021" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
 
 ## Resources and Credit
 [SpotifyAPI](https://github.com/Peter-Schorn/SpotifyAPI) by [Peter-Schorn](https://github.com/Peter-Schorn): A Swift library for the Spotify web API
