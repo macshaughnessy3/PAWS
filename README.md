@@ -9,5 +9,7 @@ Using the resources in the repo under `PAWS-Hardware`, `PAWS-RaspberryPi` and `P
 
 ## Resources
 https://github.com/Peter-Schorn/SpotifyAPI
+
 https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project
+
 https://github.com/Priva28/SwiftUIColourWheel
