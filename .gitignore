@@ -4,6 +4,8 @@
 /PAWS-iOS/PAWS/.DS_Store
 /PAWS-iOS/.DS_Store
 .DS_Store
+
+# Ignore LocalConfig.xcconfig for each user to make their own.
 /PAWS-iOS/PAWS/Config/LocalConfig.xcconfig
 
 # Ignore Xcode user data files
@@ -11,6 +13,6 @@
 *xcuserdatad
 *xcuserdata
 PAWS.xcodeproj/xcuserdata
-Pods/Pods.xcodeproj/xcuserdata
 PAWS-RaspberryPi/startup/node_modules
 PAWS-iOS/PAWS/PAWS.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata
