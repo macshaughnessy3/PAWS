@@ -9,7 +9,7 @@ Hardware | Links
 ---| ---
 Raspberry Pi 4  | [Canakit Raspberry Pi 4](https://www.canakit.com/raspberry-pi-4-starter-kit.html)
 AdaFruit 64x32 LED Matrix | [AdaFruit 64x32 LED Matrix](https://www.adafruit.com/product/2278)
-AdaFruit RGB Matrix HAT | https://www.amazon.com/Adafruit-RGB-Matrix-HAT-Raspberry/dp/B00SK69C6E/ref=sr_1_1?keywords=Adafruit+RGB+Matrix+HAT&qid=1638466078&sr=8-1
+AdaFruit RGB Matrix HAT | [AdaFruit RGB Matrix HAT](https://www.amazon.com/Adafruit-RGB-Matrix-HAT-Raspberry/dp/B00SK69C6E/ref=sr_1_1?keywords=Adafruit+RGB+Matrix+HAT&qid=1638466078&sr=8-1)
 Massive Audio MX Series Car Coaxial Speakers | [4" Massive Audio MX Series Car Coaxial Speakers](https://www.amazon.com/Massive-Audio-MX4-Speakers-Speakers/dp/B073JJ7F4W/ref=sr_1_3?dchild=1&keywords=30w+4+inch+car+speakers&qid=1632342682&sr=8-)
 TalentCell Rechargeable Battery Pack | [TalentCell Rechargeable Battery Pack](https://www.amazon.com/TalentCell-Rechargeable-12000mAh-Multi-led-indicator/dp/B00ME3ZH7C/ref=sr_1_6?dchild=1&keywords=rechargeable+battery+12v&qid=1632341218&sr=8-6)
 Battery Indicator Light | [Battery Indicator Light](https://www.amazon.com/Battery-Capacity-Indicator-Lead-Acid-Motorcycle/dp/B07V2KMQGQ/ref=sr_1_6?dchild=1&keywords=battery+indicator&qid=1633471326&sr=8-6)
