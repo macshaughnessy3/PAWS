@@ -13,3 +13,5 @@ https://github.com/Peter-Schorn/SpotifyAPI
 https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project
 
 https://github.com/Priva28/SwiftUIColourWheel
+
+https://github.com/hzeller/rpi-rgb-led-matrix
