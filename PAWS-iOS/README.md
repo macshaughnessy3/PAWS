@@ -48,6 +48,7 @@ In order to build the app in Xcode, the Spotify developer application credential
 ```bash
 # "CLIENT_ID": "6733ea957ba14a66b7ef5ab736ca7500"
 # "CLIENT_SECRET": "850e0429e8694ac1a0cfb0f427721bd5"
+```
 
 ### Onboarding
 Onboarding Welcome Page | Onboarding Spotify Login
