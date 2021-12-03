@@ -4,6 +4,8 @@
 
 ## Install
 
+### Airplay
+
 Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following the guide [here](https://github.com/mikebrady/shairport-sync/blob/master/INSTALL.md) or enter the following:
 
 ```bash
@@ -21,6 +23,12 @@ Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following 
 # systemctl start shairport-sync
 ```
 
+### Blutooth Audio
+
+In order to enable audio over classic Bluetooth the Raspberry Pi's Bluettooth must be set to `Discoverable`.
+
+### Enable Code to run on Reboot
+
 Next, make a crontab to run at start up so that our program automatically runs.
 On the command line type:
 
@@ -32,8 +40,8 @@ On the bottom of the file add:
 
 ```text
 @reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/BLEControl/uart_peripheral.py
-@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/MatrixControl/MatrixControl.py
-@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/VolumeControl.py
+@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/MatrixControl/matrix_control.py
+@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/volume_control.py
 ```
 
 After saving the file, reboot for the programs to start begin using:
