@@ -31,9 +31,9 @@ On the command line type:
 On the bottom of the file add:
 
 ```text
-@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/BLEControl/uart_peripheral.py
-@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/MatrixControl/MatrixControl.py
-@reboot python /home/pi/Code/PAWS/PAWS-RaspberryPi/startup/VolumeControl.py
+@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/BLEControl/uart_peripheral.py
+@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/MatrixControl/MatrixControl.py
+@reboot python /PathToRepo/PAWS/PAWS-RaspberryPi/startup/VolumeControl.py
 ```
 
 After saving the file, reboot for the programs to start begin using:
