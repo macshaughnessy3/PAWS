@@ -1,14 +1,12 @@
 import sys
 import time
-import dbus, dbus.mainloop.glib
-from gi.repository import GLib
+import dbus, dbus.mainloop.glib                                         # type: ignore
+from gi.repository import GLib                                          # type: ignore
 from example_advertisement import Advertisement
 from example_advertisement import register_ad_cb, register_ad_error_cb
 from example_gatt_server import Service, Characteristic
 from example_gatt_server import register_app_cb, register_app_error_cb
 #from multiprocessing import Process,Pipe
-
-
 
 BLUEZ_SERVICE_NAME =           'org.bluez'
 DBUS_OM_IFACE =                'org.freedesktop.DBus.ObjectManager'
@@ -20,10 +18,10 @@ UART_RX_CHARACTERISTIC_UUID =  '6e400002-b5a3-f393-e0a9-e50e24dcca9e'
 UART_TX_CHARACTERISTIC_UUID =  '6e400003-b5a3-f393-e0a9-e50e24dcca9e'
 mainloop = None
 
+# Transmitting Data
 class TxCharacteristic(Characteristic):
     def __init__(self, bus, index, service):
-        Characteristic.__init__(self, bus, index, UART_TX_CHARACTERISTIC_UUID,
-                                ['notify'], service)
+        Characteristic.__init__(self, bus, index, UART_TX_CHARACTERISTIC_UUID, ['notify'], service)
         self.notifying = False
         GLib.io_add_watch(sys.stdin, GLib.IO_IN, self.on_console_input)
 
@@ -53,14 +51,14 @@ class TxCharacteristic(Characteristic):
             return
         self.notifying = False
 
+# Recieving Data
 class RxCharacteristic(Characteristic):
     def __init__(self, bus, index, service):
-        Characteristic.__init__(self, bus, index, UART_RX_CHARACTERISTIC_UUID,
-                                ['write'], service)
+        Characteristic.__init__(self, bus, index, UART_RX_CHARACTERISTIC_UUID, ['write'], service)
 
     def WriteValue(self, value, options):
         print('remote: {}'.format(bytearray(value).decode()))
-        with open('/home/pi/Code/PAWS/PAWS-RaspberryPi/data/messages.txt', 'a') as f:
+        with open('/home/pi/Code/PAWS/PAWS-RaspberryPi/data/messages.txt', 'a') as f:   # /home/pi/Code/ is our PathToRepo
             f.write("\n")
             f.write('{}'.format(bytearray(value).decode()))
 
@@ -104,8 +102,7 @@ class UartAdvertisement(Advertisement):
         self.include_tx_power = True
 
 def find_adapter(bus):
-    remote_om = dbus.Interface(bus.get_object(BLUEZ_SERVICE_NAME, '/'),
-                               DBUS_OM_IFACE)
+    remote_om = dbus.Interface(bus.get_object(BLUEZ_SERVICE_NAME, '/'), DBUS_OM_IFACE)
     objects = remote_om.GetManagedObjects()
 
     for o, props in objects.items():
@@ -123,23 +120,17 @@ def main():
         print('BLE adapter not found')
         return
 
-    service_manager = dbus.Interface(
-                                bus.get_object(BLUEZ_SERVICE_NAME, adapter),
-                                GATT_MANAGER_IFACE)
-    ad_manager = dbus.Interface(bus.get_object(BLUEZ_SERVICE_NAME, adapter),
-                                LE_ADVERTISING_MANAGER_IFACE)
+    service_manager = dbus.Interface(bus.get_object(BLUEZ_SERVICE_NAME, adapter), GATT_MANAGER_IFACE)
+    ad_manager = dbus.Interface(bus.get_object(BLUEZ_SERVICE_NAME, adapter), LE_ADVERTISING_MANAGER_IFACE)
 
     app = UartApplication(bus)
     adv = UartAdvertisement(bus, 0)
 
     mainloop = GLib.MainLoop()
 
-    service_manager.RegisterApplication(app.get_path(), {},
-                                        reply_handler=register_app_cb,
-                                        error_handler=register_app_error_cb)
-    ad_manager.RegisterAdvertisement(adv.get_path(), {},
-                                     reply_handler=register_ad_cb,
-                                     error_handler=register_ad_error_cb)
+    service_manager.RegisterApplication(app.get_path(), {}, reply_handler=register_app_cb, error_handler=register_app_error_cb)
+    ad_manager.RegisterAdvertisement(adv.get_path(), {}, reply_handler=register_ad_cb, error_handler=register_ad_error_cb)
+    
     try:
         mainloop.run()
     except KeyboardInterrupt:

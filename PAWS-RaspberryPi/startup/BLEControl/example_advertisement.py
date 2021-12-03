@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
-import dbus
-import dbus.exceptions
-import dbus.mainloop.glib
-import dbus.service
+import dbus                         # type: ignore
+import dbus.exceptions              # type: ignore
+import dbus.mainloop.glib           # type: ignore
+import dbus.service                 # type: ignore
 
 import array
 try:
-  from gi.repository import GObject
+  from gi.repository import GObject # type: ignore
 except ImportError:
-  import gobject as GObject
+  import gobject as GObject         # type: ignore
 import sys
 
 from random import randint

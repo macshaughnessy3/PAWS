@@ -3,11 +3,11 @@
 
 """I2C rotary encoder simple test example."""
 
-import board
-from adafruit_seesaw import seesaw, rotaryio, digitalio
+import board                                            # type: ignore
+from adafruit_seesaw import seesaw, rotaryio, digitalio # type: ignore
 
 # import native i2c bus
-from smbus import SMBus
+from smbus import SMBus                                 # type: ignore
 import time
 #time.sleep(30)
 seesaw = seesaw.Seesaw(board.I2C(), addr=0x36)
