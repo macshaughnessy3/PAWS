@@ -16,12 +16,12 @@ A video demonstration of our completed project is linked below. The video is giv
 
 ## Resources and Credit
 
-[SpotifyAPI](https://github.com/Peter-Schorn/SpotifyAPI) by [Peter-Schorn](https://github.com/Peter-Schorn): A Swift library for the Spotify web API
+[SpotifyAPI](https://github.com/Peter-Schorn/SpotifyAPI) by [@Peter-Schorn](https://github.com/Peter-Schorn): A Swift library for the Spotify web API
 
-[iOS-SwiftUI-BLE-Project](https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project) by [Kazuya-Ito-B](https://github.com/Kazuya-Ito-B): Basic SwiftUI and CoreBluetooth Sample Code Application
+[iOS-SwiftUI-BLE-Project](https://github.com/Kazuya-Ito-B/iOS-SwiftUI-BLE-Project) by [@Kazuya-Ito-B](https://github.com/Kazuya-Ito-B): Basic SwiftUI and CoreBluetooth Sample Code Application
 
-[SwiftUIColourWheel](https://github.com/Priva28/SwiftUIColourWheel) by [Priva28](https://github.com/Priva28): SwiftUI Color Wheel
+[SwiftUIColourWheel](https://github.com/Priva28/SwiftUIColourWheel) by [@Priva28](https://github.com/Priva28): SwiftUI Color Wheel
 
-[rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) by [hzeller](https://github.com/hzeller): Controlling RGB LED display with Raspberry Pi GPIO
+[rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) by [@hzeller](https://github.com/hzeller): Controlling RGB LED display with Raspberry Pi GPIO
 
 #### Special thanks to the [Clemson University Department of Electrical and Computer Engineering](https://www.clemson.edu/cecas/departments/ece/academics/undergrad/seniordesign.html) for providing the funding and materials necessary for this project. Additional thanks to Dr. Hassan Raza for the oversight of the project.
