@@ -1,6 +1,6 @@
 # PAWS
 
-A Portable Audio visualizer (Wave) Speaker or PAWS designed by Mac Shaughnessy ([macshaughnessy3](https://github.com/macshaughnessy3)), Kevin Murray ([kevinmur24](https://github.com/kevinmur24)), Molly Pabst ([mollypabst](https://github.com/mollypabst)), Griffin Myslow ([gmyslow](https://github.com/gmyslow)) and Chas Porter ([chasporter00](https://github.com/chasporter00)).
+A Portable Audio visualizer (Wave) Speaker or PAWS designed by Mac Shaughnessy ([@macshaughnessy3](https://github.com/macshaughnessy3)), Kevin Murray ([@kevinmur24](https://github.com/kevinmur24)), Molly Pabst ([@mollypabst](https://github.com/mollypabst)), Griffin Myslow ([@gmyslow](https://github.com/gmyslow)) and Chas Porter ([@chasporter00](https://github.com/chasporter00)).
 
 <img src="Assets/Clemson University ECE 4960 Team 1 PAWS Team Picture.jpeg" alt="Clemson University ECE 4960 Team 1 PAWS Team Picture" width="500"/>
 
