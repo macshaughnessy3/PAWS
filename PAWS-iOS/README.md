@@ -4,12 +4,7 @@
 
 ## Setup and Requirments
 
-Xcode 12 or newer is required to run the PAWS application along with a device on iOS 14 and up.
-
-1. Navigate to the `PAWS/PAWS-iOS/PAWS` folder and run `pod install`
-2. Install swift resources
-
-After these steps, Xcode can compile and run PAWS using a simulator.
+Xcode 12 or newer is required to run the PAWS application along with a device on iOS 14 and up. Navigate to the `PAWS/PAWS-iOS/PAWS` folder and run `pod install`. Now, Xcode can compile and run PAWS using a simulator.
 
 ## Installing PAWS on a Device
 
