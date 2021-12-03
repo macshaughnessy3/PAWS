@@ -32,3 +32,23 @@ CODE_SIGN_STYLE = Automatic
 ```
 
 After making this file, restart xcode then select your target device, build and test the app on your iOS device.
+
+## PAWS Application Overview
+### Onboarding
+Onboarding Welcome Page | Onboarding Spotify Login
+:-------------------------:|:-------------------------:
+<img src="../Assets/PAWS-iOS images/PAWS onboarding intro screen.png" alt="PAWS onboarding intro screen" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS onboarding spotify login screen.png" alt="PAWS onboarding spotify login screen" height="500"/>
+**Onboarding BLE Pairing** | **Onboarding Finish Setup**
+<img src="../Assets/PAWS-iOS images/PAWS onboarding ble pairing screen.png" alt="PAWS onboarding ble pairing screen" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS onboarding finish setup screen.png" alt="PAWS onboarding finish setup screen" height="500"/>
+
+## Music
+
+Onboarding Welcome Page | Onboarding Spotify Login
+:-------------------------:|:-------------------------:
+<img src="../Assets/PAWS-iOS images/PAWS music view.png" alt="PAWS music view" height="500"/>   |  <img src="../Assets/PAWS-iOS images/PAWS playlist view.png" alt="PAWS playlist view" height="500"/> 
+
+## Visualizer
+
+Select Visualizer Mode|Create Visualizer Mode | Edit Visualizer Mode
+:-------------------------:|:-------------------------:|:-------------------------:|
+<img src="../Assets/PAWS-iOS images/PAWS select visualizer view.png" alt="PAWS select visualizer view" height="500"/>  | <img src="../Assets/PAWS-iOS images/PAWS create mode view.png" alt="PAWS create mode view" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS edit mode view.png" alt="PAWS edit mode view" height="500"/>
