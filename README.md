@@ -10,7 +10,7 @@ Using the resources in the repository under `PAWS-Hardware`, `PAWS-RaspberryPi` 
 
 ## PAWS Demo
 
-A video demonstration of our completed project is linked below. The video is gives a breif technical overview as well as shows the device being used.
+A video demonstration of our completed project is linked below. The video is gives a brief technical overview as well as shows the device being used.
 
 [<img src="Assets/Clemson University ECE 4960 Team 1 PAWS Final Demo 2021 Intro.png" alt="Watch our Demo Clemson University ECE 4960 Team 1 PAWS Final Demo 2021" width="500"/>](https://youtu.be/1Z3RVu9GiV0)
 
