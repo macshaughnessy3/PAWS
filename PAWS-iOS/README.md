@@ -10,9 +10,9 @@ Xcode 12 or newer is required to run the PAWS application along with a device on
 
 In order to build the app in Xcode, the Spotify developer application credentials need to be set. This can be done by selecting product from the menu bar on the top, then selecting Scheme -> Edit Scheme -> Test -> Arguments. From there, environment variables can be added by selecting the + button. Create two variables and name one "CLIENT_ID" and one "CLIENT_SECRET". Use the credentials below for the values. Alternitively, you can create your own [spotify developer account](https://developer.spotify.com) and use your own credentials when building the application.
 
-```bash
-# "CLIENT_ID": "6733ea957ba14a66b7ef5ab736ca7500"
-# "CLIENT_SECRET": "850e0429e8694ac1a0cfb0f427721bd5"
+```text
+"CLIENT_ID": "6733ea957ba14a66b7ef5ab736ca7500"
+"CLIENT_SECRET": "850e0429e8694ac1a0cfb0f427721bd5"
 ```
 
 ## Installing PAWS on a Device
