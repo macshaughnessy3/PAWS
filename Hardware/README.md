@@ -47,6 +47,6 @@ The LED matrix is connected via the RGB matrix hat that connects 5V power and a 
 
 ### Circuit Diagram
 
-Below is a Circuit Diagram that details the connectionion of the circuits above.
+Below is a Circuit Diagram that details the connection of the circuits above.
 
 ![Circuit Diagram](/Assets/Hardware%20images/Circuit%20Diagram.png)

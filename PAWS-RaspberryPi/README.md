@@ -25,7 +25,7 @@ Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following 
 
 ### Blutooth Audio
 
-In order to enable audio over classic Bluetooth the Raspberry Pi's Bluettooth must be set to `Discoverable`.
+In order to enable audio over classic Bluetooth the Raspberry Pi's Bluetooth must be set to `Discoverable`.
 
 ### Enable Code to run on Reboot
 
