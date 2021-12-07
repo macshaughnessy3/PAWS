@@ -977,13 +977,13 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/,
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTEST,
 					"-weak-lXCTestSwiftSupport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Clemson2021Group1-mac2.PAWS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Clemson2021Group1.PAWS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1014,7 +1014,7 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/,
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/,
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					XCTEST,

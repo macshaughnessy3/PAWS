@@ -105,7 +105,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
+      customArchiveName = "PAWS-1.0.1"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
