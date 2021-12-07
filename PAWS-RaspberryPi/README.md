@@ -1,6 +1,6 @@
 # PAWS-RaspberryPi
 
-`PAWS-RaspberryPi` serves as a companion to the `PAWS-iOS` app. The Raspberry Pi software can be setup by following the instructions below. A Raspberry Pi 4B is recommended. 
+`PAWS-RaspberryPi` serves as a companion to the `PAWS-iOS` app. The Raspberry Pi software can be setup by following the instructions below. A Raspberry Pi 4B is recommended.
 
 ## Install
 
@@ -26,7 +26,6 @@ Install [shairport-sync](https://github.com/mikebrady/shairport-sync) following 
 ### Blutooth Audio
 
 In order to enable audio over classic Bluetooth the Raspberry Pi's Bluettooth must be set to `Discoverable`.
-
 
 ### Enable Code to run on Reboot
 

@@ -23,7 +23,7 @@ AdaFruit Electret Microphone Amplifier | [AdaFruit Electret Microphone Amplifier
 
 The initial concepts for our projects housing looked as follows:
 
-<img src="../Assets/Hardware images/Led matrix - 32 x 64  (10” x 5”).jpeg" alt="Led matrix - 32 x 64  (10” x 5”)" width="500"/>
+![LED matrix - 32 x 64  (10” x 5”)](/Assets/Hardware%20images/Led%20matrix%20-%2032%20x%2064%20%20(10”%20x%205”).jpeg)
 
 These choices were  narrowed down and we opted for the first design where the box would be 11" x 11" x 1'10". This led us to use adobe illustrator to design a file for a laser cutter. This file includes cutouts designed to the cut at desired locations as well as add engraving for our team name. These design files are `LASER CUT 1.ai`, `LASER CUT 2.ai`, and `LASER CUT 3.ai`.
 
@@ -49,4 +49,4 @@ The LED matrix is connected via the RGB matrix hat that connects 5V power and a 
 
 Below is a Circuit Diagram that details the connectionion of the circuits above.
 
-<img src="../Assets/Hardware images/Circuit Diagram.png" alt="Circuit Diagram" width="500"/>
+![Circuit Diagram](/Assets/Hardware%20images/Circuit%20Diagram.png)

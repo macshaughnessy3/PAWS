@@ -48,20 +48,21 @@ In order to stream audio to the Raspberry Pi, Airplay can be used if [shairport-
 Alternatively, Bluetooth can be used to steam audio to the Raspberry Pi by opening settings and navigating to `Bluetooth`. Then connecting by selecting the devices name. Ensure the Raspberry Pi is discoverable when attempting to pair.
 
 ### Onboarding
+
 Onboarding Welcome Page | Onboarding Spotify Login
 :-------------------------:|:-------------------------:
-<img src="../Assets/PAWS-iOS images/PAWS onboarding intro screen.png" alt="PAWS onboarding intro screen" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS onboarding spotify login screen.png" alt="PAWS onboarding spotify login screen" height="500"/>
+![PAWS onboarding intro screen](/Assets/PAWS-iOS%20images/PAWS%20onboarding%20intro%20screen.png)  |  ![PAWS onboarding spotify login screen](/Assets/PAWS-iOS%20images/PAWS%20onboarding%20intro%20screen.png)
 **Onboarding BLE Pairing** | **Onboarding Finish Setup**
-<img src="../Assets/PAWS-iOS images/PAWS onboarding ble pairing screen.png" alt="PAWS onboarding ble pairing screen" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS onboarding finish setup screen.png" alt="PAWS onboarding finish setup screen" height="500"/>
+![PAWS onboarding finish setup screen](/Assets/PAWS-iOS%20images/PAWS%20onboarding%20ble%20pairing%20screen.png) | ![PAWS onboarding ble pairing screen](/Assets/PAWS-iOS%20images/PAWS%20onboarding%20finish%20setup%20screen.png)
 
 ### Music
 
 Onboarding Welcome Page | Onboarding Spotify Login
 :-------------------------:|:-------------------------:
-<img src="../Assets/PAWS-iOS images/PAWS music view.png" alt="PAWS music view" height="500"/>   |  <img src="../Assets/PAWS-iOS images/PAWS playlist view.png" alt="PAWS playlist view" height="500"/> 
+![PAWS music view](/Assets/PAWS-iOS%20images/PAWS%20music%20view.png) | ![PAWS playlist view](/Assets/PAWS-iOS%20images/PAWS%20playlist%20view.png)
 
 ### Visualizer
 
 Select Visualizer Mode|Create Visualizer Mode | Edit Visualizer Mode
 :-------------------------:|:-------------------------:|:-------------------------:|
-<img src="../Assets/PAWS-iOS images/PAWS select visualizer view.png" alt="PAWS select visualizer view" height="500"/>  | <img src="../Assets/PAWS-iOS images/PAWS create mode view.png" alt="PAWS create mode view" height="500"/>  |  <img src="../Assets/PAWS-iOS images/PAWS edit mode view.png" alt="PAWS edit mode view" height="500"/>
+![PAWS select visualizer view](/Assets/PAWS-iOS%20images/PAWS%20select%20visualizer%20view.png) | ![PAWS create mode view](/Assets/PAWS-iOS%20images/PAWS%20create%20mode%20view.png) |  ![PAWS edit mode view](/Assets/PAWS-iOS%20images/PAWS%20edit%20mode%20view.png)
